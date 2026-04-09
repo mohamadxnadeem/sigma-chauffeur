@@ -54,11 +54,11 @@ const IncludeCard = styled.button<{ $expanded: boolean }>`
   width: 100%;
   padding: 12px;
   border-radius: 14px;
-  border: 1px solid rgba(11, 91, 51, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.1);
   background: linear-gradient(
     135deg,
-    rgba(11, 91, 51, 0.06) 0%,
-    rgba(6, 62, 35, 0.03) 100%
+    rgba(201, 168, 76, 0.06) 0%,
+    rgba(168, 137, 56, 0.03) 100%
   );
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;

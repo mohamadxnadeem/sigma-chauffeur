@@ -40,7 +40,7 @@ const Tag = styled.div`
   align-items: center;
   padding: 0 14px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.86rem;
   font-weight: 700;

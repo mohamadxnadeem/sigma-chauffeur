@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Overlay = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   inset: 0;
-  background: rgba(6, 62, 35, 0.35);
+  background: rgba(13, 13, 13, 0.55);
   backdrop-filter: blur(3px);
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
   visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
@@ -20,8 +20,8 @@ const Drawer = styled.aside<{ $isOpen: boolean }>`
   left: 0;
   width: min(360px, 88vw);
   height: 100vh;
-  background: linear-gradient(180deg, #0b5b33 0%, #063e23 100%);
-  box-shadow: 10px 0 30px rgba(18, 61, 43, 0.2);
+  background: linear-gradient(180deg, #0D0D0D 0%, #1C1C1C 100%);
+  box-shadow: 10px 0 30px rgba(13, 13, 13, 0.3);
   transform: translateX(${({ $isOpen }) => ($isOpen ? "0" : "-100%")});
   transition: transform 0.3s ease;
   z-index: 1300;

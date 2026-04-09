@@ -223,8 +223,8 @@ const QuickInfoBadge = styled.div`
   align-items: center;
   padding: 0 14px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
-  border: 1px solid rgba(11, 91, 51, 0.12);
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.9rem;
   font-weight: 700;
@@ -310,10 +310,10 @@ const RichContent = styled.div`
 const HighlightCard = styled.div`
   background: linear-gradient(
     135deg,
-    rgba(11, 91, 51, 0.08) 0%,
-    rgba(6, 62, 35, 0.04) 100%
+    rgba(201, 168, 76, 0.08) 0%,
+    rgba(168, 137, 56, 0.04) 100%
   );
-  border: 1px solid rgba(11, 91, 51, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   padding: 28px;
   border-radius: 20px;
 `;
@@ -359,8 +359,8 @@ const TimelineLine = styled.div`
   width: 2px;
   background: linear-gradient(
     180deg,
-    rgba(11, 91, 51, 0.24) 0%,
-    rgba(11, 91, 51, 0.08) 100%
+    rgba(201, 168, 76, 0.24) 0%,
+    rgba(201, 168, 76, 0.08) 100%
   );
 `;
 
@@ -376,7 +376,7 @@ const TimelineDot = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  box-shadow: 0 10px 25px rgba(11, 91, 51, 0.18);
+  box-shadow: 0 10px 25px rgba(201, 168, 76, 0.18);
 `;
 
 const StopCard = styled.div`
@@ -402,7 +402,7 @@ const StopImage = styled.div`
   min-height: 180px;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.12), rgba(6, 62, 35, 0.06));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(168, 137, 56, 0.06));
 `;
 
 const StopEyebrow = styled.div`
@@ -537,7 +537,7 @@ const FAQIcon = styled.span<{ $open: boolean }>`
   width: 34px;
   height: 34px;
   border-radius: 12px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   display: inline-flex;
   align-items: center;
@@ -565,7 +565,7 @@ const FAQAnswerInner = styled.div`
 
 const CTASection = styled.section`
   padding: 84px 0;
-  background: linear-gradient(135deg, #0b5b33 0%, #063e23 100%);
+  background: linear-gradient(135deg, #0D0D0D 0%, #1C1C1C 100%);
 `;
 
 const CTABox = styled.div`

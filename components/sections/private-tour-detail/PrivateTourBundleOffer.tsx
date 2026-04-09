@@ -6,10 +6,10 @@ import Button from "../../common/Button";
 const OfferCard = styled.div`
   background: linear-gradient(
     135deg,
-    rgba(11, 91, 51, 0.08) 0%,
-    rgba(6, 62, 35, 0.04) 100%
+    rgba(201, 168, 76, 0.08) 0%,
+    rgba(168, 137, 56, 0.04) 100%
   );
-  border: 1px solid rgba(11, 91, 51, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   padding: 30px;
   border-radius: 20px;
   box-shadow: ${({ theme }) => theme.shadows.soft};

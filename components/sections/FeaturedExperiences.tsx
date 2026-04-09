@@ -98,7 +98,7 @@ const ArrowButton = styled.button`
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.card};
-    border-color: rgba(11, 91, 51, 0.2);
+    border-color: rgba(201, 168, 76, 0.2);
   }
 `;
 
@@ -143,14 +143,14 @@ const Card = styled(Link)`
   &:hover {
     transform: translateY(-4px);
     box-shadow: ${({ theme }) => theme.shadows.card};
-    border-color: rgba(11, 91, 51, 0.22);
+    border-color: rgba(201, 168, 76, 0.22);
   }
 `;
 
 const CardImageWrap = styled.div`
   position: relative;
   height: 260px;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.18), rgba(6, 62, 35, 0.1));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(168, 137, 56, 0.1));
 `;
 
 const CardContent = styled.div`
@@ -167,7 +167,7 @@ const Badge = styled.div`
   margin-bottom: 14px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.78rem;
   font-weight: 700;

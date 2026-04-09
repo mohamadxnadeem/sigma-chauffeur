@@ -47,7 +47,7 @@ const Trigger = styled.button<{ $isOpen: boolean }>`
   transition: background 0.2s ease;
 
   &:hover {
-    background: rgba(11, 91, 51, 0.03);
+    background: rgba(201, 168, 76, 0.03);
   }
 `;
 
@@ -66,7 +66,7 @@ const Icon = styled.div<{ $isOpen: boolean }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 1rem;
   font-weight: 700;

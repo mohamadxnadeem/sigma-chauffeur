@@ -21,8 +21,8 @@ const Wrapper = styled.header`
   position: sticky;
   top: 0;
   z-index: 1100;
-  background: linear-gradient(135deg, #0b5b33 0%, #063e23 100%);
-  box-shadow: 0 10px 30px rgba(6, 62, 35, 0.18);
+  background: linear-gradient(135deg, #0D0D0D 0%, #1C1C1C 100%);
+  box-shadow: 0 10px 30px rgba(13, 13, 13, 0.28);
 `;
 
 const Inner = styled.div`

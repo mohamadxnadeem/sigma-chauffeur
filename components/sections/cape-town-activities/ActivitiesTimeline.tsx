@@ -62,8 +62,8 @@ const ProgressRail = styled.div`
   width: 2px;
   background: linear-gradient(
     180deg,
-    rgba(11, 91, 51, 0.24) 0%,
-    rgba(11, 91, 51, 0.08) 100%
+    rgba(201, 168, 76, 0.24) 0%,
+    rgba(201, 168, 76, 0.08) 100%
   );
 `;
 
@@ -75,7 +75,7 @@ const ProgressDot = styled.div`
   height: 18px;
   border-radius: 999px;
   background: ${({ theme }) => theme.colors.primary};
-  box-shadow: 0 0 0 6px rgba(11, 91, 51, 0.12);
+  box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.12);
 `;
 
 const ActivityCard = styled.div`
@@ -98,7 +98,7 @@ const ActivityInner = styled.div`
 const ActivityImageWrap = styled.div`
   position: relative;
   min-height: 260px;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.12), rgba(6, 62, 35, 0.06));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(168, 137, 56, 0.06));
 `;
 
 const ActivityContent = styled.div`
@@ -116,7 +116,7 @@ const MobileStep = styled.div`
   min-height: 34px;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.1);
+  background: rgba(201, 168, 76, 0.1);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.76rem;
   font-weight: 700;
@@ -147,7 +147,7 @@ const Badge = styled.div`
   align-items: center;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.1);
+  background: rgba(201, 168, 76, 0.1);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.8rem;
   font-weight: 700;

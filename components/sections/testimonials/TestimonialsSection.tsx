@@ -79,8 +79,8 @@ const MetaBadge = styled.div`
   align-items: center;
   padding: 0 14px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
-  border: 1px solid rgba(11, 91, 51, 0.12);
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.8rem;
   font-weight: 700;
@@ -105,7 +105,7 @@ const Arrow = styled.button`
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.card};
-    border-color: rgba(11, 91, 51, 0.18);
+    border-color: rgba(201, 168, 76, 0.18);
   }
 `;
 
@@ -164,8 +164,8 @@ const Avatar = styled.div`
   border-radius: 50%;
   overflow: hidden;
   flex: 0 0 auto;
-  border: 2px solid rgba(11, 91, 51, 0.12);
-  box-shadow: 0 8px 20px rgba(11, 91, 51, 0.1);
+  border: 2px solid rgba(201, 168, 76, 0.12);
+  box-shadow: 0 8px 20px rgba(201, 168, 76, 0.1);
 `;
 
 const ClientMeta = styled.div`
@@ -185,7 +185,7 @@ const VerifiedBadge = styled.div`
   min-height: 28px;
   padding: 0 10px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.74rem;
   font-weight: 700;

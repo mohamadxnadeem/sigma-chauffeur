@@ -118,7 +118,7 @@ const ArrowButton = styled.button`
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.card};
-    border-color: rgba(11, 91, 51, 0.2);
+    border-color: rgba(201, 168, 76, 0.2);
   }
 `;
 
@@ -163,7 +163,7 @@ const Card = styled(Link)`
   &:hover {
     transform: translateY(-4px);
     box-shadow: ${({ theme }) => theme.shadows.card};
-    border-color: rgba(11, 91, 51, 0.22);
+    border-color: rgba(201, 168, 76, 0.22);
   }
 `;
 
@@ -171,7 +171,7 @@ const CardImageWrap = styled.div`
   position: relative;
   height: 260px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.18), rgba(6, 62, 35, 0.1));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(168, 137, 56, 0.1));
 `;
 
 const ImageOverlay = styled.div`
@@ -187,7 +187,7 @@ const ShimmerLayer = styled.div`
   inset: 0;
   z-index: 1;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.12), rgba(6, 62, 35, 0.06));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(168, 137, 56, 0.06));
 
   &::after {
     content: "";
@@ -227,7 +227,7 @@ const MetaBadge = styled.div`
   min-height: 34px;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.78rem;
   font-weight: 700;

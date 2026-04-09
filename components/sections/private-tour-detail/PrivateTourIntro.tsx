@@ -49,8 +49,8 @@ const TrustBadge = styled.div`
   align-items: center;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.06);
-  border: 1px solid rgba(11, 91, 51, 0.1);
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.1);
   color: ${({ theme }) => theme.colors.heading};
   font-size: 0.84rem;
   font-weight: 700;
@@ -69,8 +69,8 @@ const QuickInfoBadge = styled.div`
   align-items: center;
   padding: 0 14px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
-  border: 1px solid rgba(11, 91, 51, 0.12);
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.9rem;
   font-weight: 700;

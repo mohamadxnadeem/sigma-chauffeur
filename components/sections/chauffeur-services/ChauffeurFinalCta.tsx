@@ -10,7 +10,7 @@ type Props = {
 
 const FinalCta = styled.section`
   padding: 84px 0;
-  background: linear-gradient(135deg, #0b5b33 0%, #063e23 100%);
+  background: linear-gradient(135deg, #0D0D0D 0%, #1C1C1C 100%);
 `;
 
 const FinalCtaInner = styled.div`

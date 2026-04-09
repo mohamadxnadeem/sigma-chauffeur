@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Playfair_Display, Inter } from "next/font/google";
 
+import "./globals.css";
 import { brand } from "../lib/brand";
 import StyledComponentsRegistry from "../lib/styled-components-registry";
 import Providers from "./providers";
@@ -8,6 +10,18 @@ import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import ScrollTracking from "../components/tracking/ScrollTracking";
 import EngagementTracking from "../components/tracking/EngagementTracking";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: brand.name,
@@ -24,7 +38,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${playfairDisplay.variable} ${inter.variable}`}
+    >
       <body>
         <StyledComponentsRegistry>
           <Providers>

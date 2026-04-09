@@ -233,7 +233,7 @@ const ExpandButton = styled.button`
   text-align: left;
 
   &:hover {
-    background: rgba(11, 91, 51, 0.03);
+    background: rgba(201, 168, 76, 0.03);
   }
 `;
 
@@ -247,7 +247,7 @@ const ExpandIcon = styled.div<{ $open: boolean }>`
   width: 34px;
   height: 34px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   display: inline-flex;
   align-items: center;

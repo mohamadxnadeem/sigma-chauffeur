@@ -98,10 +98,10 @@ const ValueStrip = styled.div`
   border-radius: 16px;
   background: linear-gradient(
     135deg,
-    rgba(11, 91, 51, 0.08) 0%,
-    rgba(6, 62, 35, 0.04) 100%
+    rgba(201, 168, 76, 0.08) 0%,
+    rgba(168, 137, 56, 0.04) 100%
   );
-  border: 1px solid rgba(11, 91, 51, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -188,14 +188,14 @@ const Card = styled.div`
   &:hover {
     transform: translateY(-4px);
     box-shadow: ${({ theme }) => theme.shadows.card};
-    border-color: rgba(11, 91, 51, 0.18);
+    border-color: rgba(201, 168, 76, 0.18);
   }
 `;
 
 const CardImage = styled.div`
   position: relative;
   min-height: 220px;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.12), rgba(6, 62, 35, 0.06));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(168, 137, 56, 0.06));
   overflow: hidden;
 `;
 
@@ -223,7 +223,7 @@ const ShimmerMask = styled.div`
   inset: 0;
   z-index: 3;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.08), rgba(6, 62, 35, 0.04));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(168, 137, 56, 0.04));
 
   &::after {
     content: "";
@@ -266,11 +266,11 @@ const MetaBadge = styled.div`
   align-items: center;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.12);
-  color: #0b5b33;
+  background: rgba(201, 168, 76, 0.14);
+  color: #C9A84C;
   font-size: 0.84rem;
   font-weight: 700;
-  border: 1px solid rgba(11, 91, 51, 0.16);
+  border: 1px solid rgba(201, 168, 76, 0.22);
 `;
 
 const TrustRow = styled.div`
@@ -283,7 +283,7 @@ const TrustRow = styled.div`
 const TrustBadge = styled.div`
   font-size: 0.75rem;
   font-weight: 700;
-  color: #0b5b33;
+  color: #C9A84C;
 `;
 
 const CardText = styled.p`

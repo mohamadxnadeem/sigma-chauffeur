@@ -48,7 +48,7 @@ const RelatedImage = styled.div<{ $image?: string }>`
   background: ${({ $image }) =>
     $image
       ? `linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.04)), url(${$image})`
-      : `linear-gradient(135deg, rgba(11, 91, 51, 0.16), rgba(6, 62, 35, 0.08))`};
+      : `linear-gradient(135deg, rgba(201, 168, 76, 0.16), rgba(168, 137, 56, 0.08))`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -78,7 +78,7 @@ const RelatedBadge = styled.div`
   align-items: center;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.8rem;
   font-weight: 700;

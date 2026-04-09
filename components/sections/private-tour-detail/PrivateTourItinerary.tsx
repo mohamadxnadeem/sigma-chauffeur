@@ -80,8 +80,8 @@ const TimelineRail = styled.div`
     width: 2px;
     background: linear-gradient(
       180deg,
-      rgba(11, 91, 51, 0.18) 0%,
-      rgba(11, 91, 51, 0.08) 100%
+      rgba(201, 168, 76, 0.18) 0%,
+      rgba(201, 168, 76, 0.08) 100%
     );
   }
 `;
@@ -93,8 +93,8 @@ const TimelineLine = styled.div`
   width: 2px;
   background: linear-gradient(
     180deg,
-    rgba(11, 91, 51, 0.32) 0%,
-    rgba(11, 91, 51, 0.12) 100%
+    rgba(201, 168, 76, 0.32) 0%,
+    rgba(201, 168, 76, 0.12) 100%
   );
   z-index: 1;
 `;
@@ -111,7 +111,7 @@ const TimelineDot = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  box-shadow: 0 10px 25px rgba(11, 91, 51, 0.18);
+  box-shadow: 0 10px 25px rgba(201, 168, 76, 0.18);
 `;
 
 const StopCard = styled.div`
@@ -137,7 +137,7 @@ const StopImage = styled.div`
   min-height: 180px;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 91, 51, 0.12), rgba(6, 62, 35, 0.06));
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(168, 137, 56, 0.06));
 `;
 
 const StopEyebrow = styled.div`

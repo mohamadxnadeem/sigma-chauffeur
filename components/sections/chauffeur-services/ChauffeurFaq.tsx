@@ -52,7 +52,7 @@ const FaqIcon = styled.span<{ $open: boolean }>`
   width: 34px;
   height: 34px;
   border-radius: 12px;
-  background: rgba(11, 91, 51, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   color: ${({ theme }) => theme.colors.primary};
   display: inline-flex;
   align-items: center;

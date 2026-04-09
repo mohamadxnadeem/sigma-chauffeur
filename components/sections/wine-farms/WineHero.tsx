@@ -15,8 +15,8 @@ import { trackWhatsAppClick } from "../../../lib/tracking";
 const Hero = styled.section`
   padding: 96px 0 72px;
   background:
-    radial-gradient(circle at top right, rgba(11, 91, 51, 0.12), transparent 28%),
-    linear-gradient(180deg, #f8fbf9 0%, ${({ theme }) => theme.colors.background} 100%);
+    radial-gradient(circle at top right, rgba(201, 168, 76, 0.12), transparent 28%),
+    linear-gradient(180deg, #FFFFFF 0%, ${({ theme }) => theme.colors.background} 100%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: 120px 0 88px;

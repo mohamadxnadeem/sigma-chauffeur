@@ -57,8 +57,8 @@ const Rail = styled.div`
   width: 2px;
   background: linear-gradient(
     180deg,
-    rgba(11, 91, 51, 0.24),
-    rgba(11, 91, 51, 0.08)
+    rgba(201, 168, 76, 0.24),
+    rgba(201, 168, 76, 0.08)
   );
 `;
 
@@ -68,7 +68,7 @@ const Dot = styled.div`
   height: 18px;
   border-radius: 999px;
   background: ${({ theme }) => theme.colors.primary};
-  box-shadow: 0 0 0 6px rgba(11, 91, 51, 0.12);
+  box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.12);
   z-index: 2;
 `;
 
@@ -93,8 +93,8 @@ const ImageWrap = styled.div`
   min-height: 240px;
   background: linear-gradient(
     135deg,
-    rgba(11, 91, 51, 0.12),
-    rgba(6, 62, 35, 0.06)
+    rgba(201, 168, 76, 0.12),
+    rgba(168, 137, 56, 0.06)
   );
 `;
 
@@ -118,7 +118,7 @@ const BadgeRow = styled.div`
 const Badge = styled.div`
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.1);
+  background: rgba(201, 168, 76, 0.1);
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.8rem;
   font-weight: 700;
@@ -154,8 +154,8 @@ const Tag = styled.div`
   min-height: 30px;
   padding: 0 10px;
   border-radius: 999px;
-  background: rgba(11, 91, 51, 0.06);
-  border: 1px solid rgba(11, 91, 51, 0.12);
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   color: ${({ theme }) => theme.colors.heading};
   font-size: 0.76rem;
   font-weight: 700;

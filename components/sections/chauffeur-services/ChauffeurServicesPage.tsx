@@ -241,7 +241,7 @@ const FaqItem = styled.details`
   box-shadow: ${({ theme }) => theme.shadows.soft};
 
   &[open] {
-    border-color: rgba(11, 91, 51, 0.18);
+    border-color: rgba(201, 168, 76, 0.18);
   }
 `;
 
@@ -265,7 +265,7 @@ const FaqAnswer = styled.p`
 
 const FinalCta = styled.section`
   padding: 84px 0;
-  background: #0b5b33;
+  background: #0D0D0D;
   color: white;
 `;
 

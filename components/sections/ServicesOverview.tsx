@@ -87,7 +87,7 @@ const Card = styled(Link)`
   &:hover {
     transform: translateY(-4px);
     box-shadow: ${({ theme }) => theme.shadows.card};
-    border-color: rgba(11, 91, 51, 0.22);
+    border-color: rgba(201, 168, 76, 0.22);
   }
 `;
 
@@ -97,8 +97,8 @@ const IconWrap = styled.div`
   border-radius: 16px;
   background: linear-gradient(
     135deg,
-    rgba(11, 91, 51, 0.12) 0%,
-    rgba(6, 62, 35, 0.08) 100%
+    rgba(201, 168, 76, 0.12) 0%,
+    rgba(168, 137, 56, 0.08) 100%
   );
   display: flex;
   align-items: center;

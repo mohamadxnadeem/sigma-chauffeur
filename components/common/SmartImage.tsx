@@ -40,8 +40,8 @@ const ShimmerMask = styled.div`
 
   background: linear-gradient(
     135deg,
-    rgba(11, 91, 51, 0.06),
-    rgba(6, 62, 35, 0.03)
+    rgba(201, 168, 76, 0.06),
+    rgba(168, 137, 56, 0.03)
   );
 
   &::after {

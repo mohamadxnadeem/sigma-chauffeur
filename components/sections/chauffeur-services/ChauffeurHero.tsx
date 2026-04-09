@@ -29,7 +29,7 @@ const Hero = styled.section<{ $image?: string }>`
     ${({ $image }) =>
       $image
         ? `url(${$image}) center/cover no-repeat`
-        : `linear-gradient(135deg, rgba(11, 91, 51, 0.16), rgba(6, 62, 35, 0.08))`};
+        : `linear-gradient(135deg, rgba(201, 168, 76, 0.16), rgba(168, 137, 56, 0.08))`};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: 150px 0 110px;
