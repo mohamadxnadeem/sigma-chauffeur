@@ -224,7 +224,7 @@ export default function ChauffeurAuthoritySection() {
                 <p>
                   If you are searching for the best chauffeur service in Cape
                   Town, the experience should be about far more than simply
-                  getting from one place to another. At Cape Town Concierge, we
+                  getting from one place to another. At Sigma VIP, we
                   focus on delivering a private, polished, and premium standard
                   of travel for clients who value comfort, reliability, and
                   attention to detail. Our chauffeur service in Cape Town is

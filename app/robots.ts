@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://capetown-concierge.co.za/sitemap.xml",
+    sitemap: "https://www.sigmavip.co.za/sitemap.xml",
   };
 }

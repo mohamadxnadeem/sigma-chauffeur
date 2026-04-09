@@ -20,7 +20,7 @@ export default function Footer() {
     <Wrapper>
       <Container>
         <Text>
-          © {new Date().getFullYear()} Cape Town Concierge. Luxury chauffeur
+          © {new Date().getFullYear()} Sigma VIP. Luxury chauffeur
           services, private tours, and premium travel experiences in Cape Town.
         </Text>
       </Container>

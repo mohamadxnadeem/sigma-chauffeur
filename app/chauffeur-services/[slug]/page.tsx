@@ -60,7 +60,7 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-const SITE_URL = "https://capetown-concierge.co.za";
+const SITE_URL = "https://www.sigmavip.co.za";
 
 // ─────────────────────────────────────────────
 // FIX 1: SEO KEYWORD GENERATOR
@@ -167,8 +167,8 @@ function getMetaFriendlyRate(car: Car) {
 // ─────────────────────────────────────────────
 // FIX 4: META TITLE — exact keyword first, brand second
 // Old: "[Name] | VIP Chauffeur Hire Cape Town"  (generic, brand-heavy)
-// New: "[SEO Keyword] | Cape Town Concierge"    (keyword-first = higher CTR + ranking)
-// Example: "Range Rover Sport Chauffeur Service Cape Town | Cape Town Concierge"
+// New: "[SEO Keyword] | Sigma VIP"    (keyword-first = higher CTR + ranking)
+// Example: "Range Rover Sport Chauffeur Service Cape Town | Sigma VIP"
 // Under 60 chars for the keyword portion, stays within Google's display limit
 // ─────────────────────────────────────────────
 function getPageTitle(car: Car) {
@@ -177,8 +177,8 @@ function getPageTitle(car: Car) {
   const rate = getMetaFriendlyRate(car);
   // Append price if it fits — increases CTR significantly for HNWI searches
   return rate
-    ? `${keyword} | From ${rate} | Cape Town Concierge`
-    : `${keyword} | Cape Town Concierge`;
+    ? `${keyword} | From ${rate} | Sigma VIP`
+    : `${keyword} | Sigma VIP`;
 }
 
 // ─────────────────────────────────────────────
@@ -309,7 +309,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!car) {
     return {
-      title: "Chauffeur Service | Cape Town Concierge",
+      title: "Chauffeur Service | Sigma VIP",
       description: "Premium chauffeur-driven vehicles in Cape Town",
     };
   }
@@ -349,7 +349,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       url: canonicalUrl,
-      siteName: "Cape Town Concierge",
+      siteName: "Sigma VIP",
       // FIX 9: Change type from "article" to "website" — vehicle pages are not articles
       // "article" type triggers publishedTime/author expectations Google may flag
       type: "website",
@@ -413,7 +413,7 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
         description: getShortVehicleDescription(car),
         brand: {
           "@type": "Brand",
-          name: "Cape Town Concierge",
+          name: "Sigma VIP",
         },
         category: car.category || car.vehicle_type || "Luxury Chauffeur Vehicle",
         url: canonicalUrl,
@@ -463,9 +463,9 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
         serviceType: "Private Chauffeur Service",
         provider: {
           "@type": "LocalBusiness",
-          name: "Cape Town Concierge",
+          name: "Sigma VIP",
           url: SITE_URL,
-          telephone: "+27636746131",
+          telephone: "+27711081227",
           // FIX 13: Add address — critical for local SEO ranking
           address: {
             "@type": "PostalAddress",
@@ -481,7 +481,6 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
           },
           priceRange: "$$$$",
           sameAs: [
-            "https://www.facebook.com/capetownconcierge",
             // Add your actual social profiles here
           ],
         },

@@ -98,7 +98,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       <Overlay $isOpen={isOpen} onClick={onClose} />
       <Drawer $isOpen={isOpen}>
         <TopRow>
-          <Title>Cape Town Concierge</Title>
+          <Title>Sigma VIP</Title>
           <CloseButton onClick={onClose} aria-label="Close menu">
             ×
           </CloseButton>

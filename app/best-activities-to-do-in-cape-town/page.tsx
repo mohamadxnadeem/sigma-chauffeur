@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import BestActivitiesPage from "../../components/sections/cape-town-activities/BestActivitiesPage";
 
-const SITE_URL = "https://capetown-concierge.co.za";
+const SITE_URL = "https://www.sigmavip.co.za";
 
 export const metadata: Metadata = {
   title:
-    "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
+    "Best Activities to Do in Cape Town (2026 Guide) | Sigma VIP Private Tours & Chauffeur",
   description:
-    "Discover the best activities to do in Cape Town, from Table Mountain and Cape Point to wine tours, helicopter rides, safaris, and private chauffeur-driven experiences. Plan the perfect Cape Town itinerary with luxury transport and curated experiences.",
+    "Discover the best activities to do in Cape Town with Sigma VIP — Table Mountain, Cape Point, wine tours, helicopter rides, safaris, and private chauffeur-driven experiences. Plan the perfect Cape Town itinerary with luxury transport and curated experiences.",
   alternates: {
     canonical: `${SITE_URL}/best-activities-in-cape-town`,
   },
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
+      "Best Activities to Do in Cape Town (2026 Guide) | Sigma VIP Private Tours & Chauffeur",
     description:
-      "Explore top Cape Town activities including Table Mountain, Cape Peninsula, wine tours, helicopter rides, and chauffeur-driven private experiences.",
+      "Explore top Cape Town activities including Table Mountain, Cape Peninsula, wine tours, helicopter rides, and Sigma VIP chauffeur-driven private experiences.",
     url: `${SITE_URL}/best-activities-in-cape-town`,
-    siteName: "WhyCapeTown",
+    siteName: "Sigma VIP",
     type: "article",
     images: [
       {
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
+      "Best Activities to Do in Cape Town (2026 Guide) | Sigma VIP Private Tours & Chauffeur",
     description:
-      "Discover top Cape Town activities with private chauffeur service, curated tours, scenic routes, and luxury experiences.",
+      "Discover top Cape Town activities with Sigma VIP private chauffeur service, curated tours, scenic routes, and luxury experiences.",
     images: [`${SITE_URL}/images/activities/table-mountain.jpg`],
   },
 };
@@ -61,11 +61,11 @@ export default function BestActivitiesToDoInCapeTownPage() {
         image: [`${SITE_URL}/images/activities/table-mountain.jpg`],
         author: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
         },
         publisher: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
           logo: {
             "@type": "ImageObject",
             url: `${SITE_URL}/images/logo.png`,

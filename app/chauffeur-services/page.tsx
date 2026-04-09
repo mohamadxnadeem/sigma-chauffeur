@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import ChauffeurServicesPage from "../../components/sections/chauffeur-services/ChauffeurServicesPage";
 
-const SITE_URL = "https://capetown-concierge.co.za";
+const SITE_URL = "https://www.sigmavip.co.za";
 
 export const metadata: Metadata = {
-  title: "Chauffeur Service Cape Town | Luxury Private Driver & Airport Transfers",
+  title: "Chauffeur Service Cape Town | Sigma VIP Luxury Private Driver & Airport Transfers",
   description:
-    "Book a luxury chauffeur service in Cape Town for airport transfers, private tours, executive travel, and bespoke day hire. Premium vehicles, professional drivers, and tailored itineraries.",
+    "Book a luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, executive travel, and bespoke day hire. Premium vehicles, professional drivers, and tailored itineraries.",
   alternates: {
     canonical: `${SITE_URL}/chauffeur-services`,
   },
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Chauffeur Service Cape Town | Luxury Private Driver & Airport Transfers",
+    title: "Chauffeur Service Cape Town | Sigma VIP Luxury Private Driver & Airport Transfers",
     description:
-      "Luxury chauffeur service in Cape Town for airport transfers, private tours, executive travel, and bespoke day hire.",
+      "Luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, executive travel, and bespoke day hire.",
     url: `${SITE_URL}/chauffeur-services`,
-    siteName: "Cape Town Concierge",
+    siteName: "Sigma VIP",
     type: "website",
     images: [
       {
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chauffeur Service Cape Town | Luxury Private Driver & Airport Transfers",
+    title: "Chauffeur Service Cape Town | Sigma VIP Luxury Private Driver & Airport Transfers",
     description:
-      "Book a luxury chauffeur service in Cape Town for airport transfers, private tours, and executive travel.",
+      "Book a luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, and executive travel.",
     images: [`${SITE_URL}/images/hero-car.jpg`],
   },
 };
@@ -64,7 +64,7 @@ export default function ChauffeurServicesLandingPage() {
         serviceType: "Private Chauffeur Service",
         provider: {
           "@type": "Organization",
-          name: "Cape Town Concierge",
+          name: "Sigma VIP",
           url: SITE_URL,
         },
         areaServed: {

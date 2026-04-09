@@ -1,3 +1,3 @@
-import { capeTownConciergeBrand } from "@/brands/capetown-concierge";
+import { sigmaVipBrand } from "@/brands/sigma-chauffeur";
 
-export const brand = capeTownConciergeBrand;
+export const brand = sigmaVipBrand;

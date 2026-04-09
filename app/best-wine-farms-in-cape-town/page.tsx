@@ -3,13 +3,13 @@
 import type { Metadata } from "next";
 import WineFarmsPage from "../../components/sections/wine-farms/WineFarmsPage";
 
-const SITE_URL = "https://capetown-concierge.co.za";
+const SITE_URL = "https://www.sigmavip.co.za";
 
 export const metadata: Metadata = {
   title:
-    "10 Best Wine Farms in Cape Town, Stellenbosch & Franschhoek (2026 Guide)",
+    "10 Best Wine Farms in Cape Town, Stellenbosch & Franschhoek (2026 Guide) | Sigma VIP",
   description:
-    "Discover the best wine farms in Cape Town, Stellenbosch, and Franschhoek. Explore luxury estates like Delaire Graff, Babylonstoren, and Boschendal. Book a private chauffeur-driven wine tour today.",
+    "Discover the best wine farms in Cape Town, Stellenbosch, and Franschhoek. Explore luxury estates like Delaire Graff, Babylonstoren, and Boschendal. Book a private chauffeur-driven wine tour with Sigma VIP today.",
 
   alternates: {
     canonical: `${SITE_URL}/best-wine-farms-in-cape-town`,
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "10 Best Wine Farms in Cape Town, Stellenbosch & Franschhoek",
+      "10 Best Wine Farms in Cape Town, Stellenbosch & Franschhoek | Sigma VIP",
     description:
-      "Explore the top wine farms in Cape Town including Delaire Graff, Babylonstoren, Boschendal, and more. Plan your private wine tour with a chauffeur.",
+      "Explore the top wine farms in Cape Town including Delaire Graff, Babylonstoren, Boschendal, and more. Plan your private wine tour with a Sigma VIP chauffeur.",
     url: `${SITE_URL}/best-wine-farms-in-cape-town`,
-    siteName: "WhyCapeTown",
+    siteName: "Sigma VIP",
     type: "article",
     images: [
       {
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "10 Best Wine Farms in Cape Town (Luxury Wine Guide)",
+      "10 Best Wine Farms in Cape Town (Luxury Wine Guide) | Sigma VIP",
     description:
-      "Plan your Cape Winelands experience with the best wine farms in Stellenbosch, Franschhoek, and Constantia.",
+      "Plan your Cape Winelands experience with Sigma VIP — the best wine farms in Stellenbosch, Franschhoek, and Constantia.",
     images: [`${SITE_URL}/images/wine/graff.jpg`],
   },
 };
@@ -67,11 +67,11 @@ export default function BestWineFarmsInCapeTownPage() {
         image: [`${SITE_URL}/images/wine/graff.jpg`],
         author: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
         },
         publisher: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
           logo: {
             "@type": "ImageObject",
             url: `${SITE_URL}/images/logo.png`,

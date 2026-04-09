@@ -1,6 +1,6 @@
 import { Car, FaqItem, ReviewItem } from "./types";
 
-export const WHATSAPP_NUMBER = "27636746131";
+export const WHATSAPP_NUMBER = "27711081227";
 
 export function buildWhatsAppLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -153,7 +153,7 @@ export function getSeoKeyword(car: Car): string {
 // getVehicleMetaTitle
 // ─────────────────────────────────────────────────────────────────────────────
 // Keyword-first meta title — improves CTR and ranking signal.
-// Format: "[SEO Keyword] | From $[price] | Cape Town Concierge"
+// Format: "[SEO Keyword] | From $[price] | Sigma VIP"
 // Falls back gracefully if no price available.
 // ─────────────────────────────────────────────────────────────────────────────
 export function getVehicleMetaTitle(car: Car): string {
@@ -161,7 +161,7 @@ export function getVehicleMetaTitle(car: Car): string {
   const keyword = getSeoKeyword(car);
   const rate = formatPrice(car.price, car.price_from, car.price_to);
   const rateStr = rate ? ` | ${rate}` : "";
-  return `${keyword}${rateStr} | Cape Town Concierge`;
+  return `${keyword}${rateStr} | Sigma VIP`;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

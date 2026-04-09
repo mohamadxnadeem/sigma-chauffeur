@@ -3,13 +3,13 @@
 import type { Metadata } from "next";
 import ItineraryPage from "../../components/sections/cape-town-itinerary/ItineraryPage";
 
-const SITE_URL = "https://capetown-concierge.co.za";
+const SITE_URL = "https://www.sigmavip.co.za";
 
 export const metadata: Metadata = {
   title:
-    "7 Day Cape Town Itinerary (Luxury Travel Guide 2026) | Private Tours",
+    "7 Day Cape Town Itinerary (Luxury Travel Guide 2026) | Sigma VIP Private Tours",
   description:
-    "Plan the perfect 7 day Cape Town itinerary with private chauffeur-driven travel. Explore Table Mountain, Cape Peninsula, wine farms, beaches, and luxury experiences with a curated day-by-day guide.",
+    "Plan the perfect 7 day Cape Town itinerary with Sigma VIP private chauffeur-driven travel. Explore Table Mountain, Cape Peninsula, wine farms, beaches, and luxury experiences with a curated day-by-day guide.",
   alternates: {
     canonical: `${SITE_URL}/7-day-cape-town-itinerary`,
   },
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "7 Day Cape Town Itinerary (Luxury Travel Guide)",
+      "7 Day Cape Town Itinerary (Luxury Travel Guide) | Sigma VIP",
     description:
-      "A complete 7 day Cape Town itinerary including private tours, wine routes, scenic drives, and luxury experiences.",
+      "A complete 7 day Cape Town itinerary including private tours, wine routes, scenic drives, and luxury experiences with Sigma VIP.",
     url: `${SITE_URL}/7-day-cape-town-itinerary`,
-    siteName: "WhyCapeTown",
+    siteName: "Sigma VIP",
     type: "article",
     images: [
       {
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "7 Day Cape Town Itinerary (Luxury Travel Guide)",
+      "7 Day Cape Town Itinerary (Luxury Travel Guide) | Sigma VIP",
     description:
-      "Plan your Cape Town trip with a full 7-day itinerary including wine tours, beaches, and private chauffeur experiences.",
+      "Plan your Cape Town trip with a full 7-day itinerary including wine tours, beaches, and private chauffeur experiences from Sigma VIP.",
     images: [`${SITE_URL}/images/itinerary/cape-point.jpg`],
   },
 };
@@ -63,11 +63,11 @@ export default function SevenDayCapeTownItineraryPage() {
         image: [`${SITE_URL}/images/itinerary/cape-point.jpg`],
         author: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
         },
         publisher: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
           logo: {
             "@type": "ImageObject",
             url: `${SITE_URL}/images/logo.png`,

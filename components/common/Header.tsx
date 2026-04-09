@@ -123,7 +123,7 @@ export default function Header() {
               <LogoImage>
                 <Image
                   src="/images/logo.svg"
-                  alt="Cape Town Concierge"
+                  alt="Sigma VIP"
                   fill
                   priority
                   style={{

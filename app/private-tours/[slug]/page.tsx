@@ -97,7 +97,7 @@ type PageProps = {
   }>;
 };
 
-const SITE_URL = "https://www.capetown-concierge.co.za";
+const SITE_URL = "https://www.sigmavip.co.za";
 
 function formatPriceRange(
   priceFrom?: string | number,
@@ -214,7 +214,7 @@ function getPrimaryImage(experience: Experience) {
 function getPageTitle(experience: Experience) {
   return (
     experience.meta_title ||
-    `${experience.title || "Private Tour"} | Cape Town Concierge`
+    `${experience.title || "Private Tour"} | Sigma VIP`
   );
 }
 
@@ -292,7 +292,7 @@ export async function generateMetadata({
 
   if (!experienceId) {
     return {
-      title: "Private Tour | Cape Town Concierge",
+      title: "Private Tour | Sigma VIP",
       description: "Luxury private tours in Cape Town",
       robots: {
         index: true,
@@ -333,7 +333,7 @@ export async function generateMetadata({
       title,
       description,
       url: canonicalUrl,
-      siteName: "Cape Town Concierge",
+      siteName: "Sigma VIP",
       type: "article",
       images: image
         ? [
@@ -453,7 +453,7 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
     url: canonicalUrl,
     provider: {
       "@type": "Organization",
-      name: "Cape Town Concierge",
+      name: "Sigma VIP",
       url: SITE_URL,
     },
     touristType: "Luxury Travelers",

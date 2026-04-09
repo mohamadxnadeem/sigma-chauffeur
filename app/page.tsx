@@ -7,12 +7,12 @@ import TestimonialsSection from "../components/sections/testimonials/Testimonial
 import TestimonialsCta from "../components/sections/testimonials/TestimonialsCta";
 import ChauffeurAuthoritySection from "../components/sections/ChauffeurAuthoritySection";
 
-const SITE_URL = "https://capetown-concierge.co.za";
+const SITE_URL = "https://www.sigmavip.co.za";
 
 export const metadata: Metadata = {
-  title: "Luxury Chauffeur Service & Private Tours Cape Town | Cape Town Concierge",
+  title: "Luxury Chauffeur Service & Private Tours Cape Town | Sigma VIP",
   description:
-    "Book the #1 rated luxury chauffeur service and private tours in Cape Town. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5. All-inclusive, professional, and reliable.",
+    "Book the #1 rated luxury chauffeur service and private tours in Cape Town with Sigma VIP. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5. All-inclusive, professional, and reliable.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Luxury Chauffeur Service & Private Tours Cape Town | WhyCapeTown",
+    title: "Luxury Chauffeur Service & Private Tours Cape Town | Sigma VIP",
     description:
-      "Book the #1 rated luxury chauffeur service and private tours in Cape Town. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5. All-inclusive, professional, and reliable.",
+      "Book the #1 rated luxury chauffeur service and private tours in Cape Town with Sigma VIP. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5. All-inclusive, professional, and reliable.",
     url: SITE_URL,
-    siteName: "WhyCapeTown",
+    siteName: "Sigma VIP",
     type: "website",
     images: [
       {
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luxury Chauffeur Service & Private Tours Cape Town | WhyCapeTown",
+    title: "Luxury Chauffeur Service & Private Tours Cape Town | Sigma VIP",
     description:
-      "Book the #1 rated luxury chauffeur service and private tours in Cape Town. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5.",
+      "Book the #1 rated luxury chauffeur service and private tours in Cape Town with Sigma VIP. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5.",
     images: [`${SITE_URL}/images/hero-car.jpg`],
   },
 };
@@ -292,7 +292,7 @@ export default async function HomePage() {
     "@graph": [
       {
         "@type": "Organization",
-        name: "WhyCapeTown",
+        name: "Sigma VIP",
         url: SITE_URL,
         logo: `${SITE_URL}/images/logo.png`,
         description:
@@ -300,12 +300,12 @@ export default async function HomePage() {
       },
       {
         "@type": "WebSite",
-        name: "WhyCapeTown",
+        name: "Sigma VIP",
         url: SITE_URL,
       },
       {
         "@type": "WebPage",
-        name: "Luxury Chauffeur Service & Private Tours Cape Town | WhyCapeTown",
+        name: "Luxury Chauffeur Service & Private Tours Cape Town | Sigma VIP",
         url: SITE_URL,
         description:
           "Book the #1 rated luxury chauffeur service and private tours in Cape Town. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5. All-inclusive, professional, and reliable.",
@@ -373,7 +373,7 @@ export default async function HomePage() {
         name: "Private Chauffeur Services",
         provider: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
           url: SITE_URL,
         },
         areaServed: {
@@ -389,7 +389,7 @@ export default async function HomePage() {
         name: "Custom Cape Town Tours",
         provider: {
           "@type": "Organization",
-          name: "WhyCapeTown",
+          name: "Sigma VIP",
           url: SITE_URL,
         },
         areaServed: {
@@ -412,7 +412,7 @@ export default async function HomePage() {
       />
 
       <HeroBanner
-        eyebrow="Cape Town Concierge"
+        eyebrow="Sigma VIP"
         title="Luxury Chauffeur Services in Cape Town"
         description="Premium airport transfers, private chauffeur services, and curated travel experiences designed for clients who value comfort, elegance, and reliability."
         primaryCtaLabel="Book Your Ride"

@@ -443,7 +443,7 @@ export default function ChauffeurServicesPage() {
   return (
     <PageWrap>
       <HeroBanner
-        eyebrow="Cape Town Concierge"
+        eyebrow="Sigma VIP"
         title="Chauffeur Service in Cape Town"
         description="Book a luxury chauffeur service in Cape Town for airport transfers, executive travel, private driver hire, and bespoke day planning with premium vehicles and professional service."
         primaryCtaLabel="Book Chauffeur Service"
