@@ -2,7 +2,7 @@
 
 import type { Metadata } from "next";
 import PrivateJetTransferPage from "../../components/sections/private-jet-transfer/PrivateJetTransferPage";
-import { privateJetFaqItems } from "../../components/sections/private-jet-transfer/PrivateJetFaq";
+import { privateJetFaqItems } from "../../components/sections/private-jet-transfer/faqData";
 
 const SITE_URL = "https://www.sigmavip.co.za";
 
