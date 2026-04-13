@@ -41,13 +41,13 @@ const Logo = styled(Link)`
 
 const LogoImage = styled.div`
   position: relative;
-  width: 240px;
-  height: 65px;
+  width: 72px;
+  height: 72px;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    width: 300px;
-    height: 80px;
+    width: 92px;
+    height: 92px;
   }
 `;
 
@@ -122,13 +122,13 @@ export default function Header() {
             <Logo href="/">
               <LogoImage>
                 <Image
-                  src="/images/logo.svg"
-                  alt="Sigma VIP"
+                  src="/images/logo.png"
+                  alt="Sigma VIP — Luxury Chauffeur & Tourism"
                   fill
                   priority
+                  sizes="(max-width: 768px) 72px, 92px"
                   style={{
                     objectFit: "contain",
-                    transform: "scale(1.15)",
                   }}
                 />
               </LogoImage>
