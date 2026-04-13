@@ -15,6 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${SITE_URL}/private-jet-transfer`,
+      lastModified: new Date(),
+      priority: 0.95,
+    },
+    {
       url: `${SITE_URL}/private-tours`,
       lastModified: new Date(),
       priority: 0.9,
