@@ -142,7 +142,8 @@ async function getAllExperiences(): Promise<ExperienceListItem[]> {
   const response = await fetch(
     "https://web-production-1ab9.up.railway.app/api/experiences/all/",
     {
-      cache: "no-store",
+      // ISR: cache for 1 hour. Required for static generation.
+      next: { revalidate: 3600 },
     }
   );
 
@@ -157,7 +158,8 @@ async function getAllVehicles(): Promise<CarsApiItem[]> {
   const response = await fetch(
     "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
     {
-      cache: "no-store",
+      // ISR: cache for 1 hour. Required for static generation.
+      next: { revalidate: 3600 },
     }
   );
 
@@ -184,7 +186,8 @@ async function getExperienceDetails(
   const response = await fetch(
     `https://web-production-1ab9.up.railway.app/api/experiences/${id}/details/`,
     {
-      cache: "no-store",
+      // ISR: cache for 1 hour. Required for static generation.
+      next: { revalidate: 3600 },
     }
   );
 
