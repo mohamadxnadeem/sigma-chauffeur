@@ -64,7 +64,6 @@ const Button = styled.a`
 
 export default function ChauffeurStickyBar({
   title,
-  priceText,
   whatsappLink,
 }: Props) {
   return (
@@ -72,7 +71,7 @@ export default function ChauffeurStickyBar({
       <StickyCopy>
         <StickyTitle>{title}</StickyTitle>
         <StickySubtext>
-          {priceText || "Private chauffeur vehicle"} • Check availability now
+          Private chauffeur vehicle • Check availability now
         </StickySubtext>
       </StickyCopy>
 

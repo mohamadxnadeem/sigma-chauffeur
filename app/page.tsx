@@ -331,10 +331,10 @@ export default async function HomePage() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "What is included in your chauffeur pricing in Cape Town?",
+            name: "What is included in your Cape Town chauffeur service?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Our chauffeur pricing is designed to be all-inclusive, covering the vehicle, professional driver, and route-based travel arrangements so clients enjoy a seamless premium experience without hidden surprises.",
+              text: "Every booking is all-inclusive — vehicle, professional chauffeur, fuel, and route planning. Airport entrance fees and national park entry are separate where applicable. Share your itinerary via WhatsApp for a tailored quote.",
             },
           },
           {

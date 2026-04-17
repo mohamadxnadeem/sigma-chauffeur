@@ -61,13 +61,12 @@ type Props = {
 export default function PrivateTourStickyBar({
   title,
   whatsappLink,
-  priceText,
 }: Props) {
   return (
     <Bar>
       <Copy>
         <Title>{title}</Title>
-        <Subtext>{priceText || "Private tour"} • Check availability now</Subtext>
+        <Subtext>Private tour • Check availability now</Subtext>
       </Copy>
 
       <CTAAnchor

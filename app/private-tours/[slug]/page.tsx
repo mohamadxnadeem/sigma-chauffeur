@@ -247,7 +247,6 @@ function mapRelatedTours(
         [...(tour.cover_photos || [])].sort((a, b) => a.order - b.order)[0]
           ?.cover_photos || "",
       href: `/private-tours/${tour.slug}`,
-      price: formatPriceRange(tour.price_from, tour.price_to, tour.currency),
     }));
 }
 
@@ -277,12 +276,6 @@ function mapVehicles(items: CarsApiItem[]): TourVehicle[] {
         image: featuredPhoto,
         seats: car.number_of_seats,
         description,
-        price: formatVehiclePrice(
-          car.price,
-          car.price_from,
-          car.price_to,
-          car.currency
-        ),
       };
     });
 }
@@ -381,7 +374,6 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
 
   const primaryImage = getPrimaryImage(experience);
   const canonicalUrl = `${SITE_URL}/private-tours/${slug}`;
-  const price = experience.price_from || experience.price_to || "";
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -460,15 +452,6 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
       url: SITE_URL,
     },
     touristType: "Luxury Travelers",
-    offers: price
-      ? {
-          "@type": "Offer",
-          priceCurrency: experience.currency || "ZAR",
-          price: price,
-          availability: "https://schema.org/InStock",
-          url: canonicalUrl,
-        }
-      : undefined,
   };
 
   return (

@@ -388,9 +388,6 @@ export default function FeaturedVehicles({
                 <CardContent>
                   <MetaRow>
                     {item.seats ? <MetaBadge>{item.seats} Seats</MetaBadge> : null}
-                    {item.price ? (
-                      <MetaBadge>{normalizeUsdPrice(item.price)}</MetaBadge>
-                    ) : null}
                   </MetaRow>
 
                   <CardTitle>{item.title}</CardTitle>

@@ -169,7 +169,6 @@ export default function ChauffeurHero({
             {vehicleType && <HeroMetaItem>{vehicleType}</HeroMetaItem>}
             {seats && <HeroMetaItem>{seats} Seats</HeroMetaItem>}
             {luggage && <HeroMetaItem>{luggage} Luggage</HeroMetaItem>}
-            {priceText && <HeroMetaItem>{priceText}</HeroMetaItem>}
           </HeroMeta>
 
           <HeroButtons>

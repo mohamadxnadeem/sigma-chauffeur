@@ -26,44 +26,6 @@ export function formatCurrency(amount: number) {
   return `$${amount.toFixed(0)}`;
 }
 
-export function formatPrice(
-  price?: string | number,
-  priceFrom?: string | number,
-  priceTo?: string | number
-) {
-  if (price !== undefined && price !== null && price !== "") {
-    return `From $${price}`;
-  }
-  if (priceFrom && priceTo) return `From $${priceFrom} - $${priceTo}`;
-  if (priceFrom) return `From $${priceFrom}`;
-  if (priceTo) return `$${priceTo}`;
-  return "";
-}
-
-export function getBaseDailyRate(
-  price?: string | number,
-  priceFrom?: string | number
-) {
-  const raw = price ?? priceFrom;
-  const numeric = Number(raw);
-  if (raw === undefined || raw === null || raw === "" || Number.isNaN(numeric)) {
-    return 0;
-  }
-  return numeric;
-}
-
-export function getDiscountPercent(days: number) {
-  if (days >= 5) return 20;
-  if (days === 4) return 15;
-  if (days === 3) return 10;
-  if (days === 2) return 5;
-  return 0;
-}
-
-export function calculateDiscountedRate(baseRate: number, discountPercent: number) {
-  if (!baseRate) return 0;
-  return baseRate - baseRate * (discountPercent / 100);
-}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // buildFaqs
@@ -88,8 +50,8 @@ export function buildFaqs(vehicleTitle: string, seoKeyword?: string): FaqItem[] 
   return [
     // Q1: primary keyword in the question — strongest FAQ schema trigger
     {
-      question: `How much does ${kw} cost?`,
-      answer: `${kw} starts from $500 per vehicle per day. This includes your professional chauffeur, fuel, and complimentary bottled water. Airport entrance fees and national park entry are not included in the base rate. Message us on WhatsApp for a tailored quote based on your exact route and itinerary.`,
+      question: `How do I book ${kw}?`,
+      answer: `The quickest way is via WhatsApp. Share your dates, party size, and intended route and we will confirm availability with a tailored quote within 30 minutes. Every booking includes the vehicle, a professional chauffeur, fuel, and route planning. Airport entrance fees and national park entry are separate where applicable.`,
     },
 
     // Q2: airport transfer — high search volume
@@ -150,32 +112,22 @@ export function getSeoKeyword(car: Car): string {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// getVehicleMetaTitle
-// ─────────────────────────────────────────────────────────────────────────────
-// Keyword-first meta title — improves CTR and ranking signal.
-// Format: "[SEO Keyword] | From $[price] | Sigma VIP"
-// Falls back gracefully if no price available.
+// getVehicleMetaTitle — keyword-first meta title, under 60 chars where possible.
 // ─────────────────────────────────────────────────────────────────────────────
 export function getVehicleMetaTitle(car: Car): string {
   if (car.meta_title) return car.meta_title;
   const keyword = getSeoKeyword(car);
-  const rate = formatPrice(car.price, car.price_from, car.price_to);
-  const rateStr = rate ? ` | ${rate}` : "";
-  return `${keyword}${rateStr} | Sigma VIP`;
+  return `${keyword} | Sigma VIP`;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// getVehicleMetaDescription
-// ─────────────────────────────────────────────────────────────────────────────
-// Keyword in first ~120 chars, CTA at end, stays under 155 chars.
+// getVehicleMetaDescription — keyword in first ~120 chars, CTA at end, <155.
 // ─────────────────────────────────────────────────────────────────────────────
 export function getVehicleMetaDescription(car: Car): string {
   if (car.meta_description) return car.meta_description;
   const keyword = getSeoKeyword(car);
-  const rate = formatPrice(car.price, car.price_from, car.price_to);
-  const rateStr = rate ? ` ${rate}/day.` : "";
   const seats = car.number_of_seats ? ` ${car.number_of_seats} seats.` : "";
-  const raw = `${keyword} — private airport transfers, full-day tours & Cape Town hire.${rateStr}${seats} Professional chauffeur. Book via WhatsApp.`;
+  const raw = `${keyword} — private airport transfers, full-day tours & Cape Town hire.${seats} Professional chauffeur. Book via WhatsApp.`;
   if (raw.length <= 155) return raw;
   return raw.slice(0, 152).trimEnd() + "...";
 }

@@ -108,10 +108,6 @@ export default function ChauffeurRelatedVehicles({ items }: Props) {
                 {vehicle.seats ? (
                   <RelatedBadge>{vehicle.seats} Seats</RelatedBadge>
                 ) : null}
-
-                {vehicle.price ? (
-                  <RelatedBadge>{normalizeUsdPrice(vehicle.price)}</RelatedBadge>
-                ) : null}
               </RelatedMeta>
 
               <RelatedText>

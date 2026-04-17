@@ -95,12 +95,6 @@ export default function ChauffeurQuickDetails({
             </QuickStat>
           ) : null}
 
-          {priceText ? (
-            <QuickStat>
-              <QuickStatLabel>Pricing</QuickStatLabel>
-              <QuickStatValue>{priceText}</QuickStatValue>
-            </QuickStat>
-          ) : null}
         </QuickStats>
       </CardInner>
     </Card>

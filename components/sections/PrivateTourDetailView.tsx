@@ -633,12 +633,6 @@ export default function PrivateTourDetailView({
   const mainImage = images[0]?.cover_photos || "";
   const sideImages = images.slice(1, 3);
 
-  const priceText = formatPriceRange(
-    experience.price_from,
-    experience.price_to,
-    experience.currency
-  );
-
   return (
     <PageWrap>
       <Section>
@@ -735,7 +729,6 @@ export default function PrivateTourDetailView({
               {experience.location ? (
                 <QuickInfoBadge>{experience.location}</QuickInfoBadge>
               ) : null}
-              {priceText ? <QuickInfoBadge>{priceText}</QuickInfoBadge> : null}
               <QuickInfoBadge>Private Experience</QuickInfoBadge>
             </QuickInfoRow>
           </SectionHeader>

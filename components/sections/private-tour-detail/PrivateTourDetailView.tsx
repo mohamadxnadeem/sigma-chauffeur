@@ -128,12 +128,6 @@ export default function PrivateTourDetailView({
     )
   );
 
-  const priceText = formatPriceRange(
-    experience.price_from,
-    experience.price_to,
-    experience.currency
-  );
-
   const stops = [...(experience.stops || [])].sort((a, b) => a.order - b.order);
 
   return (
@@ -155,7 +149,6 @@ export default function PrivateTourDetailView({
             highlight={experience.highlight}
             duration={experience.duration}
             location={experience.location}
-            priceText={priceText}
           />
         </Container>
       </Section>
@@ -220,7 +213,6 @@ export default function PrivateTourDetailView({
       <PrivateTourStickyBar
         title={safeTourTitle}
         whatsappLink={whatsappLink}
-        priceText={priceText}
       />
     </PageWrap>
   );

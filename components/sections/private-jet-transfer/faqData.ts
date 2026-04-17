@@ -31,9 +31,9 @@ export const privateJetFaqItems: PrivateJetFaqItem[] = [
       "NDAs are available on request. Our chauffeurs do not photograph clients, engage in unsolicited conversation, or share passenger details with third parties. For high-profile arrivals we can coordinate unmarked vehicles and staged departure routes.",
   },
   {
-    question: "What are your rates for FBO transfers?",
+    question: "How is pricing handled?",
     answer:
-      "Our standard chauffeur rates apply, starting from R7,500 per day (10 hours) for the BMW 7-Series and up to R25,000 per day for the Range Rover Autobiography. Short transfers can be arranged on an hourly basis. Share your itinerary via WhatsApp for an exact quote.",
+      "Every FBO transfer is priced to the itinerary — onward distance, chauffeur hours, vehicle choice, and any multi-day extensions. Share your flight details and onward plan via WhatsApp and we will come back with a tailored quote within 30 minutes.",
   },
   {
     question: "How far in advance should I book?",

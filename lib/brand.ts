@@ -1,8 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Sigma VIP brand constants
 // ─────────────────────────────────────────────────────────────────────────────
-// Single source of truth for all brand metadata, contact details, pricing,
-// and tracking IDs. Colour tokens live in styles/theme.ts and
+// Single source of truth for all brand metadata, contact details, and
+// tracking IDs. Colour tokens live in styles/theme.ts and
 // app/globals.css — not here.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -25,14 +25,7 @@ export const brand = {
   website: "https://sigmavip.co.za",
   siteUrl: "https://www.sigmavip.co.za", // alias for legacy consumers
 
-  // Commercial
-  rateRange: {
-    min: 7500,
-    max: 25000,
-    currency: "ZAR",
-    hours: 10,
-  },
-  overtime: "10% of daily rate per additional hour",
+  // Response standard
   responseTime: "30 minutes",
 
   // Tracking placeholders — replace with real IDs via env vars in production

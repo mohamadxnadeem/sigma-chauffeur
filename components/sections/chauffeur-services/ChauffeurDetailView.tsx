@@ -7,8 +7,6 @@ import { Car, RelatedVehicle } from "./types";
 import {
   buildFaqs,
   buildWhatsAppLink,
-  formatPrice,
-  getBaseDailyRate,
   getPrimaryImage,
   stripHtml,
 } from "./utils";
@@ -16,7 +14,6 @@ import ChauffeurHero from "./ChauffeurHero";
 import ChauffeurWhatToExpect from "./ChauffeurWhatToExpect";
 import ChauffeurGallery from "./ChauffeurGallery";
 import ChauffeurQuickDetails from "./ChauffeurQuickDetails";
-import ChauffeurDiscountTable from "./ChauffeurDiscountTable";
 import ChauffeurFeatures from "./ChauffeurFeatures";
 import ChauffeurIdealFor from "./ChauffeurIdealFor";
 import ChauffeurFaq from "./ChauffeurFaq";
@@ -308,7 +305,6 @@ export default function ChauffeurDetailView({
     "Travel Cape Town in comfort with a premium chauffeur-driven vehicle designed for polished, private, and reliable service.";
 
   const heroImage = getPrimaryImage(car);
-  const priceText = formatPrice(car.price, car.price_from, car.price_to);
 
   const mainWhatsAppLink = buildWhatsAppLink(
     `Hey, I'm interested in booking the ${safeTitle}. Please can you share pricing and availability?`
@@ -339,7 +335,6 @@ export default function ChauffeurDetailView({
   const faqs = buildFaqs(safeTitle, seoKeyword);
 
   const bodyHtml = car.body && stripHtml(car.body) ? car.body : undefined;
-  const baseRate = getBaseDailyRate(car.price, car.price_from);
   const galleryImages = [...(car.cover_photos || car.images || [])];
 
   // ── Authority section content ─────────────
@@ -376,7 +371,6 @@ export default function ChauffeurDetailView({
         vehicleType={car.vehicle_type}
         seats={car.number_of_seats}
         luggage={car.luggage_capacity}
-        priceText={priceText}
         image={heroImage}
         whatsappLink={mainWhatsAppLink}
       />
@@ -392,7 +386,6 @@ export default function ChauffeurDetailView({
                   vehicleType={car.vehicle_type}
                   seats={car.number_of_seats}
                   luggage={car.luggage_capacity}
-                  priceText={priceText}
                 />
               </div>
             </TwoColGrid>
@@ -524,7 +517,6 @@ export default function ChauffeurDetailView({
 
       <ChauffeurStickyBar
         title={safeTitle}
-        priceText={priceText}
         whatsappLink={mainWhatsAppLink}
       />
     </PageWrap>

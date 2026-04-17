@@ -199,10 +199,6 @@ export default function PrivateTourRelatedTours({
             <CardBody>
               <CardTitle>{item.title}</CardTitle>
 
-              {item.price ? (
-                <Price>{normalizeUsdPrice(item.price)}</Price>
-              ) : null}
-
               <CardText>
                 {item.description ||
                   "Discover another premium private tour experience in Cape Town."}

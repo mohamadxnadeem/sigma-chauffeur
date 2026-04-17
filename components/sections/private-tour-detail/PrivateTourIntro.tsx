@@ -147,7 +147,6 @@ export default function PrivateTourIntro({
       <QuickInfoRow>
         {duration ? <QuickInfoBadge>{duration}</QuickInfoBadge> : null}
         {location ? <QuickInfoBadge>{location}</QuickInfoBadge> : null}
-        {priceText ? <QuickInfoBadge>{priceText}</QuickInfoBadge> : null}
         <QuickInfoBadge>Hotel pickup available</QuickInfoBadge>
       </QuickInfoRow>
 
