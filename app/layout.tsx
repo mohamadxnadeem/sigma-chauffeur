@@ -70,7 +70,8 @@ export default function RootLayout({
                 // Google Analytics
                 gtag('config', '${gaId}');
 
-                ${googleAdsId ? `gtag('config', '${googleAdsId}');` : ""}
+                // Google Ads
+                gtag('config', '${googleAdsId || "AW-11020060137"}');
               `}
             </Script>
           </>
