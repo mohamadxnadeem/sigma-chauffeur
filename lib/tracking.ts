@@ -29,13 +29,15 @@ export function trackWhatsAppClick({
     tour: tour || "",
   };
 
-  // GA4 custom event
-  window.gtag?.("event", "whatsapp_click", {
+  // GA4 custom event — name must match the Google Ads conversion import
+  window.gtag?.("event", "sigma_whatsapp_click", {
     event_category: "lead",
     event_label: label,
     source,
     vehicle: vehicle || "",
     tour: tour || "",
+    value: META_LEAD_VALUE_ZAR,
+    currency: "ZAR",
   });
 
   // Google Ads conversion
