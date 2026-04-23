@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import ItineraryPage from "../../components/sections/cape-town-itinerary/ItineraryPage";
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:

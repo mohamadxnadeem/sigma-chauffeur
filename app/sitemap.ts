@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/best-activities-in-cape-town`,
+      url: `${SITE_URL}/best-activities-to-do-in-cape-town`,
       lastModified: new Date(),
       priority: 0.9,
     },
@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/7-day-cape-town-itinerary`,
       lastModified: new Date(),
       priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.5,
     },
   ];
 }

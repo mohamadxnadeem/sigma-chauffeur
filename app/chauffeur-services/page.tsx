@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ChauffeurServicesPage from "../../components/sections/chauffeur-services/ChauffeurServicesPage";
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title: "Chauffeur Service Cape Town | Sigma VIP Luxury Private Driver & Airport Transfers",

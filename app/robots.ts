@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.sigmavip.co.za/sitemap.xml",
+    sitemap: "https://sigmachauffeur.vip/sitemap.xml",
   };
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import BestActivitiesPage from "../../components/sections/cape-town-activities/BestActivitiesPage";
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Discover the best activities to do in Cape Town with Sigma VIP — Table Mountain, Cape Point, wine tours, helicopter rides, safaris, and private chauffeur-driven experiences. Plan the perfect Cape Town itinerary with luxury transport and curated experiences.",
   alternates: {
-    canonical: `${SITE_URL}/best-activities-in-cape-town`,
+    canonical: `${SITE_URL}/best-activities-to-do-in-cape-town`,
   },
   robots: {
     index: true,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Best Activities to Do in Cape Town (2026 Guide) | Sigma VIP Private Tours & Chauffeur",
     description:
       "Explore top Cape Town activities including Table Mountain, Cape Peninsula, wine tours, helicopter rides, and Sigma VIP chauffeur-driven private experiences.",
-    url: `${SITE_URL}/best-activities-in-cape-town`,
+    url: `${SITE_URL}/best-activities-to-do-in-cape-town`,
     siteName: "Sigma VIP",
     type: "article",
     images: [
@@ -73,7 +73,7 @@ export default function BestActivitiesToDoInCapeTownPage() {
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${SITE_URL}/best-activities-in-cape-town`,
+          "@id": `${SITE_URL}/best-activities-to-do-in-cape-town`,
         },
       },
       {
@@ -134,7 +134,7 @@ export default function BestActivitiesToDoInCapeTownPage() {
             "@type": "ListItem",
             position: 2,
             name: "Best Activities in Cape Town",
-            item: `${SITE_URL}/best-activities-in-cape-town`,
+            item: `${SITE_URL}/best-activities-to-do-in-cape-town`,
           },
         ],
       },

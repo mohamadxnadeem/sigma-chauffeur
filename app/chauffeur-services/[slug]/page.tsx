@@ -60,7 +60,7 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 // ─────────────────────────────────────────────
 // FIX 1: SEO KEYWORD GENERATOR

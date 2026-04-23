@@ -7,7 +7,7 @@ import TestimonialsSection from "../components/sections/testimonials/Testimonial
 import TestimonialsCta from "../components/sections/testimonials/TestimonialsCta";
 import ChauffeurAuthoritySection from "../components/sections/ChauffeurAuthoritySection";
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title: "Luxury Chauffeur Service & Private Tours Cape Town | Sigma VIP",

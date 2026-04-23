@@ -22,8 +22,8 @@ export const brand = {
   address: "23 Aberdeen Road, Rondebosch, Cape Town, 7700",
 
   // Web
-  website: "https://sigmavip.co.za",
-  siteUrl: "https://www.sigmavip.co.za", // alias for legacy consumers
+  website: "https://sigmachauffeur.vip",
+  siteUrl: "https://sigmachauffeur.vip", // alias for legacy consumers
 
   // Response standard
   responseTime: "30 minutes",

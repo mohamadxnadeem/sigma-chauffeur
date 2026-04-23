@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
   compiler: {
     styledComponents: true,
   },
@@ -10,7 +11,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "why-cpt-storage.s3.amazonaws.com",
+        hostname: "**.amazonaws.com",
       },
       {
         protocol: "https",

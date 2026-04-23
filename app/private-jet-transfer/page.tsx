@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import PrivateJetTransferPage from "../../components/sections/private-jet-transfer/PrivateJetTransferPage";
 import { privateJetFaqItems } from "../../components/sections/private-jet-transfer/faqData";
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:

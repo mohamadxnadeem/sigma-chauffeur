@@ -97,7 +97,7 @@ type PageProps = {
   }>;
 };
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 function formatPriceRange(
   priceFrom?: string | number,

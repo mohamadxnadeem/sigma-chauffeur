@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import WineFarmsPage from "../../components/sections/wine-farms/WineFarmsPage";
 
-const SITE_URL = "https://www.sigmavip.co.za";
+const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:
