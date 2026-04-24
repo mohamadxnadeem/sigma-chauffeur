@@ -6,18 +6,32 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
   images: {
-    qualities: [75, 90],
-    formats: ["image/avif", "image/webp"],
-    // Hostnames allowed to be loaded by next/image. Any S3 bucket /
-    // backend domain that serves an image URL to the frontend must be
-    // listed here explicitly — otherwise the image optimizer returns
-    // 400 Bad Request.
+    // GLOBAL UNOPTIMIZED
+    // ──────────────────────────────────────────────────────────────────
+    // Bypass Vercel's image optimizer for every <Image>. The Hobby
+    // plan's image optimization quota was being exhausted, returning
+    // 402 Payment Required on the /_next/image endpoint. With this
+    // flag, images are served directly from their source (S3, local
+    // public/, etc.) — no transformation, no Vercel cost.
     //
-    // TODO: When we move to a CloudFront distribution in front of S3,
-    // add the CloudFront hostname (e.g. dXXXXXX.cloudfront.net) here
-    // so image URLs served through CloudFront continue to work.
+    // Tradeoffs:
+    //   - No automatic WebP/AVIF conversion
+    //   - No responsive srcset
+    //   - Cannot set image quality via `quality={...}` (ignored)
+    //
+    // When Vercel is upgraded to Pro, remove this flag to restore
+    // optimization for local images. API images (S3) will still be
+    // routed around the optimizer via components/common/MonitoredImage.
+    unoptimized: true,
+
+    formats: ["image/avif", "image/webp"],
+    // Remote patterns are only consulted when the optimizer runs
+    // (i.e. not when unoptimized is true). Kept for future use when
+    // we upgrade plan + re-enable optimization.
+    //
+    // TODO: When CloudFront distribution is added, append its
+    // hostname (e.g. dXXXXXX.cloudfront.net) here.
     remotePatterns: [
-      // Current active S3 bucket (cape-town-concierge, eu-north-1)
       {
         protocol: "https",
         hostname: "cape-town-concierge.s3.amazonaws.com",
@@ -26,13 +40,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cape-town-concierge.s3.eu-north-1.amazonaws.com",
       },
-      // Legacy S3 bucket — kept so existing image URLs in the CMS
-      // keep rendering until every record is re-uploaded to the new bucket.
       {
         protocol: "https",
         hostname: "why-cpt-storage.s3.amazonaws.com",
       },
-      // Django backend (Railway)
       {
         protocol: "https",
         hostname: "web-production-1ab9.up.railway.app",
