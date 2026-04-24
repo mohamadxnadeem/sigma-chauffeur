@@ -4,7 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Container from "../common/Container";
 import Button from "../common/Button";
-import Image from "next/image";
+import MonitoredImage from "../common/MonitoredImage";
 import {
   buildWhatsAppLink,
   buildTourWhatsAppMessage,
@@ -640,7 +640,7 @@ export default function PrivateTourDetailView({
           <Gallery>
             <MainImage>
               {mainImage ? (
-                <Image
+                <MonitoredImage
                   src={mainImage}
                   alt={`${safeTourTitle} private tour in Cape Town`}
                   fill
@@ -659,7 +659,7 @@ export default function PrivateTourDetailView({
               {sideImages.length ? (
                 sideImages.map((img) => (
                   <SideImage key={img.id}>
-                    <Image
+                    <MonitoredImage
                       src={img.cover_photos}
                       alt={`${safeTourTitle} tour gallery image`}
                       fill
@@ -677,7 +677,7 @@ export default function PrivateTourDetailView({
                   {mainImage ? (
                     <>
                       <SideImage>
-                        <Image
+                        <MonitoredImage
                           src={mainImage}
                           alt={`${safeTourTitle} tour gallery image`}
                           fill
@@ -690,7 +690,7 @@ export default function PrivateTourDetailView({
                         />
                       </SideImage>
                       <SideImage>
-                        <Image
+                        <MonitoredImage
                           src={mainImage}
                           alt={`${safeTourTitle} tour gallery image`}
                           fill
@@ -774,7 +774,7 @@ export default function PrivateTourDetailView({
                       <StopTop>
                         <StopImage>
                           {stop.image ? (
-                            <Image
+                            <MonitoredImage
                               src={stop.image}
                               alt={`${stop.title} on the ${safeTourTitle}`}
                               fill

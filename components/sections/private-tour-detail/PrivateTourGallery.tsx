@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import Image from "next/image";
+import MonitoredImage from "../../common/MonitoredImage";
 import { ExperiencePhoto } from "./types";
 
 function shimmer(w: number, h: number) {
@@ -312,7 +312,7 @@ export default function PrivateTourGallery({ title, photos }: Props) {
 
           <ActiveImageLayer key={activePhoto}>
             <CinematicLayer>
-              <Image
+              <MonitoredImage
                 src={activePhoto}
                 alt={title}
                 fill
@@ -341,7 +341,7 @@ export default function PrivateTourGallery({ title, photos }: Props) {
               onClick={() => setActiveIndex(index)}
               aria-label={`Show ${title} image ${index + 1}`}
             >
-              <Image
+              <MonitoredImage
                 src={photo.cover_photos}
                 alt={title}
                 fill

@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import Image from "next/image";
+import MonitoredImage from "../../common/MonitoredImage";
 import Link from "next/link";
 import Button from "../../common/Button";
 import { RelatedTour } from "./types";
@@ -182,7 +182,7 @@ export default function PrivateTourRelatedTours({
           <Card key={`${item.title}-${index}`}>
             <CardImage>
               {item.image ? (
-                <Image
+                <MonitoredImage
                   src={item.image}
                   alt={`${item.title} private tour`}
                   fill

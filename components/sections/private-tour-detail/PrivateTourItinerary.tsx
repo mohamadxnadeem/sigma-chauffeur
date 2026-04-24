@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import Image from "next/image";
+import MonitoredImage from "../../common/MonitoredImage";
 import { ExperienceStop } from "./types";
 
 function shimmer(w: number, h: number) {
@@ -215,7 +215,7 @@ export default function PrivateTourItinerary({ title, location, stops }: Props) 
                 <StopTop>
                   <StopImage>
                     {stop.image ? (
-                      <Image
+                      <MonitoredImage
                         src={stop.image}
                         alt={`${stop.title} on the ${title}`}
                         fill
