@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import MonitoredImage from "../common/MonitoredImage";
 import styled from "styled-components";
 import Button from "../common/Button";
 
@@ -116,7 +116,7 @@ export default function HeroBanner({
   return (
     <Wrapper>
       <ImageLayer>
-        <Image
+        <MonitoredImage
           src={image}
           alt={imageAlt}
           fill

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
+import MonitoredImage from "../../common/MonitoredImage";
 import styled, { keyframes } from "styled-components";
 import { CarPhoto } from "./types";
 
@@ -201,7 +201,7 @@ export default function ChauffeurGallery({ images }: Props) {
           <ActiveImageLayer key={activeImage}>
             <CinematicLayer>
               {activeImage && (
-                <Image
+                <MonitoredImage
                   src={activeImage}
                   alt={`Vehicle gallery image ${activeImageIndex + 1}`}
                   fill
@@ -229,7 +229,7 @@ export default function ChauffeurGallery({ images }: Props) {
               aria-label={`Show image ${index + 1}`}
             >
               {image.cover_photos && (
-                <Image
+                <MonitoredImage
                   src={image.cover_photos}
                   alt={`Thumbnail ${index + 1}`}
                   fill

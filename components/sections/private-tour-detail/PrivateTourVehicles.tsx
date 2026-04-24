@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import Image from "next/image";
+import MonitoredImage from "../../common/MonitoredImage";
 import Button from "../../common/Button";
 import { TourVehicle } from "./types";
 import {
@@ -312,7 +312,7 @@ function VehicleImage({
     <>
       {!loaded && <ShimmerMask />}
       <ImageLayer>
-        <Image
+        <MonitoredImage
           src={image}
           alt={alt}
           fill

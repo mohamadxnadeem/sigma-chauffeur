@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import MonitoredImage from "../common/MonitoredImage";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
@@ -310,7 +310,7 @@ function VehicleImageCard({
     <CardImageWrap>
       {!loaded && <ShimmerLayer />}
       {image ? (
-        <Image
+        <MonitoredImage
           src={image}
           alt={alt || getVehicleAltText(title)}
           fill

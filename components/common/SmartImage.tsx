@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import MonitoredImage from "./MonitoredImage";
 import styled, { keyframes } from "styled-components";
 
 type Props = {
@@ -84,7 +84,7 @@ export default function SmartImage({
       {!loaded && <ShimmerMask />}
 
       <FadeLayer $loaded={loaded}>
-        <Image
+        <MonitoredImage
           src={src}
           alt={alt}
           fill

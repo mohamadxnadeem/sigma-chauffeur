@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import MonitoredImage from "../../common/MonitoredImage";
 import Link from "next/link";
 import styled from "styled-components";
 import { RelatedVehicle } from "./types";
@@ -107,7 +107,7 @@ export default function ChauffeurRelatedVehicles({ items }: Props) {
           <RelatedCard key={`${vehicle.title}-${index}`} href={vehicle.href}>
             <RelatedImageWrap>
               {vehicle.image && (
-                <Image
+                <MonitoredImage
                   src={vehicle.image}
                   alt={`${vehicle.title} chauffeur service Cape Town`}
                   fill
