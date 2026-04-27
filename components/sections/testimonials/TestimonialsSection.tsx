@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import Image from "next/image";
+
 import { testimonials } from "./data";
 
 const Section = styled.section`
@@ -306,13 +306,9 @@ export default function TestimonialsSection() {
             <Card key={`${item.name}-${index}`}>
               <CardHeader>
                 <Avatar>
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={64}
-                    height={64}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
+                  <span style={{ fontSize: "1.2rem", fontWeight: 700, color: "#C9A84C" }}>
+                    {item.name.charAt(0).toUpperCase()}
+                  </span>
                 </Avatar>
 
                 <ClientMeta>

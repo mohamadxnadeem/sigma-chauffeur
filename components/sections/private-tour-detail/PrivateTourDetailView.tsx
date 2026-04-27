@@ -122,12 +122,6 @@ export default function PrivateTourDetailView({
     buildGeneralWhatsAppMessage(`checking availability for the ${safeTourTitle}`)
   );
 
-  const bundleWhatsAppLink = buildWhatsAppLink(
-    buildGeneralWhatsAppMessage(
-      `booking 3 private tours including ${safeTourTitle}`
-    )
-  );
-
   const stops = [...(experience.stops || [])].sort((a, b) => a.order - b.order);
 
   return (
@@ -204,7 +198,6 @@ export default function PrivateTourDetailView({
         <Container>
           <PrivateTourRelatedTours
             items={relatedTours}
-            bundleWhatsappLink={bundleWhatsAppLink}
           />
         </Container>
       </Section>

@@ -65,37 +65,6 @@ const SectionText = styled.p`
   line-height: 1.8;
 `;
 
-const OfferCard = styled.div`
-  margin-bottom: 26px;
-  background: linear-gradient(
-    135deg,
-    rgba(201, 168, 76, 0.08) 0%,
-    rgba(168, 137, 56, 0.04) 100%
-  );
-  border: 1px solid rgba(201, 168, 76, 0.12);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: ${({ theme }) => theme.shadows.soft};
-`;
-
-const OfferTitle = styled.h3`
-  margin: 0 0 10px;
-  color: ${({ theme }) => theme.colors.heading};
-  font-size: 1.45rem;
-`;
-
-const OfferText = styled.p`
-  margin: 0 0 18px;
-  color: ${({ theme }) => theme.colors.textMuted};
-  line-height: 1.8;
-  max-width: 760px;
-`;
-
-const OfferCta = styled.a`
-  display: inline-flex;
-  text-decoration: none;
-`;
-
 const Grid = styled.div`
   display: grid;
   gap: 18px;
@@ -143,12 +112,10 @@ const CardText = styled.p`
 
 type Props = {
   items: RelatedTour[];
-  bundleWhatsappLink: string;
 };
 
 export default function PrivateTourRelatedTours({
   items,
-  bundleWhatsappLink,
 }: Props) {
   if (!items.length) return null;
 
@@ -162,20 +129,6 @@ export default function PrivateTourRelatedTours({
           for comfort, flexibility, and unforgettable scenery.
         </SectionText>
       </SectionHeader>
-
-      <OfferCard>
-        <OfferTitle>Explore More and Save</OfferTitle>
-        <OfferText>
-          Book any 3 private tours together and ask us about a special bundled
-          rate. It’s the perfect option for travellers who want to experience
-          more of Cape Town in comfort, style, and with a smoother overall
-          itinerary.
-        </OfferText>
-
-        <OfferCta href={bundleWhatsappLink} target="_blank">
-          <Button as="span">Get 3-Tour Offer on WhatsApp</Button>
-        </OfferCta>
-      </OfferCard>
 
       <Grid>
         {items.map((item, index) => (
