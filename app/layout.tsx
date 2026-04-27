@@ -8,8 +8,16 @@ import StyledComponentsRegistry from "../lib/styled-components-registry";
 import Providers from "./providers";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import ScrollTracking from "../components/tracking/ScrollTracking";
-import EngagementTracking from "../components/tracking/EngagementTracking";
+import dynamic from "next/dynamic";
+
+const ScrollTracking = dynamic(
+  () => import("../components/tracking/ScrollTracking"),
+  { ssr: false }
+);
+const EngagementTracking = dynamic(
+  () => import("../components/tracking/EngagementTracking"),
+  { ssr: false }
+);
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -42,6 +50,22 @@ export default function RootLayout({
       lang="en"
       className={`${playfairDisplay.variable} ${inter.variable}`}
     >
+      <head>
+        <link
+          rel="preconnect"
+          href="https://cape-town-concierge.s3.amazonaws.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="dns-prefetch"
+          href="https://cape-town-concierge.s3.amazonaws.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://web-production-1ab9.up.railway.app"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <StyledComponentsRegistry>
           <Providers>

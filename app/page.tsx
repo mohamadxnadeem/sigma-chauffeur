@@ -1,11 +1,28 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import HeroBanner from "../components/sections/HeroBanner";
 import FeaturedVehicles from "../components/sections/FeaturedVehicles";
-import WhyChooseUs from "../components/sections/WhyChooseUs";
-import FeaturedExperiences from "../components/sections/FeaturedExperiences";
-import TestimonialsSection from "../components/sections/testimonials/TestimonialsSection";
-import TestimonialsCta from "../components/sections/testimonials/TestimonialsCta";
-import ChauffeurAuthoritySection from "../components/sections/ChauffeurAuthoritySection";
+
+const WhyChooseUs = dynamic(
+  () => import("../components/sections/WhyChooseUs"),
+  { ssr: true }
+);
+const FeaturedExperiences = dynamic(
+  () => import("../components/sections/FeaturedExperiences"),
+  { ssr: true }
+);
+const TestimonialsSection = dynamic(
+  () => import("../components/sections/testimonials/TestimonialsSection"),
+  { ssr: true }
+);
+const TestimonialsCta = dynamic(
+  () => import("../components/sections/testimonials/TestimonialsCta"),
+  { ssr: true }
+);
+const ChauffeurAuthoritySection = dynamic(
+  () => import("../components/sections/ChauffeurAuthoritySection"),
+  { ssr: true }
+);
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
