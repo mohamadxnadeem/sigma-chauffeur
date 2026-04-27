@@ -8,16 +8,8 @@ import StyledComponentsRegistry from "../lib/styled-components-registry";
 import Providers from "./providers";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import dynamic from "next/dynamic";
-
-const ScrollTracking = dynamic(
-  () => import("../components/tracking/ScrollTracking"),
-  { ssr: false }
-);
-const EngagementTracking = dynamic(
-  () => import("../components/tracking/EngagementTracking"),
-  { ssr: false }
-);
+import ScrollTracking from "../components/tracking/ScrollTracking";
+import EngagementTracking from "../components/tracking/EngagementTracking";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
