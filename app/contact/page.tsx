@@ -39,13 +39,6 @@ export default function ContactPage() {
       url: SITE_URL,
       telephone: "+27 71 108 1227",
       email: "info@sigmavip.co.za",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "23 Aberdeen Road, Rondebosch",
-        addressLocality: "Cape Town",
-        postalCode: "7700",
-        addressCountry: "ZA",
-      },
     },
   };
 
@@ -74,7 +67,6 @@ export default function ContactPage() {
           <div><strong>Email:</strong>{" "}
             <a href="mailto:info@sigmavip.co.za">info@sigmavip.co.za</a>
           </div>
-          <div><strong>Address:</strong> 23 Aberdeen Road, Rondebosch, Cape Town, 7700</div>
           <div><strong>Hours:</strong> Available 7 days a week, 24 hours</div>
         </div>
       </main>
