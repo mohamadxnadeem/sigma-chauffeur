@@ -20,8 +20,8 @@ export default function Footer() {
     <Wrapper>
       <Container>
         <Text>
-          © {new Date().getFullYear()} Sigma VIP. Luxury chauffeur
-          services, private tours, and premium travel experiences in Cape Town.
+          © 2021–{new Date().getFullYear()} Sigma VIP. Serving Cape Town since 2021 — luxury chauffeur
+          services, private tours, and premium travel experiences.
         </Text>
       </Container>
     </Wrapper>
