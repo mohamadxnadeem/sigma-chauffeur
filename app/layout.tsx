@@ -8,6 +8,7 @@ import StyledComponentsRegistry from "../lib/styled-components-registry";
 import Providers from "./providers";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
+import FloatingWhatsApp from "../components/common/FloatingWhatsApp";
 import ScrollTracking from "../components/tracking/ScrollTracking";
 import EngagementTracking from "../components/tracking/EngagementTracking";
 
@@ -66,6 +67,7 @@ export default function RootLayout({
             <Header />
             {children}
             <Footer />
+            <FloatingWhatsApp />
           </Providers>
         </StyledComponentsRegistry>
 

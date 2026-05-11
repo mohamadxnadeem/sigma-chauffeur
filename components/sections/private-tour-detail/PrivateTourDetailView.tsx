@@ -18,7 +18,7 @@ import PrivateTourReviews from "./PrivateTourReviews";
 import PrivateTourFaq from "./PrivateTourFaq";
 import PrivateTourRelatedTours from "./PrivateTourRelatedTours";
 import PrivateTourCta from "./PrivateTourCta";
-import PrivateTourStickyBar from "./PrivateTourStickyBar";
+
 import TestimonialsSection from "../testimonials/TestimonialsSection";
 import TestimonialsCta from "../testimonials/TestimonialsCta";
 
@@ -203,10 +203,6 @@ export default function PrivateTourDetailView({
       </Section>
 
       <PrivateTourCta whatsappLink={whatsappLink} />
-      <PrivateTourStickyBar
-        title={safeTourTitle}
-        whatsappLink={whatsappLink}
-      />
     </PageWrap>
   );
 }
