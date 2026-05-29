@@ -305,6 +305,17 @@ export default function ChauffeurDetailView({
 
   const heroImage = getPrimaryImage(car);
 
+  if (typeof window !== "undefined") {
+    console.log("[ChauffeurDetailView] Vehicle image debug:", {
+      slug: car.slug,
+      title: car.title,
+      coverPhotosCount: (car.cover_photos || []).length,
+      imagesCount: (car.images || []).length,
+      heroImage,
+      firstPhotoUrl: (car.cover_photos || car.images || [])[0]?.cover_photos,
+    });
+  }
+
   const mainWhatsAppLink = buildWhatsAppLink(
     `Hey, I'm interested in booking the ${safeTitle}. Please can you share pricing and availability?`
   );
