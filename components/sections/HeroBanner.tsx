@@ -102,6 +102,11 @@ const StyledLink = styled(Link)`
   display: inline-flex;
 `;
 
+const StyledAnchor = styled.a`
+  display: inline-flex;
+  text-decoration: none;
+`;
+
 export default function HeroBanner({
   eyebrow = "Luxury Travel in Cape Town",
   title,
@@ -138,15 +143,25 @@ export default function HeroBanner({
           <Description>{description}</Description>
 
           <ButtonRow>
-            <StyledLink href={primaryCtaHref}>
-              <Button as="span">{primaryCtaLabel}</Button>
-            </StyledLink>
+            {primaryCtaHref.startsWith("http") ? (
+              <StyledAnchor
+                href={primaryCtaHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button as="span">{primaryCtaLabel}</Button>
+              </StyledAnchor>
+            ) : (
+              <StyledLink href={primaryCtaHref}>
+                <Button as="span">{primaryCtaLabel}</Button>
+              </StyledLink>
+            )}
 
-            {/* <StyledLink href={secondaryCtaHref}>
+            <StyledLink href={secondaryCtaHref}>
               <Button as="span" $variant="secondary">
                 {secondaryCtaLabel}
               </Button>
-            </StyledLink> */}
+            </StyledLink>
           </ButtonRow>
         </Inner>
       </Content>

@@ -430,6 +430,38 @@ export default async function HomePage() {
         description:
           "Custom private tours in Cape Town including Cape Peninsula, Cape Winelands, Table Mountain, coastal routes, and tailored chauffeur-driven itineraries designed around each client’s pace and preferences.",
       },
+      {
+        "@type": "LocalBusiness",
+        name: "Sigma VIP",
+        url: SITE_URL,
+        telephone: "+27 71 108 1227",
+        email: "info@sigmavip.co.za",
+        priceRange: "$$$",
+        areaServed: {
+          "@type": "City",
+          name: "Cape Town",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Cape Town",
+          addressRegion: "Western Cape",
+          addressCountry: "ZA",
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      },
     ],
   };
 
@@ -446,8 +478,8 @@ export default async function HomePage() {
         eyebrow="Sigma VIP"
         title="Luxury Chauffeur Services in Cape Town"
         description="Premium airport transfers, private chauffeur services, and curated travel experiences designed for clients who value comfort, elegance, and reliability."
-        primaryCtaLabel="Book Your Ride"
-        primaryCtaHref="/contact"
+        primaryCtaLabel="Book on WhatsApp"
+        primaryCtaHref="https://wa.me/27711081227?text=Hey%2C%20I%27m%20interested%20in%20booking%20a%20private%20chauffeur%20or%20tour%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
         secondaryCtaLabel="Explore Services"
         secondaryCtaHref="/chauffeur-services"
         image="/images/car.jpg"

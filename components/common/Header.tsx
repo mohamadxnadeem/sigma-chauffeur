@@ -136,6 +136,13 @@ export default function Header() {
 
             <RightSide>
               <HeaderCta
+                href="tel:+27711081227"
+                aria-label="Call Sigma VIP"
+              >
+                ✆ Call
+              </HeaderCta>
+
+              <HeaderCta
                 href={headerWhatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
