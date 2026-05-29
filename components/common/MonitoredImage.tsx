@@ -46,6 +46,11 @@ export default function MonitoredImage(props: ImageProps) {
     ...rest
   } = props;
 
+  // Don't render if src is empty — prevents broken image placeholder
+  if (!src || (typeof src === "string" && src.trim() === "")) {
+    return null;
+  }
+
   const external = isExternalSrc(src);
   // Explicit prop wins; otherwise auto-skip optimizer for external URLs.
   const unoptimized = unoptimizedProp ?? external;

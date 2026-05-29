@@ -13,15 +13,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cape-town-concierge.s3.amazonaws.com",
-      },
-      {
-        protocol: "https",
-        hostname: "cape-town-concierge.s3.eu-north-1.amazonaws.com",
-      },
-      {
-        protocol: "https",
-        hostname: "why-cpt-storage.s3.amazonaws.com",
+        hostname: "**.amazonaws.com",
       },
       {
         protocol: "https",
