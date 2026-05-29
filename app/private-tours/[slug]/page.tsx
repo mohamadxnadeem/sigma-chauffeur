@@ -202,10 +202,16 @@ function normalizeExperience(data: ExperienceDetailResponse | Experience): Exper
   return (data as ExperienceDetailResponse)?.experience || (data as Experience);
 }
 
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
 function getPrimaryImage(experience: Experience) {
-  const sorted = [...(experience.cover_photos || [])].sort(
-    (a, b) => a.order - b.order
-  );
+  const sorted = [...(experience.cover_photos || [])]
+    .sort((a, b) => a.order - b.order)
+    .filter((p) => isBrowserRenderable(p.cover_photos));
 
   return (
     sorted.find((photo) => photo.is_featured)?.cover_photos ||
@@ -244,7 +250,9 @@ function mapRelatedTours(
         tour.highlight ||
         "Discover another premium private tour experience in Cape Town.",
       image:
-        [...(tour.cover_photos || [])].sort((a, b) => a.order - b.order)[0]
+        [...(tour.cover_photos || [])]
+          .sort((a, b) => a.order - b.order)
+          .filter((p) => isBrowserRenderable(p.cover_photos))[0]
           ?.cover_photos || "",
       href: `/private-tours/${tour.slug}`,
     }));

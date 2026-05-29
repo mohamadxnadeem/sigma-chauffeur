@@ -153,9 +153,18 @@ const ThumbButton = styled.button<{ $active: boolean }>`
   }
 `;
 
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
 export default function ChauffeurGallery({ images }: Props) {
   const galleryImages = useMemo(
-    () => [...images].sort((a, b) => (a.order || 0) - (b.order || 0)),
+    () =>
+      [...images]
+        .sort((a, b) => (a.order || 0) - (b.order || 0))
+        .filter((img) => isBrowserRenderable(img.cover_photos)),
     [images]
   );
 

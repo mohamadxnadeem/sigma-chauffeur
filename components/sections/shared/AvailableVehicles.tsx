@@ -43,9 +43,19 @@ type Props = {
 const API_URL =
   "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/";
 
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
 function pickImage(item: CarsForHireApiItem): string | undefined {
-  const carImages = item.car?.cover_photos || [];
-  const topImages = item.cover_photos || [];
+  const carImages = (item.car?.cover_photos || []).filter((p) =>
+    isBrowserRenderable(p.cover_photos)
+  );
+  const topImages = (item.cover_photos || []).filter((p) =>
+    isBrowserRenderable(p.cover_photos)
+  );
   return carImages[0]?.cover_photos || topImages[0]?.cover_photos || undefined;
 }
 

@@ -92,6 +92,12 @@ const trustItems = [
   },
 ];
 
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
 type ExperiencePhoto = {
   id: number;
   cover_photos: string;
@@ -203,10 +209,12 @@ async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
 
         if (!experience?.title) return null;
 
+        const renderable = (experience.cover_photos || []).filter((p) =>
+          isBrowserRenderable(p.cover_photos)
+        );
         const featuredPhoto =
-          experience.cover_photos?.find((photo) => photo.is_featured)
-            ?.cover_photos ||
-          experience.cover_photos?.[0]?.cover_photos ||
+          renderable.find((photo) => photo.is_featured)?.cover_photos ||
+          renderable[0]?.cover_photos ||
           "";
 
         const plainTextBody = stripHtml(experience.body || "");
@@ -263,7 +271,9 @@ async function getFeaturedVehicles(): Promise<FeaturedVehicleItem[]> {
 
         if (!car?.title) return null;
 
-        const imageArray = car.cover_photos || car.images || [];
+        const imageArray = (car.cover_photos || car.images || []).filter(
+          (p: CarPhoto) => isBrowserRenderable(p.cover_photos)
+        );
 
         const featuredPhoto =
           imageArray.find((photo: CarPhoto) => photo?.is_featured)

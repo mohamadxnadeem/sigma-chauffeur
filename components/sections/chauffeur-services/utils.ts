@@ -11,9 +11,17 @@ export function stripHtml(html?: string) {
   return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
 }
 
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
 export function getPrimaryImage(car: Car) {
   const imageArray = car.cover_photos || car.images || [];
-  const sorted = [...imageArray].sort((a, b) => (a.order || 0) - (b.order || 0));
+  const sorted = [...imageArray]
+    .sort((a, b) => (a.order || 0) - (b.order || 0))
+    .filter((photo) => isBrowserRenderable(photo.cover_photos));
   return (
     sorted.find((photo) => photo.is_featured)?.cover_photos ||
     sorted[0]?.cover_photos ||

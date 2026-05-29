@@ -46,9 +46,15 @@ async function getFeaturedExperiences() {
       .map((item) => {
         const experience = item?.experience || item;
         if (!experience?.title) return null;
+        const renderable = (experience.cover_photos || []).filter(
+          (p) => {
+            const url = p.cover_photos?.toLowerCase() || "";
+            return url && !url.endsWith(".heic") && !url.endsWith(".heif") && !url.endsWith(".tiff");
+          }
+        );
         const featuredPhoto =
-          experience.cover_photos?.find((p) => p.is_featured)?.cover_photos ||
-          experience.cover_photos?.[0]?.cover_photos ||
+          renderable.find((p) => p.is_featured)?.cover_photos ||
+          renderable[0]?.cover_photos ||
           "";
         const plainTextBody = stripHtml(experience.body || "");
         return {

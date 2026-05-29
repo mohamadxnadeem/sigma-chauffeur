@@ -43,6 +43,12 @@ type FeaturedVehicleItem = {
   price?: string;
 };
 
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
 function stripHtml(html: string) {
   return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
 }
@@ -400,7 +406,9 @@ export default function ChauffeurServicesPage() {
             const car = item?.car || item;
             if (!car?.title) return null;
 
-            const imageArray = car.cover_photos || car.images || [];
+            const imageArray = (car.cover_photos || car.images || []).filter(
+              (p: CarPhoto) => isBrowserRenderable(p.cover_photos)
+            );
             const featuredPhoto =
               imageArray.find((photo: CarPhoto) => photo?.is_featured)
                 ?.cover_photos ||
