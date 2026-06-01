@@ -66,7 +66,7 @@ async function getFeaturedExperiences() {
             "Discover a premium private tour in Cape Town.",
           href: experience.slug
             ? `/private-tours/${experience.slug}`
-            : "/private-tours",
+            : "/chauffeur-services",
           image: featuredPhoto,
           alt: `Private ${experience.title} in Cape Town with Professional Driver`,
         };

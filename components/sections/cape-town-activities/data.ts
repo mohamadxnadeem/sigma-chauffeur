@@ -135,8 +135,8 @@ export const services: ServiceItem[] = [
     title: "Private Tours",
     description:
       "Explore Cape Town with a private chauffeur-driven experience tailored around your pace, preferred stops, and travel style.",
-    href: "/private-tours",
-    cta: "Explore Private Tours",
+    href: "/chauffeur-services",
+    cta: "Explore Chauffeur Services",
   },
   {
     title: "Chauffeur Services",

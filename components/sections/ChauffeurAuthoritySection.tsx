@@ -247,7 +247,7 @@ export default function ChauffeurAuthoritySection() {
                   We also specialise in private tours and tailor-made
                   itineraries. Some of the most requested experiences include
                   the{" "}
-                  <InlineLink href="/private-tours">
+                  <InlineLink href="/best-activities-to-do-in-cape-town">
                     Cape Peninsula private tour
                   </InlineLink>
                   , scenic coastal drives, and curated{" "}

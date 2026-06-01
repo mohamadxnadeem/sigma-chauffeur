@@ -229,7 +229,7 @@ async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
           description,
           href: experience.slug
             ? `/private-tours/${experience.slug}`
-            : "/private-tours",
+            : "/chauffeur-services",
           image: featuredPhoto,
           alt: `Private ${experience.title} in Cape Town with Professional Driver`,
         };

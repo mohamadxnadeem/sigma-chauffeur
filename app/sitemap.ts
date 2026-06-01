@@ -67,11 +67,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.95,
     },
     {
-      url: `${SITE_URL}/private-tours`,
-      lastModified: new Date(),
-      priority: 0.9,
-    },
-    {
       url: `${SITE_URL}/best-wine-farms-in-cape-town`,
       lastModified: new Date(),
       priority: 0.9,
