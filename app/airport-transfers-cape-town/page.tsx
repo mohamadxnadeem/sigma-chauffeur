@@ -4,6 +4,68 @@ import { privateJetFaqItems } from "../../components/sections/private-jet-transf
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
+type CarPhoto = {
+  id: number;
+  cover_photos: string;
+  is_featured?: boolean;
+  order?: number;
+};
+
+type Car = {
+  title?: string;
+  short_description?: string;
+  highlight?: string;
+  number_of_seats?: number;
+  cover_photos?: CarPhoto[];
+  images?: CarPhoto[];
+};
+
+type CarsApiItem = {
+  car?: Car;
+} & Partial<Car>;
+
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
+async function getVehicles() {
+  try {
+    const res = await fetch(
+      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
+      { next: { revalidate: 3600 } }
+    );
+    if (!res.ok) return [];
+    const data: CarsApiItem[] = await res.json();
+    return data
+      .map((item) => {
+        const car = item?.car || item;
+        if (!car?.title) return null;
+        const images = (car.cover_photos || car.images || []).filter((p) =>
+          isBrowserRenderable(p.cover_photos)
+        );
+        return {
+          title: car.title,
+          description:
+            car.short_description ||
+            car.highlight ||
+            "Premium chauffeur-driven vehicle for airport transfers in Cape Town.",
+          image: images[0]?.cover_photos || "",
+          seats: car.number_of_seats,
+        };
+      })
+      .filter(Boolean) as {
+      title: string;
+      description: string;
+      image: string;
+      seats?: number;
+    }[];
+  } catch {
+    return [];
+  }
+}
+
 export const metadata: Metadata = {
   title:
     "Airport Transfers Cape Town | Luxury Chauffeur Pickup & Drop-off | Sigma VIP",
@@ -52,7 +114,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AirportTransfersRoute() {
+export default async function AirportTransfersRoute() {
+  const vehicles = await getVehicles();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -131,7 +194,7 @@ export default function AirportTransfersRoute() {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <AirportTransfersPage />
+      <AirportTransfersPage vehicles={vehicles} />
     </>
   );
 }
