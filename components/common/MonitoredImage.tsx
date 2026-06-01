@@ -1,7 +1,8 @@
 "use client";
 
 import Image, { ImageProps } from "next/image";
-import { useCallback, SyntheticEvent } from "react";
+import { useCallback, useState, SyntheticEvent } from "react";
+import styled, { keyframes } from "styled-components";
 
 declare global {
   interface Window {
@@ -9,54 +10,87 @@ declare global {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// MonitoredImage
-// ─────────────────────────────────────────────────────────────────────────────
-// Drop-in replacement for <Image> from "next/image" with two enhancements:
-//
-//   1. Auto `unoptimized={true}` for EXTERNAL image URLs (anything not under
-//      /public). Vercel's image optimizer has a monthly quota on the Hobby
-//      plan — exceeding it returns 402 Payment Required and breaks images.
-//      Routing S3/API images around the optimizer solves the 402 at the cost
-//      of losing WebP conversion and responsive sizing. Local images still
-//      go through the optimizer as normal.
-//
-//   2. Error logging via onError. If an image fails to load (S3 403,
-//      CDN 404, Vercel 402, wrong hostname 400 etc.), we log to the browser
-//      console AND fire a GA4 `image_load_error` event so broken images
-//      surface in Analytics instead of silently failing.
-//
-// Usage: identical to next/image. Swap the import and go.
-// ─────────────────────────────────────────────────────────────────────────────
+const shimmerSweep = keyframes`
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+const ShimmerOverlay = styled.div<{ $visible: boolean }>`
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 168, 76, 0.06),
+    rgba(168, 137, 56, 0.03)
+  );
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    );
+    animation: ${shimmerSweep} 1.6s ease-in-out infinite;
+  }
+`;
 
 function isExternalSrc(src: ImageProps["src"]): boolean {
-  if (typeof src !== "string") return false; // StaticImport = bundled local asset
-  if (src.startsWith("/")) return false; // /public/... — local
-  if (src.startsWith("data:")) return false; // inline data URL
-  if (src.startsWith("blob:")) return false; // runtime object URL
-  return true; // http(s):// or anything else = external
+  if (typeof src !== "string") return false;
+  if (src.startsWith("/")) return false;
+  if (src.startsWith("data:")) return false;
+  if (src.startsWith("blob:")) return false;
+  return true;
 }
 
 export default function MonitoredImage(props: ImageProps) {
   const {
     src,
     alt,
+    fill,
     unoptimized: unoptimizedProp,
     onError: userOnError,
+    onLoad: userOnLoad,
     ...rest
   } = props;
 
-  // Don't render if src is empty — prevents broken image placeholder
+  const [loaded, setLoaded] = useState(false);
+
   if (!src || (typeof src === "string" && src.trim() === "")) {
     return null;
   }
 
   const external = isExternalSrc(src);
-  // Explicit prop wins; otherwise auto-skip optimizer for external URLs.
   const unoptimized = unoptimizedProp ?? external;
+
+  const handleLoad = useCallback(
+    (event: SyntheticEvent<HTMLImageElement, Event>) => {
+      setLoaded(true);
+      userOnLoad?.(event);
+    },
+    [userOnLoad]
+  );
 
   const handleError = useCallback(
     (event: SyntheticEvent<HTMLImageElement, Event>) => {
+      setLoaded(true);
       const url = typeof src === "string" ? src : "[static-import]";
       const target = event.currentTarget as HTMLImageElement;
       const attemptedSrc = target?.currentSrc || target?.src || "unknown";
@@ -83,12 +117,30 @@ export default function MonitoredImage(props: ImageProps) {
     [src, alt, external, userOnError]
   );
 
+  if (fill) {
+    return (
+      <Wrapper>
+        <ShimmerOverlay $visible={!loaded} />
+        <Image
+          {...rest}
+          src={src}
+          alt={alt}
+          fill
+          unoptimized={unoptimized}
+          onLoad={handleLoad}
+          onError={handleError}
+        />
+      </Wrapper>
+    );
+  }
+
   return (
     <Image
       {...rest}
       src={src}
       alt={alt}
       unoptimized={unoptimized}
+      onLoad={handleLoad}
       onError={handleError}
     />
   );
