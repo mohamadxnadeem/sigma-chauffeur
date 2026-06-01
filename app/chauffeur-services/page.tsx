@@ -4,9 +4,9 @@ import ChauffeurServicesPage from "../../components/sections/chauffeur-services/
 const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
-  title: "Chauffeur Service Cape Town | Sigma VIP Luxury Private Driver & Airport Transfers",
+  title: "Private Chauffeur Service Cape Town | VIP Driver Hire | Sigma VIP",
   description:
-    "Book a luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, executive travel, and bespoke day hire. Premium vehicles, professional drivers, and tailored itineraries.",
+    "Hire a private chauffeur in Cape Town with Sigma VIP. VIP airport transfers, luxury day hire, corporate transport, and private tours. Mercedes S-Class, Range Rover, G-Wagon fleet. Professional drivers available 24/7.",
   alternates: {
     canonical: `${SITE_URL}/chauffeur-services`,
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Chauffeur Service Cape Town | Sigma VIP Luxury Private Driver & Airport Transfers",
+    title: "Private Chauffeur Service Cape Town | VIP Driver Hire | Sigma VIP",
     description:
       "Luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, executive travel, and bespoke day hire.",
     url: `${SITE_URL}/chauffeur-services`,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chauffeur Service Cape Town | Sigma VIP Luxury Private Driver & Airport Transfers",
+    title: "Private Chauffeur Service Cape Town | VIP Driver Hire | Sigma VIP",
     description:
       "Book a luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, and executive travel.",
     images: [`${SITE_URL}/images/hero-car.jpg`],
