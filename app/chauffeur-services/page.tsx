@@ -3,6 +3,101 @@ import ChauffeurServicesPage from "../../components/sections/chauffeur-services/
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
+type CarPhoto = {
+  id: number;
+  cover_photos: string;
+  is_featured?: boolean;
+  order?: number;
+};
+
+type Car = {
+  title?: string;
+  slug?: string;
+  short_description?: string;
+  highlight?: string;
+  body?: string;
+  number_of_seats?: number;
+  cover_photos?: CarPhoto[];
+  images?: CarPhoto[];
+};
+
+type CarsApiItem = {
+  car?: Car;
+} & Partial<Car>;
+
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+}
+
+function stripHtml(html: string) {
+  return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+}
+
+function truncateText(text: string, maxLength: number) {
+  if (!text) return "";
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength).trim()}...`;
+}
+
+async function getVehicles() {
+  try {
+    const res = await fetch(
+      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
+      { next: { revalidate: 3600 } }
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    const items: CarsApiItem[] = Array.isArray(data)
+      ? data
+      : Array.isArray(data?.results)
+      ? data.results
+      : [];
+
+    return items
+      .map((item) => {
+        const car = item?.car || item;
+        if (!car?.title) return null;
+        const imageArray = (car.cover_photos || car.images || []).filter((p) =>
+          isBrowserRenderable(p.cover_photos)
+        );
+        const sorted = [...imageArray].sort(
+          (a, b) => (a.order || 0) - (b.order || 0)
+        );
+        const image =
+          sorted.find((p) => p.is_featured)?.cover_photos ||
+          sorted[0]?.cover_photos ||
+          "";
+        return {
+          title: car.title,
+          description:
+            car.short_description ||
+            car.highlight ||
+            truncateText(stripHtml(car.body || ""), 200) ||
+            "Luxury chauffeur vehicle for private travel in Cape Town.",
+          href:
+            car.slug?.trim()
+              ? `/chauffeur-services/${car.slug.trim().toLowerCase()}`
+              : "/chauffeur-services",
+          image,
+          alt: `${car.title} chauffeur service Cape Town`,
+          seats: car.number_of_seats,
+        };
+      })
+      .filter(Boolean) as {
+      title: string;
+      description: string;
+      href: string;
+      image: string;
+      alt: string;
+      seats?: number;
+    }[];
+  } catch {
+    return [];
+  }
+}
+
 export const metadata: Metadata = {
   title: "Private Chauffeur Service Cape Town | VIP Driver Hire | Sigma VIP",
   description:
@@ -46,7 +141,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ChauffeurServicesLandingPage() {
+export default async function ChauffeurServicesLandingPage() {
+  const vehicles = await getVehicles();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -149,7 +245,7 @@ export default function ChauffeurServicesLandingPage() {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <ChauffeurServicesPage />
+      <ChauffeurServicesPage vehicles={vehicles} />
     </>
   );
 }

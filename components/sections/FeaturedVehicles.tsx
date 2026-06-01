@@ -169,9 +169,13 @@ const Card = styled(Link)`
 
 const CardImageWrap = styled.div`
   position: relative;
-  height: 260px;
+  height: 340px;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(168, 137, 56, 0.1));
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 380px;
+  }
 `;
 
 const ImageOverlay = styled.div`
@@ -179,7 +183,37 @@ const ImageOverlay = styled.div`
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.06));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.05) 50%);
+`;
+
+const ImageTitle = styled.div`
+  position: absolute;
+  bottom: 16px;
+  left: 18px;
+  right: 18px;
+  z-index: 3;
+  color: white;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+`;
+
+const ImageBadge = styled.div`
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 700;
 `;
 
 const ShimmerLayer = styled.div`
@@ -208,9 +242,9 @@ const ShimmerLayer = styled.div`
 
 const CardContent = styled.div`
   display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
 `;
 
 const MetaRow = styled.div`
@@ -295,7 +329,7 @@ function getVehicleAltText(title: string) {
   return `Luxury ${title} Chauffeur Service Cape Town - VIP Transport`;
 }
 
-function VehicleImageCard({
+function VehicleImageInner({
   image,
   title,
   alt,
@@ -307,7 +341,7 @@ function VehicleImageCard({
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <CardImageWrap>
+    <>
       {!loaded && <ShimmerLayer />}
       {image ? (
         <MonitoredImage
@@ -321,8 +355,7 @@ function VehicleImageCard({
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTJlOGYwIi8+PC9zdmc+"
         />
       ) : null}
-      <ImageOverlay />
-    </CardImageWrap>
+    </>
   );
 }
 
@@ -381,20 +414,20 @@ export default function FeaturedVehicles({
           <Slider ref={sliderRef}>
             {items.map((item, index) => (
               <Card key={`${item.title}-${index}`} href={item.href}>
-                <VehicleImageCard
-                  image={item.image}
-                  title={item.title}
-                  alt={item.alt}
-                />
+                <CardImageWrap>
+                  <VehicleImageInner
+                    image={item.image}
+                    title={item.title}
+                    alt={item.alt}
+                  />
+                  <ImageOverlay />
+                  <ImageTitle>{item.title}</ImageTitle>
+                  {item.seats ? (
+                    <ImageBadge>{item.seats} Seats</ImageBadge>
+                  ) : null}
+                </CardImageWrap>
 
                 <CardContent>
-                  <MetaRow>
-                    {item.seats ? <MetaBadge>{item.seats} Seats</MetaBadge> : null}
-                  </MetaRow>
-
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardText>{item.description}</CardText>
-
                   <CardFooter>
                     <ViewButton>View Vehicle</ViewButton>
                     <InlineArrow>→</InlineArrow>

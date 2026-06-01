@@ -378,72 +378,20 @@ function isFeaturedVehicleItem(
   return item !== null;
 }
 
-export default function ChauffeurServicesPage() {
-  const [vehicles, setVehicles] = useState<FeaturedVehicleItem[]>([]);
+type VehicleItem = {
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+  alt?: string;
+  seats?: number;
+};
 
-  useEffect(() => {
-    async function loadVehicles() {
-      try {
-        const response = await fetch(
-          "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
-          { cache: "no-store" }
-        );
+type PageProps = {
+  vehicles?: VehicleItem[];
+};
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch vehicles");
-        }
-
-        const data = await response.json();
-
-        const sourceArray: CarsApiItem[] = Array.isArray(data)
-          ? data
-          : Array.isArray(data?.results)
-          ? data.results
-          : [];
-
-        const mapped: Array<FeaturedVehicleItem | null> = sourceArray.map(
-          (item: CarsApiItem) => {
-            const car = item?.car || item;
-            if (!car?.title) return null;
-
-            const imageArray = (car.cover_photos || car.images || []).filter(
-              (p: CarPhoto) => isBrowserRenderable(p.cover_photos)
-            );
-            const featuredPhoto =
-              imageArray.find((photo: CarPhoto) => photo?.is_featured)
-                ?.cover_photos ||
-              imageArray[0]?.cover_photos ||
-              "";
-
-            return {
-              title: car.title,
-              description:
-                car.short_description ||
-                car.highlight ||
-                truncateText(stripHtml(car.body || ""), 140) ||
-                "Luxury chauffeur vehicle available for private travel in Cape Town.",
-              href:
-                typeof car.slug === "string" && car.slug.trim()
-                  ? `/chauffeur-services/${car.slug.trim()}`
-                  : "/chauffeur-services",
-              image: featuredPhoto,
-              alt: `Luxury ${car.title} Chauffeur Service Cape Town - VIP Transport`,
-              seats: car.number_of_seats,
-              price: formatPrice(car.price),
-            };
-          }
-        );
-
-        setVehicles(mapped.filter(isFeaturedVehicleItem));
-      } catch (error) {
-        console.error("Error loading vehicles:", error);
-        setVehicles([]);
-      }
-    }
-
-    loadVehicles();
-  }, []);
-
+export default function ChauffeurServicesPage({ vehicles = [] }: PageProps) {
   const whatsappLink = buildWhatsAppLink(
     buildGeneralWhatsAppMessage("booking a chauffeur service in Cape Town")
   );
@@ -454,8 +402,8 @@ export default function ChauffeurServicesPage() {
         eyebrow="Sigma VIP"
         title="Chauffeur Service in Cape Town"
         description="Book a luxury chauffeur service in Cape Town for airport transfers, executive travel, private driver hire, and bespoke day planning with premium vehicles and professional service."
-        primaryCtaLabel="Book Chauffeur Service"
-        primaryCtaHref="/contact"
+        primaryCtaLabel="Book on WhatsApp"
+        primaryCtaHref={whatsappLink}
         secondaryCtaLabel="View Fleet"
         secondaryCtaHref="#chauffeur-fleet"
         image="/images/hero-car.jpg"
