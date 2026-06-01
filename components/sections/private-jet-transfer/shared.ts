@@ -9,7 +9,7 @@ import {
 
 export const whatsappLink = buildWhatsAppLink(
   buildGeneralWhatsAppMessage(
-    "arranging a private jet FBO transfer in Cape Town"
+    "arranging an airport transfer in Cape Town"
   )
 );
 

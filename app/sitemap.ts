@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.95,
     },
     {
-      url: `${SITE_URL}/private-jet-transfer`,
+      url: `${SITE_URL}/airport-transfers-cape-town`,
       lastModified: new Date(),
       priority: 0.95,
     },

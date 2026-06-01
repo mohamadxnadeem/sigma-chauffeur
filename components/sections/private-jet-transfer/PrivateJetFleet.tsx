@@ -36,7 +36,7 @@ const vehicles: Vehicle[] = [
     title: "Range Rover Autobiography",
     ideal: "Multi-day hire · extended Cape Peninsula drives",
     description:
-      "Massage seats, panoramic roof, Meridian audio. Supreme comfort for long-form itineraries straight off the ramp.",
+      "Massage seats, panoramic roof, Meridian audio. Supreme comfort for long-form itineraries from the moment you land.",
     features: ["4 passengers", "Panoramic roof", "Meridian audio"],
   },
   {
@@ -144,12 +144,13 @@ export default function PrivateJetFleet() {
         <SectionHeader>
           <SectionEyebrow>Vehicles</SectionEyebrow>
           <SectionTitle>
-            The Right Vehicle Waiting on the Ramp
+            The Right Vehicle Waiting at the Airport
           </SectionTitle>
           <SectionText>
-            Three vehicles built for the standard of client who arrives by
-            private jet. Choose your preference when you book — or let us
-            recommend based on party size and onward schedule.
+            Three vehicles built for the standard of client who expects
+            more from an airport transfer. Choose your preference when
+            you book — or let us recommend based on party size and
+            onward schedule.
           </SectionText>
         </SectionHeader>
 

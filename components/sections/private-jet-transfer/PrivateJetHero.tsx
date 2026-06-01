@@ -94,16 +94,17 @@ export default function PrivateJetHero() {
     <Hero>
       <Container>
         <HeroInner>
-          <Eyebrow>Private Jet Arrivals · Cape Town International</Eyebrow>
+          <Eyebrow>Airport Transfers · Cape Town International</Eyebrow>
 
-          <Title>Your Jet Has Landed. Your Chauffeur is Ready.</Title>
+          <Title>Your Flight Has Landed. Your Chauffeur is Ready.</Title>
 
           <Description>
-            Sigma VIP coordinates directly with the FBO team at Cape Town
-            International Airport. Your vehicle is staged before you
-            disembark. Your chauffeur manages ramp coordination, luggage
-            handling, and the first mile of your Cape Town stay — quietly,
-            precisely, and without delay.
+            Sigma VIP tracks your flight in real time and stages your
+            vehicle at Cape Town International Airport before you land.
+            From commercial arrivals to private jet FBO coordination —
+            your chauffeur handles luggage, meet-and-greet, and the
+            first mile of your Cape Town stay. Quietly, precisely,
+            and without delay.
           </Description>
 
           <ButtonRow>
@@ -113,12 +114,12 @@ export default function PrivateJetHero() {
               rel="noopener noreferrer"
               onClick={() =>
                 trackWhatsAppClick({
-                  source: "private_jet_hero",
-                  label: "Arrange FBO Transfer",
+                  source: "airport_transfer_hero",
+                  label: "Arrange Airport Transfer",
                 })
               }
             >
-              <Button as="span">Arrange FBO Transfer</Button>
+              <Button as="span">Arrange Airport Transfer</Button>
             </Anchor>
 
             <StyledLink href="/chauffeur-services">
@@ -129,10 +130,10 @@ export default function PrivateJetHero() {
           </ButtonRow>
 
           <TrustStrip>
-            <TrustPill>Tail-Number Tracking</TrustPill>
-            <TrustPill>FBO Ramp Coordination</TrustPill>
+            <TrustPill>Live Flight Tracking</TrustPill>
+            <TrustPill>Meet-and-Greet</TrustPill>
+            <TrustPill>Private Jet FBO</TrustPill>
             <TrustPill>24/7 Availability</TrustPill>
-            <TrustPill>Absolute Discretion</TrustPill>
           </TrustStrip>
         </HeroInner>
       </Container>

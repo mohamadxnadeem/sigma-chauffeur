@@ -1,19 +1,17 @@
-// app/private-jet-transfer/page.tsx
-
 import type { Metadata } from "next";
-import PrivateJetTransferPage from "../../components/sections/private-jet-transfer/PrivateJetTransferPage";
+import AirportTransfersPage from "../../components/sections/private-jet-transfer/PrivateJetTransferPage";
 import { privateJetFaqItems } from "../../components/sections/private-jet-transfer/faqData";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:
-    "Private Jet Transfer Cape Town | FBO Ground Transport | Sigma VIP",
+    "Airport Transfers Cape Town | Luxury Chauffeur Pickup & Drop-off | Sigma VIP",
   description:
-    "Tarmac pickup from the FBO at Cape Town International Airport. Flight tracking, ramp coordination and ultra-luxury ground transport for private jet arrivals. Available 24/7.",
+    "Premium airport transfers at Cape Town International Airport. Flight tracking, meet-and-greet, private jet FBO coordination, and luxury chauffeur service. Available 24/7.",
 
   alternates: {
-    canonical: `${SITE_URL}/private-jet-transfer`,
+    canonical: `${SITE_URL}/airport-transfers-cape-town`,
   },
 
   robots: {
@@ -29,41 +27,41 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Private Jet Transfer Cape Town | FBO Ground Transport | Sigma VIP",
+      "Airport Transfers Cape Town | Luxury Chauffeur Pickup & Drop-off | Sigma VIP",
     description:
-      "Ultra-luxury ground transport for private jet arrivals at Cape Town International. Tail-number tracking, FBO coordination, and discreet chauffeur service.",
-    url: `${SITE_URL}/private-jet-transfer`,
+      "Premium airport transfers in Cape Town. Flight tracking, luxury vehicles, and professional chauffeur service for arrivals and departures.",
+    url: `${SITE_URL}/airport-transfers-cape-town`,
     siteName: "Sigma VIP",
     type: "website",
     images: [
       {
         url: `${SITE_URL}/images/logo.png`,
-        width: 1200,
-        height: 630,
-        alt: "Sigma VIP — private jet FBO transfer Cape Town",
+        width: 520,
+        height: 520,
+        alt: "Sigma VIP — airport transfers Cape Town",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Private Jet Transfer Cape Town | Sigma VIP",
+    title: "Airport Transfers Cape Town | Sigma VIP",
     description:
-      "Tarmac pickup, flight tracking, and ultra-luxury ground transport for private jet arrivals in Cape Town.",
+      "Luxury airport transfers with flight tracking and professional chauffeur service in Cape Town.",
     images: [`${SITE_URL}/images/logo.png`],
   },
 };
 
-export default function PrivateJetTransferRoute() {
+export default function AirportTransfersRoute() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Service",
-        serviceType: "Private Jet FBO Ground Transport",
-        name: "Sigma VIP Private Jet Transfer — Cape Town",
+        serviceType: "Airport Transfer Service",
+        name: "Sigma VIP Airport Transfers — Cape Town",
         description:
-          "Ultra-luxury ground transport for private jet arrivals at Cape Town International Airport. Includes tail-number tracking, FBO coordination, vehicle staging, and discreet chauffeur service.",
+          "Premium airport transfers at Cape Town International Airport. Includes flight tracking, meet-and-greet, private jet FBO coordination, vehicle staging, and luxury chauffeur service. Available 24/7.",
         provider: {
           "@type": "Organization",
           name: "Sigma VIP",
@@ -74,13 +72,6 @@ export default function PrivateJetTransferRoute() {
           },
           telephone: "+27 71 108 1227",
           email: "info@sigmavip.co.za",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "23 Aberdeen Road, Rondebosch",
-            addressLocality: "Cape Town",
-            postalCode: "7700",
-            addressCountry: "ZA",
-          },
         },
         areaServed: {
           "@type": "City",
@@ -88,25 +79,19 @@ export default function PrivateJetTransferRoute() {
         },
         availableChannel: {
           "@type": "ServiceChannel",
-          serviceUrl: `${SITE_URL}/private-jet-transfer`,
+          serviceUrl: `${SITE_URL}/airport-transfers-cape-town`,
           servicePhone: "+27 71 108 1227",
         },
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
+            "Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday", "Sunday",
           ],
           opens: "00:00",
           closes: "23:59",
         },
       },
-
       {
         "@type": "FAQPage",
         mainEntity: privateJetFaqItems.map((item) => ({
@@ -118,7 +103,6 @@ export default function PrivateJetTransferRoute() {
           },
         })),
       },
-
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -131,8 +115,8 @@ export default function PrivateJetTransferRoute() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Private Jet Transfer",
-            item: `${SITE_URL}/private-jet-transfer`,
+            name: "Airport Transfers",
+            item: `${SITE_URL}/airport-transfers-cape-town`,
           },
         ],
       },
@@ -147,7 +131,7 @@ export default function PrivateJetTransferRoute() {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <PrivateJetTransferPage />
+      <AirportTransfersPage />
     </>
   );
 }

@@ -21,13 +21,13 @@ const steps: Step[] = [
     label: "Step 01",
     title: "Confirm Your Arrival",
     description:
-      "Share your tail number, ETA, FBO handler, passenger count and onward destination via WhatsApp. We confirm your vehicle and route within 30 minutes.",
+      "Share your flight number, arrival time, passenger count, and onward destination via WhatsApp. For private jet arrivals, include your tail number and FBO handler. We confirm your vehicle within 30 minutes.",
   },
   {
     label: "Step 02",
     title: "Flight-Tracked from Departure",
     description:
-      "From the moment you push back, your tail number is on our screens. Airborne delays, early arrivals, diverts — your chauffeur is already adjusting.",
+      "Your flight is on our screens from the moment it departs. Delays, early arrivals, gate changes — your chauffeur adjusts in real time so you never wait.",
   },
   {
     label: "Step 03",
@@ -135,7 +135,7 @@ export default function PrivateJetTimeline() {
       <Container>
         <SectionHeader>
           <SectionEyebrow>How It Works</SectionEyebrow>
-          <SectionTitle>From Tail Number to Hotel Door</SectionTitle>
+          <SectionTitle>From Landing to Hotel Door</SectionTitle>
           <SectionText>
             Five steps, one standard. This is what happens from the moment
             you confirm your arrival to the moment you leave the FBO ramp.

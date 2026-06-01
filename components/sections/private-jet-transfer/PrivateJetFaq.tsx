@@ -104,7 +104,7 @@ export default function PrivateJetFaq({ items = privateJetFaqItems }: Props) {
       <Container>
         <SectionHeader>
           <SectionEyebrow>Frequently Asked</SectionEyebrow>
-          <SectionTitle>Private Jet Transfer — Common Questions</SectionTitle>
+          <SectionTitle>Airport Transfers — Common Questions</SectionTitle>
           <SectionText>
             Everything our UHNW clients typically ask before arranging an FBO
             transfer with Sigma VIP.

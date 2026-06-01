@@ -2,6 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  async redirects() {
+    return [
+      {
+        source: "/private-jet-transfer",
+        destination: "/airport-transfers-cape-town",
+        permanent: true,
+      },
+    ];
+  },
   compiler: {
     styledComponents: true,
   },

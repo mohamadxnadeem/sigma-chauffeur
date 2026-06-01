@@ -76,7 +76,7 @@ export default function PrivateJetFinalCta() {
         <Inner>
           <Eyebrow>Arrange Your Transfer</Eyebrow>
 
-          <Title>Send Us Your Tail Number. We Handle the Rest.</Title>
+          <Title>Send Us Your Flight Details. We Handle the Rest.</Title>
 
           <Text>
             Share your flight details via WhatsApp and we will confirm your
@@ -85,8 +85,8 @@ export default function PrivateJetFinalCta() {
           </Text>
 
           <TrustRow>
-            <TrustItem>✔ Tail-Number Tracking</TrustItem>
-            <TrustItem>✔ FBO Coordination</TrustItem>
+            <TrustItem>✔ Flight Tracking</TrustItem>
+            <TrustItem>✔ Meet-and-Greet</TrustItem>
             <TrustItem>✔ 30-Min Response</TrustItem>
             <TrustItem>✔ 24/7 Availability</TrustItem>
           </TrustRow>
@@ -97,12 +97,12 @@ export default function PrivateJetFinalCta() {
             rel="noopener noreferrer"
             onClick={() =>
               trackWhatsAppClick({
-                source: "private_jet_final_cta",
-                label: "Arrange FBO Transfer",
+                source: "airport_transfer_final_cta",
+                label: "Arrange Airport Transfer",
               })
             }
           >
-            <Button as="span">Arrange Your FBO Transfer</Button>
+            <Button as="span">Arrange Your Airport Transfer</Button>
           </Anchor>
         </Inner>
       </Container>

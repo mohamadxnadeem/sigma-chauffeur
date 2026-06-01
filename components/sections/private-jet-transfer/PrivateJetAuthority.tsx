@@ -107,11 +107,11 @@ export default function PrivateJetAuthority() {
         <SectionHeader>
           <SectionEyebrow>Why Sigma VIP</SectionEyebrow>
           <SectionTitle>
-            A Different Standard of Ground Transport for Private Jet Arrivals
+            A Different Standard of Airport Transfer
           </SectionTitle>
           <SectionText>
             Most transfer services start when you walk out of the terminal.
-            Ours starts when your jet pushes back from its origin gate.
+            Ours starts when your flight pushes back from its origin gate.
           </SectionText>
         </SectionHeader>
 
