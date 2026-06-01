@@ -21,8 +21,8 @@ async function getVehicleSlugs(): Promise<string[]> {
     if (!res.ok) return [];
     const data: CarsApiItem[] = await res.json();
     return data
-      .map((item) => item?.car?.slug || item?.slug)
-      .filter((slug): slug is string => Boolean(slug));
+      .map((item) => (item?.car?.slug || item?.slug || "").toLowerCase())
+      .filter(Boolean);
   } catch {
     return [];
   }
@@ -37,8 +37,8 @@ async function getTourSlugs(): Promise<string[]> {
     if (!res.ok) return [];
     const data: ExperienceApiItem[] = await res.json();
     return data
-      .map((item) => item?.experience?.slug || item?.slug)
-      .filter((slug): slug is string => Boolean(slug));
+      .map((item) => (item?.experience?.slug || item?.slug || "").toLowerCase())
+      .filter(Boolean);
   } catch {
     return [];
   }

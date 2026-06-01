@@ -102,7 +102,8 @@ function normalizeCars(items: CarsApiItem[]): Car[] {
 }
 
 function getVehicleBySlug(cars: Car[], slug: string) {
-  return cars.find((car) => car.slug === slug) || null;
+  const lower = slug.toLowerCase();
+  return cars.find((car) => car.slug?.toLowerCase() === lower) || null;
 }
 
 function isBrowserRenderable(url?: string): boolean {
@@ -252,7 +253,7 @@ export async function generateStaticParams() {
   const vehicles = normalizeCars(await getAllVehicles());
   return vehicles
     .filter((car) => Boolean(car.slug))
-    .map((car) => ({ slug: car.slug as string }));
+    .map((car) => ({ slug: (car.slug as string).toLowerCase() }));
 }
 
 // ─────────────────────────────────────────────

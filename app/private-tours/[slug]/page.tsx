@@ -176,7 +176,8 @@ async function getAllVehicles(): Promise<CarsApiItem[]> {
 
 async function getExperienceIdBySlug(slug: string) {
   const data = await getAllExperiences();
-  const match = data.find((item) => item?.experience?.slug === slug);
+  const lower = slug.toLowerCase();
+  const match = data.find((item) => item?.experience?.slug?.toLowerCase() === lower);
   return match?.experience?.id || null;
 }
 
