@@ -38,6 +38,7 @@ type VehicleCardItem = {
 
 type Props = {
   title?: string;
+  onLoaded?: (count: number) => void;
 };
 
 const API_URL =
@@ -81,6 +82,7 @@ function normalizeVehicles(data: CarsForHireApiItem[]): VehicleCardItem[] {
 
 export default function AvailableVehicles({
   title = "Private Wine Tour in Cape Town",
+  onLoaded,
 }: Props) {
   const [vehicles, setVehicles] = useState<VehicleCardItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -102,10 +104,15 @@ export default function AvailableVehicles({
         const json = (await res.json()) as CarsForHireApiItem[];
         if (!isMounted) return;
 
-        setVehicles(normalizeVehicles(json));
+        const normalized = normalizeVehicles(json);
+        setVehicles(normalized);
+        onLoaded?.(normalized.length);
       } catch (error) {
         console.error("AvailableVehicles fetch error:", error);
-        if (isMounted) setHasError(true);
+        if (isMounted) {
+          setHasError(true);
+          onLoaded?.(0);
+        }
       } finally {
         if (isMounted) setLoading(false);
       }
