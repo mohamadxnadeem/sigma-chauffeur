@@ -16,9 +16,8 @@ const shimmerSweep = keyframes`
 `;
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
 `;
 
 const ShimmerOverlay = styled.div<{ $visible: boolean }>`
