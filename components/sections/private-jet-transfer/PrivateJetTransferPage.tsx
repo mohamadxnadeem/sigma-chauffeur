@@ -4,10 +4,10 @@ import { PageWrap } from "./shared";
 import PrivateJetHero from "./PrivateJetHero";
 import PrivateJetAuthority from "./PrivateJetAuthority";
 import PrivateJetTimeline from "./PrivateJetTimeline";
-import PrivateJetFleet from "./PrivateJetFleet";
 import PrivateJetFaq from "./PrivateJetFaq";
 import PrivateJetFinalCta from "./PrivateJetFinalCta";
 import TestimonialsSection from "../testimonials/TestimonialsSection";
+import AvailableVehicles from "../shared/AvailableVehicles";
 
 export default function PrivateJetTransferPage() {
   return (
@@ -15,7 +15,7 @@ export default function PrivateJetTransferPage() {
       <PrivateJetHero />
       <PrivateJetAuthority />
       <PrivateJetTimeline />
-      <PrivateJetFleet />
+      <AvailableVehicles title="Airport Transfer" />
       <TestimonialsSection />
       <PrivateJetFaq />
       <PrivateJetFinalCta />
