@@ -32,16 +32,18 @@ export default function PrivateJetTransferPage({ vehicles = [] }: Props) {
       <PrivateJetHero />
       <PrivateJetAuthority />
       <PrivateJetTimeline />
-      {vehicleItems.length > 0 ? (
-        <FeaturedVehicles
-          eyebrow="Our Fleet"
-          title="The Right Vehicle for Your Transfer"
-          description="Choose your vehicle when you book, or let us recommend based on party size and onward schedule."
-          items={vehicleItems}
-        />
-      ) : (
-        <PrivateJetFleet />
-      )}
+      <div id="fleet">
+        {vehicleItems.length > 0 ? (
+          <FeaturedVehicles
+            eyebrow="Our Fleet"
+            title="The Right Vehicle for Your Transfer"
+            description="Choose your vehicle when you book, or let us recommend based on party size and onward schedule."
+            items={vehicleItems}
+          />
+        ) : (
+          <PrivateJetFleet />
+        )}
+      </div>
       <TestimonialsSection />
       <PrivateJetFaq />
       <PrivateJetFinalCta />

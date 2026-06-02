@@ -122,7 +122,7 @@ export default function PrivateJetHero() {
               <Button as="span">Arrange Airport Transfer</Button>
             </Anchor>
 
-            <StyledLink href="/chauffeur-services">
+            <StyledLink href="#fleet">
               <Button as="span" $variant="secondary">
                 View Our Fleet
               </Button>
