@@ -323,7 +323,7 @@ export default function TestimonialsSection() {
 
               <Review>“{item.review}”</Review>
 
-              <FooterNote>Private Chauffeur & Tour Experience</FooterNote>
+              <FooterNote>{item.service}</FooterNote>
             </Card>
           ))}
         </Slider>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -45,45 +44,6 @@ const Title = styled.h2`
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: 2.5rem;
   }
-`;
-
-const Intro = styled.p`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.textMuted};
-  line-height: 1.9;
-  font-size: 1rem;
-`;
-
-const Grid = styled.div`
-  display: grid;
-  gap: 18px;
-  margin-bottom: 24px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-`;
-
-const Card = styled.div`
-  padding: 22px;
-  border-radius: 22px;
-  background: ${({ theme }) => theme.colors.backgroundSoft};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  box-shadow: ${({ theme }) => theme.shadows.soft};
-`;
-
-const CardTitle = styled.h3`
-  margin: 0 0 10px;
-  color: ${({ theme }) => theme.colors.heading};
-  font-size: 1.05rem;
-  line-height: 1.2;
-`;
-
-const CardText = styled.p`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.textMuted};
-  line-height: 1.8;
-  font-size: 0.95rem;
 `;
 
 const ExpandWrap = styled.div`
@@ -156,16 +116,6 @@ const RichText = styled.div`
   }
 `;
 
-const InlineLink = styled(Link)`
-  color: ${({ theme }) => theme.colors.primary};
-  font-weight: 700;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 export default function ChauffeurAuthoritySection() {
   const [open, setOpen] = useState(false);
 
@@ -175,42 +125,40 @@ export default function ChauffeurAuthoritySection() {
         <SectionHeader>
           <Eyebrow>Chauffeur Service Cape Town</Eyebrow>
           <Title>The Premier Chauffeur & Private Tour Service in Cape Town</Title>
-          <Intro>
-            Discover a more polished way to experience Cape Town with private
-            chauffeur-driven travel, premium vehicles, and custom touring
-            designed around comfort, reliability, and a five-star guest
-            experience.
-          </Intro>
         </SectionHeader>
 
-        <Grid>
-          <Card>
-            <CardTitle>Luxury Fleet</CardTitle>
-            <CardText>
-              Travel in premium vehicles including the Mercedes V-Class,
-              Hyundai Staria, and executive options suited to airport transfers,
-              VIP travel, couples, and families.
-            </CardText>
-          </Card>
+        <RichText style={{ marginBottom: 24 }}>
+          <p>
+            Sigma VIP is a private chauffeur service built for clients who
+            expect more than transport. Full-day hire from R6,850 per vehicle,
+            multi-day packages across the Western Cape, and private jet FBO
+            coordination at Cape Town International — every booking handled with
+            complete discretion and no room for error.
+          </p>
 
-          <Card>
-            <CardTitle>Private Touring</CardTitle>
-            <CardText>
-              Enjoy tailored experiences such as Cape Peninsula routes, scenic
-              coastal drives, and Cape Winelands days with private chauffeur
-              service from start to finish.
-            </CardText>
-          </Card>
+          <p>
+            Our fleet is positioned for UHNW travel. The Mercedes S-Class and
+            G-Wagon for clients who require the pinnacle. The Range Rover Sport
+            for those who want presence and performance. The Mercedes V-Class
+            for private groups and families travelling together. Every vehicle
+            maintained to the same standard, every chauffeur vetted and briefed
+            before each booking.
+          </p>
 
-          <Card>
-            <CardTitle>All-Inclusive Experience</CardTitle>
-            <CardText>
-              Our service is designed to feel seamless, with professional
-              drivers, route planning, comfort, and attention to detail that
-              elevates the whole journey.
-            </CardText>
-          </Card>
-        </Grid>
+          <p>
+            Most clients arrive with a destination in mind and leave with a week
+            they didn&apos;t expect. The Cape Peninsula in the morning,
+            Franschhoek for lunch, back in Cape Town for sunset — arranged over
+            WhatsApp in under thirty minutes. Multi-day packages across
+            Stellenbosch, Hermanus, and the Garden Route handled as a single
+            booking. Private jet arrivals managed from ramp to villa.
+          </p>
+
+          <p>
+            If you know what you want, message us. If you want recommendations,
+            we&apos;ll plan the whole thing.
+          </p>
+        </RichText>
 
         <ExpandWrap>
           <ExpandButton type="button" onClick={() => setOpen((v) => !v)}>
@@ -222,42 +170,44 @@ export default function ChauffeurAuthoritySection() {
             <ExpandInner>
               <RichText>
                 <p>
-                  If you are searching for the best chauffeur service in Cape
-                  Town, the experience should be about far more than simply
-                  getting from one place to another. At Sigma VIP, we
-                  focus on delivering a private, polished, and premium standard
-                  of travel for clients who value comfort, reliability, and
-                  attention to detail. Our chauffeur service in Cape Town is
-                  designed for airport transfers, full-day private driving,
-                  business transport, and custom travel experiences that feel
-                  seamless from start to finish.
+                  What separates Sigma VIP from other Cape Town chauffeur
+                  services is the combination of fleet quality, operational
+                  precision, and a client-first approach that extends well
+                  beyond the vehicle.
                 </p>
 
                 <p>
-                  Our fleet is carefully positioned for different travel styles.
-                  The Mercedes V-Class is ideal for premium group travel, family
-                  trips, and VIP clients who want space and elegance. The
-                  Hyundai Staria offers a modern, comfortable option for airport
-                  transfers and full-day touring, while executive vehicles are
-                  perfect for couples, professionals, and travellers who want a
-                  more private luxury feel.
+                  Every booking begins with a conversation. We want to
+                  understand your schedule, your preferences, and your
+                  expectations before we confirm anything. For single-day
+                  bookings this takes minutes. For multi-day packages we take
+                  the time to understand the full itinerary — which estates to
+                  visit, where to stop on the Garden Route, how many hours you
+                  want at each location — and build the schedule around you.
                 </p>
 
                 <p>
-                  We also specialise in private tours and tailor-made
-                  itineraries. Some of the most requested experiences include
-                  the{" "}
-                  <InlineLink href="/best-activities-to-do-in-cape-town">
-                    Cape Peninsula private tour
-                  </InlineLink>
-                  , scenic coastal drives, and curated{" "}
-                  <InlineLink href="/best-wine-farms-in-cape-town">
-                    Cape Winelands wine tours
-                  </InlineLink>{" "}
-                  through Stellenbosch and Franschhoek. Many clients combine
-                  chauffeur service with airport transfers, custom wine days,
-                  and multi-day route planning for a more elevated Cape Town
-                  experience.
+                  Our fleet spans the full range of private transport
+                  requirements. From the Mercedes S-Class and G-Wagon for
+                  clients who require the absolute best, to the BMW X5 and
+                  Range Rover Sport for full-day touring, the Mercedes V-Class
+                  for group and family travel, and the Hyundai Staria for
+                  larger parties on multi-day routes.
+                </p>
+
+                <p>
+                  For private aviation clients, we provide a dedicated FBO
+                  service at Cape Town International. We coordinate directly
+                  with the private terminal team on ramp access, luggage
+                  handling, and vehicle staging — so your transfer from aircraft
+                  to vehicle takes under five minutes. NDAs available on
+                  request.
+                </p>
+
+                <p>
+                  All bookings are all-inclusive. One rate covers the vehicle,
+                  chauffeur, fuel, tolls, and parking. There are no hidden fees,
+                  no end-of-day additions, and no surprises on the invoice.
                 </p>
               </RichText>
             </ExpandInner>

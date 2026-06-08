@@ -3,6 +3,10 @@ import dynamic from "next/dynamic";
 import HeroBanner from "../components/sections/HeroBanner";
 import FeaturedVehicles from "../components/sections/FeaturedVehicles";
 
+const MultiDaySection = dynamic(
+  () => import("../components/sections/MultiDaySection"),
+  { ssr: true }
+);
 const WhyChooseUs = dynamic(
   () => import("../components/sections/WhyChooseUs"),
   { ssr: true }
@@ -27,9 +31,9 @@ const ChauffeurAuthoritySection = dynamic(
 const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
-  title: "VIP Private Chauffeur Service Cape Town | Luxury Transfers & Tours | Sigma VIP",
+  title: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
   description:
-    "Book a VIP private chauffeur service in Cape Town with Sigma VIP. Luxury airport transfers, private tours, corporate transport, and bespoke itineraries with professional drivers. Mercedes S-Class, Range Rover, G-Wagon. WhatsApp to book.",
+    "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover. Book via WhatsApp.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -45,9 +49,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "VIP Private Chauffeur Service Cape Town | Luxury Transfers & Tours | Sigma VIP",
+    title: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
     description:
-      "Book the #1 rated luxury chauffeur service and private tours in Cape Town with Sigma VIP. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5. All-inclusive, professional, and reliable.",
+      "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO coordination, and bespoke Western Cape itineraries. One vehicle, one chauffeur, your schedule.",
     url: SITE_URL,
     siteName: "Sigma VIP",
     type: "website",
@@ -62,33 +66,33 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VIP Private Chauffeur Service Cape Town | Luxury Transfers & Tours | Sigma VIP",
+    title: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
     description:
-      "Book the #1 rated luxury chauffeur service and private tours in Cape Town with Sigma VIP. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5.",
+      "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
     images: [`${SITE_URL}/images/hero-car.jpg`],
   },
 };
 
 const trustItems = [
   {
-    title: "Professional Chauffeur Service",
+    title: "Full-Day from R6,850 — All-Inclusive",
     description:
-      "Enjoy a polished, private, and dependable experience with professional service from start to finish.",
+      "One flat rate covers your vehicle, professional chauffeur, fuel, tolls, and parking. No meter, no surge pricing, nothing added on the day.",
   },
   {
-    title: "Luxury Travel Presentation",
+    title: "Multi-Day Packages Across the Western Cape",
     description:
-      "Every journey is designed to feel refined, comfortable, and premium, with attention to the details that matter.",
+      "Cape Peninsula, Winelands, Hermanus, and the Garden Route across 3 to 7 days — one vehicle, one chauffeur, one point of contact throughout.",
   },
   {
-    title: "Tailored Cape Town Experiences",
+    title: "Private Jet FBO Coordination",
     description:
-      "From airport transfers to private tours, each booking is shaped around your schedule, style, and preferences.",
+      "We work directly with Cape Town's private terminal team on ramp access, vehicle staging, and luggage handling. Your S-Class or G-Wagon is in position before you land.",
   },
   {
-    title: "Local Knowledge You Can Trust",
+    title: "100% Private — No Groups, No Shared Schedules",
     description:
-      "Travel with confidence through Cape Town with trusted local insight, smooth coordination, and thoughtful planning.",
+      "Every booking is exclusively yours. Your vehicle, your chauffeur, your itinerary — operated entirely around your pace and preferences.",
   },
 ];
 
@@ -322,125 +326,13 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        name: "Sigma VIP",
-        url: SITE_URL,
-        logo: `${SITE_URL}/images/logo.png`,
-        description:
-          "Luxury chauffeur services, private tours, airport transfers, and curated travel experiences in Cape Town.",
-      },
-      {
-        "@type": "WebSite",
-        name: "Sigma VIP",
-        url: SITE_URL,
-      },
-      {
-        "@type": "WebPage",
-        name: "VIP Private Chauffeur Service Cape Town | Luxury Transfers & Tours | Sigma VIP",
-        url: SITE_URL,
-        description:
-          "Book the #1 rated luxury chauffeur service and private tours in Cape Town. Premium airport transfers, bespoke itineraries, and a 5-star fleet including Mercedes V-Class and BMW X5. All-inclusive, professional, and reliable.",
-        image: [`${SITE_URL}/images/hero-car.jpg`],
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: SITE_URL,
-          },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "What is included in your Cape Town chauffeur service?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Every booking is all-inclusive — vehicle, professional chauffeur, fuel, and route planning. Airport entrance fees and national park entry are separate where applicable. Share your itinerary via WhatsApp for a tailored quote.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Can I customise my Cape Town chauffeur itinerary?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. We offer fully bespoke itineraries for airport transfers, private city touring, Cape Peninsula routes, Winelands days, corporate travel, and multi-day private travel in and around Cape Town.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Do you offer airport transfers in Cape Town?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. We provide premium airport transfers in Cape Town with luxury vehicles, professional drivers, punctual pickups, and a polished arrival or departure experience.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Is your chauffeur service safe and reliable?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. Our service focuses on safety, professionalism, local route knowledge, and reliable communication so clients can travel with complete peace of mind.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "What vehicles are available for private chauffeur service in Cape Town?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Our fleet includes premium chauffeur options such as Mercedes V-Class, BMW X5, and group-friendly vehicles, allowing us to tailor transport to couples, families, executives, and VIP travellers.",
-            },
-          },
-        ],
-      },
-      {
-        "@type": "Service",
-        serviceType: "Private Chauffeur Services",
-        name: "Private Chauffeur Services",
-        provider: {
-          "@type": "Organization",
-          name: "Sigma VIP",
-          url: SITE_URL,
-        },
-        areaServed: {
-          "@type": "City",
-          name: "Cape Town",
-        },
-        description:
-          "Luxury chauffeur service in Cape Town for airport transfers, executive transport, private travel, bespoke day planning, and all-inclusive premium journeys with professional drivers.",
-      },
-      {
-        "@type": "Service",
-        serviceType: "Custom Cape Town Tours",
-        name: "Custom Cape Town Tours",
-        provider: {
-          "@type": "Organization",
-          name: "Sigma VIP",
-          url: SITE_URL,
-        },
-        areaServed: {
-          "@type": "City",
-          name: "Cape Town",
-        },
-        description:
-          "Custom private tours in Cape Town including Cape Peninsula, Cape Winelands, Table Mountain, coastal routes, and tailored chauffeur-driven itineraries designed around each client’s pace and preferences.",
-      },
-      {
         "@type": "LocalBusiness",
         name: "Sigma VIP",
         url: SITE_URL,
-        telephone: "+27 71 108 1227",
+        telephone: "+27711081227",
         email: "info@sigmavip.co.za",
-        priceRange: "$$$",
-        areaServed: {
-          "@type": "City",
-          name: "Cape Town",
-        },
+        priceRange: "RRRR",
+        logo: `${SITE_URL}/images/logo.png`,
         address: {
           "@type": "PostalAddress",
           addressLocality: "Cape Town",
@@ -462,6 +354,91 @@ export default async function HomePage() {
           closes: "23:59",
         },
       },
+      {
+        "@type": "WebSite",
+        name: "Sigma VIP",
+        url: SITE_URL,
+      },
+      {
+        "@type": "WebPage",
+        name: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
+        url: SITE_URL,
+        description:
+          "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
+        image: [`${SITE_URL}/images/hero-car.jpg`],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How much does a full-day private chauffeur cost in Cape Town?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Full-day private chauffeur hire starts from R6,850 per vehicle, all-inclusive — vehicle, professional chauffeur, fuel, tolls, and parking. No hidden fees.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you offer multi-day chauffeur packages in Cape Town?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Multi-day packages are available across Cape Town and the Western Cape — covering the Cape Peninsula, Stellenbosch Winelands, Hermanus, and the Garden Route. Same vehicle and chauffeur throughout. Packages from R6,850 per vehicle per day.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you handle private jet FBO transfers at Cape Town International?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We coordinate directly with Cape Town’s private terminal team on ramp access, vehicle staging, and luggage handling. Share your tail number via WhatsApp and we manage everything before you land.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Which vehicles are available for full-day hire?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Our fleet includes the Mercedes S-Class, Mercedes G-Wagon, Range Rover Sport, BMW X5, Mercedes V-Class, Hyundai Staria, and BMW 5-Series. Choose based on party size and preference or let us recommend.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How do I book a private chauffeur with Sigma VIP?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Message us on WhatsApp at +27 71 108 1227. We respond within 30 minutes and confirm your vehicle, chauffeur, and itinerary from there.",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        serviceType: "Private Chauffeur Hire",
+        name: "Full-Day & Multi-Day Private Chauffeur Hire",
+        provider: {
+          "@type": "Organization",
+          name: "Sigma VIP",
+          url: SITE_URL,
+        },
+        areaServed: {
+          "@type": "City",
+          name: "Cape Town",
+        },
+        description:
+          "Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. All-inclusive pricing from R6,850 per vehicle per day. Private jet FBO coordination, executive travel, and bespoke itineraries.",
+      },
     ],
   };
 
@@ -476,8 +453,8 @@ export default async function HomePage() {
 
       <HeroBanner
         eyebrow="Sigma VIP"
-        title="Luxury Chauffeur Services in Cape Town"
-        description="Premium airport transfers, private chauffeur services, and curated travel experiences designed for clients who value comfort, elegance, and reliability."
+        title="Private Chauffeur Cape Town — Full-Day Hire & Multi-Day Packages"
+        description="Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. One vehicle, one professional chauffeur, your itinerary — from R6,850 per day, all-inclusive. Private jet FBO transfers also available."
         primaryCtaLabel="Book on WhatsApp"
         primaryCtaHref="https://wa.me/27711081227?text=Hey%2C%20I%27m%20interested%20in%20booking%20a%20private%20chauffeur%20or%20tour%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
         secondaryCtaLabel="Explore Services"
@@ -490,6 +467,8 @@ export default async function HomePage() {
       <TestimonialsCta />
 
       <FeaturedVehicles items={featuredVehicleItems} />
+
+      <MultiDaySection />
 
       <WhyChooseUs items={trustItems} />
 
