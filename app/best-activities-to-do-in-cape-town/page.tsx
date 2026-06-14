@@ -3,93 +3,13 @@ import BestActivitiesPage from "../../components/sections/cape-town-activities/B
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
-type ExperiencePhoto = {
-  id: number;
-  cover_photos: string;
-  is_featured: boolean;
-  order: number;
-};
-
-type Experience = {
-  id: number;
-  title: string;
-  slug?: string;
-  short_description?: string;
-  highlight?: string;
-  body?: string;
-  cover_photos?: ExperiencePhoto[];
-};
-
-type ExperienceApiItem = {
-  experience?: Experience;
-} & Partial<Experience>;
-
-function stripHtml(html: string) {
-  return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
-}
-
-function truncateText(text: string, maxLength: number) {
-  if (!text) return "";
-  if (text.length <= maxLength) return text;
-  return `${text.slice(0, maxLength).trim()}...`;
-}
-
-async function getFeaturedExperiences() {
-  try {
-    const response = await fetch(
-      "https://web-production-1ab9.up.railway.app/api/experiences/all/",
-      { next: { revalidate: 3600 } }
-    );
-    if (!response.ok) return [];
-    const data: ExperienceApiItem[] = await response.json();
-    return data
-      .map((item) => {
-        const experience = item?.experience || item;
-        if (!experience?.title) return null;
-        const renderable = (experience.cover_photos || []).filter(
-          (p) => {
-            const url = p.cover_photos?.toLowerCase() || "";
-            return url && !url.endsWith(".heic") && !url.endsWith(".heif") && !url.endsWith(".tiff");
-          }
-        );
-        const featuredPhoto =
-          renderable.find((p) => p.is_featured)?.cover_photos ||
-          renderable[0]?.cover_photos ||
-          "";
-        const plainTextBody = stripHtml(experience.body || "");
-        return {
-          title: experience.title,
-          description:
-            experience.short_description ||
-            experience.highlight ||
-            truncateText(plainTextBody, 140) ||
-            "Discover a premium private tour in Cape Town.",
-          href: experience.slug
-            ? `/private-tours/${experience.slug}`
-            : "/chauffeur-services",
-          image: featuredPhoto,
-          alt: `Private ${experience.title} in Cape Town with Professional Driver`,
-        };
-      })
-      .filter(Boolean) as {
-      title: string;
-      description: string;
-      href: string;
-      image: string;
-      alt: string;
-    }[];
-  } catch {
-    return [];
-  }
-}
-
 export const metadata: Metadata = {
   title:
-    "Best Activities to Do in Cape Town (2026 Guide) | Sigma VIP Private Tours & Chauffeur",
+    "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
   description:
-    "Discover the best activities to do in Cape Town with Sigma VIP — Table Mountain, Cape Point, wine tours, helicopter rides, safaris, and private chauffeur-driven experiences. Plan the perfect Cape Town itinerary with luxury transport and curated experiences.",
+    "Discover the best activities to do in Cape Town, from Table Mountain and Cape Point to wine tours, helicopter rides, safaris, and private chauffeur-driven experiences. Plan the perfect Cape Town itinerary with luxury transport and curated experiences.",
   alternates: {
-    canonical: `${SITE_URL}/best-activities-to-do-in-cape-town`,
+    canonical: `${SITE_URL}/best-activities-in-cape-town`,
   },
   robots: {
     index: true,
@@ -104,10 +24,10 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Best Activities to Do in Cape Town (2026 Guide) | Sigma VIP Private Tours & Chauffeur",
+      "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
     description:
-      "Explore top Cape Town activities including Table Mountain, Cape Peninsula, wine tours, helicopter rides, and Sigma VIP chauffeur-driven private experiences.",
-    url: `${SITE_URL}/best-activities-to-do-in-cape-town`,
+      "Explore top Cape Town activities including Table Mountain, Cape Peninsula, wine tours, helicopter rides, and chauffeur-driven private experiences.",
+    url: `${SITE_URL}/best-activities-in-cape-town`,
     siteName: "Sigma VIP",
     type: "article",
     images: [
@@ -122,15 +42,14 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Best Activities to Do in Cape Town (2026 Guide) | Sigma VIP Private Tours & Chauffeur",
+      "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
     description:
-      "Discover top Cape Town activities with Sigma VIP private chauffeur service, curated tours, scenic routes, and luxury experiences.",
+      "Discover top Cape Town activities with private chauffeur service, curated tours, scenic routes, and luxury experiences.",
     images: [`${SITE_URL}/images/activities/table-mountain.jpg`],
   },
 };
 
-export default async function BestActivitiesToDoInCapeTownPage() {
-  const featuredExperienceItems = await getFeaturedExperiences();
+export default function BestActivitiesToDoInCapeTownPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -154,7 +73,7 @@ export default async function BestActivitiesToDoInCapeTownPage() {
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${SITE_URL}/best-activities-to-do-in-cape-town`,
+          "@id": `${SITE_URL}/best-activities-in-cape-town`,
         },
       },
       {
@@ -215,7 +134,7 @@ export default async function BestActivitiesToDoInCapeTownPage() {
             "@type": "ListItem",
             position: 2,
             name: "Best Activities in Cape Town",
-            item: `${SITE_URL}/best-activities-to-do-in-cape-town`,
+            item: `${SITE_URL}/best-activities-in-cape-town`,
           },
         ],
       },
@@ -231,7 +150,7 @@ export default async function BestActivitiesToDoInCapeTownPage() {
         }}
       />
 
-      <BestActivitiesPage featuredExperienceItems={featuredExperienceItems} />
+      <BestActivitiesPage />
     </>
   );
 }

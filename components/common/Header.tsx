@@ -21,8 +21,8 @@ const Wrapper = styled.header`
   position: sticky;
   top: 0;
   z-index: 1100;
-  background: linear-gradient(135deg, #0D0D0D 0%, #1C1C1C 100%);
-  box-shadow: 0 10px 30px rgba(13, 13, 13, 0.28);
+  background: linear-gradient(135deg, #C9A84C 0%, #A88938 100%);
+  box-shadow: 0 10px 30px rgba(168, 137, 56, 0.18);
 `;
 
 const Inner = styled.div`
@@ -41,13 +41,13 @@ const Logo = styled(Link)`
 
 const LogoImage = styled.div`
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: 240px;
+  height: 65px;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    width: 92px;
-    height: 92px;
+    width: 300px;
+    height: 80px;
   }
 `;
 
@@ -122,26 +122,19 @@ export default function Header() {
             <Logo href="/">
               <LogoImage>
                 <Image
-                  src="/images/logo.png"
-                  alt="Sigma VIP — Luxury Chauffeur & Tourism"
+                  src="/images/logo.svg"
+                  alt="Sigma VIP"
                   fill
                   priority
-                  sizes="(max-width: 768px) 72px, 92px"
                   style={{
                     objectFit: "contain",
+                    transform: "scale(1.15)",
                   }}
                 />
               </LogoImage>
             </Logo>
 
             <RightSide>
-              <HeaderCta
-                href="tel:+27711081227"
-                aria-label="Call Sigma VIP"
-              >
-                ✆ Call
-              </HeaderCta>
-
               <HeaderCta
                 href={headerWhatsappLink}
                 target="_blank"

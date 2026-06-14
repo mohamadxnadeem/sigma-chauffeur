@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import styled from "styled-components";
-import { trackWhatsAppClick } from "../../lib/tracking";
 
 const Overlay = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   inset: 0;
-  background: rgba(13, 13, 13, 0.55);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(3px);
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
   visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
@@ -22,7 +21,7 @@ const Drawer = styled.aside<{ $isOpen: boolean }>`
   width: min(360px, 88vw);
   height: 100vh;
   background: linear-gradient(180deg, #0D0D0D 0%, #1C1C1C 100%);
-  box-shadow: 10px 0 30px rgba(13, 13, 13, 0.3);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
   transform: translateX(${({ $isOpen }) => ($isOpen ? "0" : "-100%")});
   transition: transform 0.3s ease;
   z-index: 1300;
@@ -80,50 +79,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Divider = styled.div`
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 8px 0;
-`;
-
-const WhatsAppButton = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 16px;
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: #25d366;
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.2s ease;
-
-  &:hover {
-    background: #20bd5a;
-  }
-`;
-
-const CallButton = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: 0.2s ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.18);
-  }
-`;
-
 const FooterNote = styled.div`
   margin-top: auto;
   padding-top: 24px;
@@ -153,52 +108,37 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <NavLink href="/" onClick={onClose}>
             Home
           </NavLink>
-          <NavLink href="/chauffeur-services" onClick={onClose}>
+          <NavLink href="/best-activities-to-do-in-cape-town" onClick={onClose}>
+            Experiences
+          </NavLink>
+
+            <NavLink href="/best-wine-farms-in-cape-town" onClick={onClose}>
+              Wine Farms
+            </NavLink>
+
+            <NavLink href="/7-day-cape-town-itinerary" onClick={onClose}>
+              7 Day Itinerary
+            </NavLink>
+
+          {/* <NavLink href="/chauffeur-services" onClick={onClose}>
             Chauffeur Services
           </NavLink>
-          <NavLink href="/airport-transfers-cape-town" onClick={onClose}>
-            Airport Transfers
+          <NavLink href="/tours" onClick={onClose}>
+            Tours
           </NavLink>
-
-          <Divider />
-
-          <NavLink href="/best-wine-farms-in-cape-town" onClick={onClose}>
-            Wine Farms Guide
+          <NavLink href="/accommodation" onClick={onClose}>
+            Accommodation
           </NavLink>
-          <NavLink href="/best-activities-to-do-in-cape-town" onClick={onClose}>
-            Cape Town Activities
-          </NavLink>
-          <NavLink href="/7-day-cape-town-itinerary" onClick={onClose}>
-            7-Day Itinerary
-          </NavLink>
-
-          <Divider />
-
           <NavLink href="/contact" onClick={onClose}>
             Contact
           </NavLink>
+          <NavLink href="/portal" onClick={onClose}>
+            Portal Login
+          </NavLink> */}
         </Nav>
 
-        <WhatsAppButton
-          href="https://wa.me/27711081227"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() =>
-            trackWhatsAppClick({
-              source: "sidebar_menu",
-              label: "WhatsApp — Sidebar",
-            })
-          }
-        >
-          WhatsApp Us
-        </WhatsAppButton>
-
-        <CallButton href="tel:+27711081227" style={{ marginTop: 10 }}>
-          Call +27 71 108 1227
-        </CallButton>
-
         <FooterNote>
-          Luxury chauffeur services and private tours in Cape Town since 2021.
+          Premium chauffeur services, private tours, and curated Cape Town travel.
         </FooterNote>
       </Drawer>
     </>

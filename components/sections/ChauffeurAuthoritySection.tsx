@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -116,6 +117,16 @@ const RichText = styled.div`
   }
 `;
 
+const InlineLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.primary};
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export default function ChauffeurAuthoritySection() {
   const [open, setOpen] = useState(false);
 
@@ -130,33 +141,40 @@ export default function ChauffeurAuthoritySection() {
         <RichText style={{ marginBottom: 24 }}>
           <p>
             Sigma VIP is a private chauffeur service built for clients who
-            expect more than transport. Full-day hire from R6,850 per vehicle,
-            multi-day packages across the Western Cape, and private jet FBO
-            coordination at Cape Town International — every booking handled with
-            complete discretion and no room for error.
+            expect more than transport. Full-day hire, multi-day packages
+            across the Western Cape, and private jet FBO coordination at
+            Cape Town International — every booking handled with complete
+            discretion and no room for error.
           </p>
 
           <p>
-            Our fleet is positioned for UHNW travel. The Mercedes S-Class and
-            G-Wagon for clients who require the pinnacle. The Range Rover Sport
-            for those who want presence and performance. The Mercedes V-Class
-            for private groups and families travelling together. Every vehicle
-            maintained to the same standard, every chauffeur vetted and briefed
-            before each booking.
+            Our fleet is positioned for discerning travel. The Mercedes
+            S-Class and G-Wagon for clients who require the pinnacle. The
+            Range Rover Sport for those who want presence and performance.
+            The Mercedes V-Class for private groups and families travelling
+            together. Every vehicle maintained to the same standard, every
+            chauffeur vetted and briefed before each booking.
           </p>
 
           <p>
-            Most clients arrive with a destination in mind and leave with a week
-            they didn&apos;t expect. The Cape Peninsula in the morning,
-            Franschhoek for lunch, back in Cape Town for sunset — arranged over
-            WhatsApp in under thirty minutes. Multi-day packages across
-            Stellenbosch, Hermanus, and the Garden Route handled as a single
-            booking. Private jet arrivals managed from ramp to villa.
+            Most clients arrive with a destination in mind and leave with a
+            week they didn&apos;t expect. The{" "}
+            <InlineLink href="/best-activities-to-do-in-cape-town">
+              Cape Peninsula
+            </InlineLink>{" "}
+            in the morning, Franschhoek for lunch, back in Cape Town for
+            sunset — arranged over WhatsApp in under thirty minutes.
+            Multi-day packages across{" "}
+            <InlineLink href="/best-wine-farms-in-cape-town">
+              Stellenbosch and the Winelands
+            </InlineLink>
+            , Hermanus, and the Garden Route handled as a single booking.
+            Private jet arrivals managed from ramp to villa.
           </p>
 
           <p>
-            If you know what you want, message us. If you want recommendations,
-            we&apos;ll plan the whole thing.
+            If you know what you want, message us. If you want
+            recommendations, we&apos;ll plan the whole thing.
           </p>
         </RichText>
 
@@ -180,34 +198,36 @@ export default function ChauffeurAuthoritySection() {
                   Every booking begins with a conversation. We want to
                   understand your schedule, your preferences, and your
                   expectations before we confirm anything. For single-day
-                  bookings this takes minutes. For multi-day packages we take
-                  the time to understand the full itinerary — which estates to
-                  visit, where to stop on the Garden Route, how many hours you
-                  want at each location — and build the schedule around you.
+                  bookings this takes minutes. For multi-day packages we
+                  take the time to understand the full itinerary — which
+                  estates to visit, where to stop on the Garden Route, how
+                  many hours you want at each location — and build the
+                  schedule around you.
                 </p>
 
                 <p>
                   Our fleet spans the full range of private transport
                   requirements. From the Mercedes S-Class and G-Wagon for
                   clients who require the absolute best, to the BMW X5 and
-                  Range Rover Sport for full-day touring, the Mercedes V-Class
-                  for group and family travel, and the Hyundai Staria for
-                  larger parties on multi-day routes.
+                  Range Rover Sport for full-day touring, the Mercedes
+                  V-Class for group and family travel, and the Hyundai
+                  Staria for larger parties on multi-day routes.
                 </p>
 
                 <p>
                   For private aviation clients, we provide a dedicated FBO
                   service at Cape Town International. We coordinate directly
                   with the private terminal team on ramp access, luggage
-                  handling, and vehicle staging — so your transfer from aircraft
-                  to vehicle takes under five minutes. NDAs available on
-                  request.
+                  handling, and vehicle staging — so your transfer from
+                  aircraft to vehicle takes under five minutes. NDAs
+                  available on request.
                 </p>
 
                 <p>
-                  All bookings are all-inclusive. One rate covers the vehicle,
-                  chauffeur, fuel, tolls, and parking. There are no hidden fees,
-                  no end-of-day additions, and no surprises on the invoice.
+                  All bookings are all-inclusive. One arrangement covers the
+                  vehicle, chauffeur, fuel, tolls, and parking. There are no
+                  hidden fees, no end-of-day additions, and no surprises on
+                  the invoice.
                 </p>
               </RichText>
             </ExpandInner>

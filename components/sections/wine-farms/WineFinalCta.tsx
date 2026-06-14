@@ -7,7 +7,7 @@ import { trackWhatsAppClick } from "../../../lib/tracking";
 
 const Section = styled.section`
   padding: 84px 0;
-  background: linear-gradient(135deg, #0D0D0D 0%, #1C1C1C 100%);
+  background: linear-gradient(135deg, #C9A84C 0%, #A88938 100%);
 `;
 
 const Inner = styled.div`

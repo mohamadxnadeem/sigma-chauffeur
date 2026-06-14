@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import MonitoredImage from "../../common/MonitoredImage";
+import Image from "next/image";
 import Button from "../../common/Button";
 import { TourVehicle } from "./types";
 import {
@@ -266,11 +266,11 @@ const MetaBadge = styled.div`
   align-items: center;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(201, 168, 76, 0.14);
+  background: rgba(201, 168, 76, 0.12);
   color: #C9A84C;
   font-size: 0.84rem;
   font-weight: 700;
-  border: 1px solid rgba(201, 168, 76, 0.22);
+  border: 1px solid rgba(201, 168, 76, 0.16);
 `;
 
 const TrustRow = styled.div`
@@ -312,7 +312,7 @@ function VehicleImage({
     <>
       {!loaded && <ShimmerMask />}
       <ImageLayer>
-        <MonitoredImage
+        <Image
           src={image}
           alt={alt}
           fill
@@ -412,6 +412,8 @@ export default function PrivateTourVehicles({ items, tourTitle }: Props) {
               buildVehicleForTourWhatsAppMessage(item.title, tourTitle)
             );
 
+            const minPerDay = getMinimumUsdPerDay(item.price);
+
             return (
               <Card key={`${item.title}-${index}`}>
                 <CardImage>
@@ -428,6 +430,7 @@ export default function PrivateTourVehicles({ items, tourTitle }: Props) {
                     {item.seats ? (
                       <MetaBadge>Up to {item.seats} guests</MetaBadge>
                     ) : null}
+                    {minPerDay ? <MetaBadge>{minPerDay}</MetaBadge> : null}
                     <MetaBadge>Fuel Included</MetaBadge>
                     <MetaBadge>Toll Fees Included</MetaBadge>
                     <MetaBadge>Local Guide</MetaBadge>

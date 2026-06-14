@@ -74,6 +74,36 @@ function getSeoKeyword(car: Car): string {
   return `${name} Chauffeur Service Cape Town`;
 }
 
+// ─────────────────────────────────────────────
+// PRICE HELPERS (unchanged)
+// ─────────────────────────────────────────────
+function formatPrice(
+  price?: string | number,
+  priceFrom?: string | number,
+  priceTo?: string | number,
+  currency?: string
+) {
+  const symbol = currency === "ZAR" || !currency ? "$" : `${currency} `;
+  if (price !== undefined && price !== null && price !== "") {
+    return `From ${symbol}${price}`;
+  }
+  if (priceFrom && priceTo) return `From ${symbol}${priceFrom} - ${symbol}${priceTo}`;
+  if (priceFrom) return `From ${symbol}${priceFrom}`;
+  if (priceTo) return `${symbol}${priceTo}`;
+  return "";
+}
+
+function getNumericPriceValue(
+  price?: string | number,
+  priceFrom?: string | number,
+  priceTo?: string | number
+): string | number | undefined {
+  if (price !== undefined && price !== null && price !== "") return price;
+  if (priceFrom !== undefined && priceFrom !== null && priceFrom !== "") return priceFrom;
+  if (priceTo !== undefined && priceTo !== null && priceTo !== "") return priceTo;
+  return undefined;
+}
+
 function truncateText(text?: string, maxLength = 155) {
   if (!text) return "";
   if (text.length <= maxLength) return text;
@@ -102,21 +132,12 @@ function normalizeCars(items: CarsApiItem[]): Car[] {
 }
 
 function getVehicleBySlug(cars: Car[], slug: string) {
-  const lower = slug.toLowerCase();
-  return cars.find((car) => car.slug?.toLowerCase() === lower) || null;
-}
-
-function isBrowserRenderable(url?: string): boolean {
-  if (!url) return false;
-  const lower = url.toLowerCase();
-  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+  return cars.find((car) => car.slug === slug) || null;
 }
 
 function getPrimaryImage(car: Car) {
   const imageArray = car.cover_photos || car.images || [];
-  const sorted = [...imageArray]
-    .sort((a, b) => (a.order || 0) - (b.order || 0))
-    .filter((photo) => isBrowserRenderable(photo.cover_photos));
+  const sorted = [...imageArray].sort((a, b) => (a.order || 0) - (b.order || 0));
   return (
     sorted.find((photo) => photo.is_featured)?.cover_photos ||
     sorted[0]?.cover_photos ||
@@ -133,6 +154,16 @@ function getVehicleImageAlt(car: Car) {
   return getSeoKeyword(car);
 }
 
+function getFormattedDailyRate(car: Car) {
+  return formatPrice(car.price, car.price_from, car.price_to, car.currency);
+}
+
+function getMetaFriendlyRate(car: Car) {
+  const value = getFormattedDailyRate(car);
+  if (!value) return "";
+  return value.replace(/^From\s+/i, "");
+}
+
 // ─────────────────────────────────────────────
 // FIX 4: META TITLE — exact keyword first, brand second
 // Old: "[Name] | VIP Chauffeur Hire Cape Town"  (generic, brand-heavy)
@@ -143,7 +174,11 @@ function getVehicleImageAlt(car: Car) {
 function getPageTitle(car: Car) {
   if (car.meta_title) return car.meta_title; // CMS override wins
   const keyword = getSeoKeyword(car);
-  return `${keyword} | Sigma VIP`;
+  const rate = getMetaFriendlyRate(car);
+  // Append price if it fits — increases CTR significantly for HNWI searches
+  return rate
+    ? `${keyword} | From ${rate} | Sigma VIP`
+    : `${keyword} | Sigma VIP`;
 }
 
 // ─────────────────────────────────────────────
@@ -154,20 +189,25 @@ function getPageTitle(car: Car) {
 function getPageDescription(car: Car) {
   if (car.meta_description) return car.meta_description; // CMS override wins
   const keyword = getSeoKeyword(car);
+  const rate = getMetaFriendlyRate(car);
   const seats = car.number_of_seats ? ` ${car.number_of_seats} seats.` : "";
+  const rateStr = rate ? ` From ${rate}/day.` : "";
   return truncateText(
-    `${keyword} — private airport transfers, full-day tours & bespoke Cape Town hire.${seats} Professional chauffeur. Book via WhatsApp.`,
+    `${keyword} — private airport transfers, full-day tours & bespoke Cape Town hire.${rateStr}${seats} Professional chauffeur. Book via WhatsApp.`,
     155
   );
 }
 
 function getShortVehicleDescription(car: Car) {
   const keyword = getSeoKeyword(car);
+  const rate = getFormattedDailyRate(car);
   return (
     car.short_description ||
     car.highlight ||
     truncateText(car.body, 180) ||
-    `Premium ${keyword} for private travel, airport transfers, and chauffeur-driven experiences.`
+    (rate
+      ? `${keyword} — ${rate.toLowerCase()} for private airport transfers, tours, and full-day hire in Cape Town.`
+      : `Premium ${keyword} for private travel, airport transfers, and chauffeur-driven experiences.`)
   );
 }
 
@@ -183,6 +223,7 @@ function mapRelatedVehicles(cars: Car[], currentSlug: string): RelatedVehicle[] 
         truncateText(car.body, 120) ||
         "Premium chauffeur-driven vehicle for Cape Town travel.",
       seats: car.number_of_seats,
+      price: formatPrice(car.price, car.price_from, car.price_to, car.currency),
       href: `/chauffeur-services/${car.slug}`,
     }));
 }
@@ -193,7 +234,7 @@ function mapRelatedVehicles(cars: Car[], currentSlug: string): RelatedVehicle[] 
 // New: 8 questions, first 3 embed the exact SEO keyword naturally
 // This is what triggers FAQ rich results in Google — specificity matters
 // ─────────────────────────────────────────────
-function buildVehicleFaqs(car: Car) {
+function buildVehicleFaqs(car: Car, formattedPrice: string) {
   const name = car.title || "this luxury vehicle";
   const keyword = getSeoKeyword(car);
   const seats = car.number_of_seats ? `${car.number_of_seats}` : "multiple";
@@ -202,8 +243,10 @@ function buildVehicleFaqs(car: Car) {
   return [
     {
       // Q1: Primary keyword in question — strongest FAQ schema signal
-      question: `How do I book ${keyword}?`,
-      answer: `The quickest way is via WhatsApp — share your dates, route, and party size and we will confirm availability and a tailored quote within 30 minutes. Every booking includes the vehicle, professional chauffeur, fuel, and route planning.`,
+      question: `How much does ${keyword} cost?`,
+      answer: formattedPrice
+        ? `${keyword} starts ${formattedPrice.toLowerCase()} per vehicle per day. This includes your professional chauffeur and fuel. Airport entrance fees and national park entry are not included. Contact us via WhatsApp for a tailored quote.`
+        : `Pricing for ${keyword} depends on your route, duration, and itinerary. Contact us via WhatsApp for availability and a personalised quote.`,
     },
     {
       // Q2: Airport transfer — high search volume variant
@@ -253,7 +296,7 @@ export async function generateStaticParams() {
   const vehicles = normalizeCars(await getAllVehicles());
   return vehicles
     .filter((car) => Boolean(car.slug))
-    .map((car) => ({ slug: (car.slug as string).toLowerCase() }));
+    .map((car) => ({ slug: car.slug as string }));
 }
 
 // ─────────────────────────────────────────────
@@ -348,7 +391,9 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
   const pageTitle = getPageTitle(car);
   const pageDescription = getPageDescription(car);
   const keyword = getSeoKeyword(car);
-  const vehicleFaqs = buildVehicleFaqs(car);
+  const formattedPrice = formatPrice(car.price, car.price_from, car.price_to, car.currency);
+  const numericPrice = getNumericPriceValue(car.price, car.price_from, car.price_to);
+  const vehicleFaqs = buildVehicleFaqs(car, formattedPrice);
 
   // ─────────────────────────────────────────────
   // FIX 11: EXPANDED STRUCTURED DATA
@@ -397,6 +442,17 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
                 worstRating: "1",
               },
             }),
+        ...(numericPrice
+          ? {
+              offers: {
+                "@type": "Offer",
+                priceCurrency: car.currency || "USD",
+                price: numericPrice,
+                availability: "https://schema.org/InStock",
+                url: canonicalUrl,
+              },
+            }
+          : {}),
       },
 
       // 2. Service schema — the chauffeur service itself
@@ -425,6 +481,7 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
           },
           priceRange: "$$$$",
           sameAs: [
+            "https://www.facebook.com/capetownconcierge",
             // Add your actual social profiles here
           ],
         },

@@ -61,8 +61,8 @@ export const theme = {
     xl: "32px",
   },
   shadows: {
-    soft: "0 10px 30px rgba(13, 13, 13, 0.06)",
-    card: "0 18px 40px rgba(13, 13, 13, 0.08)",
+    soft: "0 10px 30px rgba(201, 168, 76, 0.06)",
+    card: "0 18px 40px rgba(201, 168, 76, 0.08)",
   },
   spacing: {
     xs: "8px",

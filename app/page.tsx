@@ -1,39 +1,19 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import HeroBanner from "../components/sections/HeroBanner";
 import FeaturedVehicles from "../components/sections/FeaturedVehicles";
-
-const MultiDaySection = dynamic(
-  () => import("../components/sections/MultiDaySection"),
-  { ssr: true }
-);
-const WhyChooseUs = dynamic(
-  () => import("../components/sections/WhyChooseUs"),
-  { ssr: true }
-);
-const FeaturedExperiences = dynamic(
-  () => import("../components/sections/FeaturedExperiences"),
-  { ssr: true }
-);
-const TestimonialsSection = dynamic(
-  () => import("../components/sections/testimonials/TestimonialsSection"),
-  { ssr: true }
-);
-const TestimonialsCta = dynamic(
-  () => import("../components/sections/testimonials/TestimonialsCta"),
-  { ssr: true }
-);
-const ChauffeurAuthoritySection = dynamic(
-  () => import("../components/sections/ChauffeurAuthoritySection"),
-  { ssr: true }
-);
+import WhyChooseUs from "../components/sections/WhyChooseUs";
+import FeaturedExperiences from "../components/sections/FeaturedExperiences";
+import TestimonialsSection from "../components/sections/testimonials/TestimonialsSection";
+import TestimonialsCta from "../components/sections/testimonials/TestimonialsCta";
+import ChauffeurAuthoritySection from "../components/sections/ChauffeurAuthoritySection";
+import PrivateServiceSection from "../components/sections/PrivateServiceSection";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
-  title: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
+  title: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
   description:
-    "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover. Book via WhatsApp.",
+    "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover. All-inclusive — book via WhatsApp.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -49,9 +29,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
+    title: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
     description:
-      "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO coordination, and bespoke Western Cape itineraries. One vehicle, one chauffeur, your schedule.",
+      "Private full-day chauffeur hire across Cape Town and the Western Cape. Multi-day packages, private jet FBO coordination, and bespoke itineraries. One vehicle, one chauffeur, your schedule.",
     url: SITE_URL,
     siteName: "Sigma VIP",
     type: "website",
@@ -60,47 +40,41 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/hero-car.jpg`,
         width: 1200,
         height: 630,
-        alt: "Luxury chauffeur service Cape Town with premium private travel experience",
+        alt: "Private chauffeur service Cape Town — Sigma VIP luxury fleet",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
+    title: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
     description:
-      "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
+      "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
     images: [`${SITE_URL}/images/hero-car.jpg`],
   },
 };
 
 const trustItems = [
   {
-    title: "Full-Day from R6,850 — All-Inclusive",
+    title: "Family & Multi-Vehicle Convoys",
     description:
-      "One flat rate covers your vehicle, professional chauffeur, fuel, tolls, and parking. No meter, no surge pricing, nothing added on the day.",
+      "Principal in the Mercedes S-Class, family in the V-Class or Staria, luggage in a separate vehicle. One coordinated booking, one point of contact.",
   },
   {
-    title: "Multi-Day Packages Across the Western Cape",
+    title: "Complete Discretion & Privacy",
     description:
-      "Cape Peninsula, Winelands, Hermanus, and the Garden Route across 3 to 7 days — one vehicle, one chauffeur, one point of contact throughout.",
+      "Fully private vehicles, vetted chauffeurs, NDAs available on request. No shared schedules, no groups — every booking is exclusively yours.",
+  },
+  {
+    title: "Arabic-Speaking Chauffeurs on Request",
+    description:
+      "Request an Arabic-speaking driver when you book. Halal-aware itineraries and prayer-time flexibility arranged as standard.",
   },
   {
     title: "Private Jet FBO Coordination",
     description:
-      "We work directly with Cape Town's private terminal team on ramp access, vehicle staging, and luggage handling. Your S-Class or G-Wagon is in position before you land.",
-  },
-  {
-    title: "100% Private — No Groups, No Shared Schedules",
-    description:
-      "Every booking is exclusively yours. Your vehicle, your chauffeur, your itinerary — operated entirely around your pace and preferences.",
+      "We coordinate directly with Cape Town's private terminal on ramp access, vehicle staging, and luggage handling. Your vehicle is in position before you land.",
   },
 ];
-
-function isBrowserRenderable(url?: string): boolean {
-  if (!url) return false;
-  const lower = url.toLowerCase();
-  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
-}
 
 type ExperiencePhoto = {
   id: number;
@@ -194,10 +168,7 @@ async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
     const response = await fetch(
       "https://web-production-1ab9.up.railway.app/api/experiences/all/",
       {
-        // ISR: cache for 1 hour, refresh in background. Allows static
-        // generation at build time and avoids `no-store` forcing the
-        // route into dynamic rendering (which fails the build).
-        next: { revalidate: 3600 },
+        cache: "no-store",
       }
     );
 
@@ -213,12 +184,10 @@ async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
 
         if (!experience?.title) return null;
 
-        const renderable = (experience.cover_photos || []).filter((p) =>
-          isBrowserRenderable(p.cover_photos)
-        );
         const featuredPhoto =
-          renderable.find((photo) => photo.is_featured)?.cover_photos ||
-          renderable[0]?.cover_photos ||
+          experience.cover_photos?.find((photo) => photo.is_featured)
+            ?.cover_photos ||
+          experience.cover_photos?.[0]?.cover_photos ||
           "";
 
         const plainTextBody = stripHtml(experience.body || "");
@@ -233,7 +202,7 @@ async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
           description,
           href: experience.slug
             ? `/private-tours/${experience.slug}`
-            : "/chauffeur-services",
+            : "/private-tours",
           image: featuredPhoto,
           alt: `Private ${experience.title} in Cape Town with Professional Driver`,
         };
@@ -252,8 +221,7 @@ async function getFeaturedVehicles(): Promise<FeaturedVehicleItem[]> {
     const response = await fetch(
       "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
       {
-        // ISR: cache for 1 hour, refresh in background. See note above.
-        next: { revalidate: 3600 },
+        cache: "no-store",
       }
     );
 
@@ -275,9 +243,7 @@ async function getFeaturedVehicles(): Promise<FeaturedVehicleItem[]> {
 
         if (!car?.title) return null;
 
-        const imageArray = (car.cover_photos || car.images || []).filter(
-          (p: CarPhoto) => isBrowserRenderable(p.cover_photos)
-        );
+        const imageArray = car.cover_photos || car.images || [];
 
         const featuredPhoto =
           imageArray.find((photo: CarPhoto) => photo?.is_featured)
@@ -361,10 +327,10 @@ export default async function HomePage() {
       },
       {
         "@type": "WebPage",
-        name: "Private Chauffeur Cape Town | Full-Day & Multi-Day | Sigma VIP",
+        name: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
         url: SITE_URL,
         description:
-          "Private full-day chauffeur hire in Cape Town from R6,850 per day. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
+          "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
         image: [`${SITE_URL}/images/hero-car.jpg`],
       },
       {
@@ -383,10 +349,10 @@ export default async function HomePage() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "How much does a full-day private chauffeur cost in Cape Town?",
+            name: "What is included in a full-day private chauffeur booking in Cape Town?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Full-day private chauffeur hire starts from R6,850 per vehicle, all-inclusive — vehicle, professional chauffeur, fuel, tolls, and parking. No hidden fees.",
+              text: "Every booking is all-inclusive. One arrangement covers the vehicle, professional chauffeur, fuel, tolls, and parking. No meter, no surge, and nothing added on the day.",
             },
           },
           {
@@ -394,7 +360,7 @@ export default async function HomePage() {
             name: "Do you offer multi-day chauffeur packages in Cape Town?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes. Multi-day packages are available across Cape Town and the Western Cape — covering the Cape Peninsula, Stellenbosch Winelands, Hermanus, and the Garden Route. Same vehicle and chauffeur throughout. Packages from R6,850 per vehicle per day.",
+              text: "Yes. Multi-day packages are available across Cape Town and the Western Cape — covering the Cape Peninsula, Stellenbosch Winelands, Hermanus, and the Garden Route. Same vehicle and chauffeur throughout.",
             },
           },
           {
@@ -437,7 +403,7 @@ export default async function HomePage() {
           name: "Cape Town",
         },
         description:
-          "Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. All-inclusive pricing from R6,850 per vehicle per day. Private jet FBO coordination, executive travel, and bespoke itineraries.",
+          "Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. All-inclusive. Private jet FBO coordination, executive travel, and bespoke itineraries.",
       },
     ],
   };
@@ -454,21 +420,21 @@ export default async function HomePage() {
       <HeroBanner
         eyebrow="Sigma VIP"
         title="Private Chauffeur Cape Town — Full-Day Hire & Multi-Day Packages"
-        description="Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. One vehicle, one professional chauffeur, your itinerary — from R6,850 per day, all-inclusive. Private jet FBO transfers also available."
+        description="Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. One vehicle, one professional chauffeur, your itinerary — all-inclusive. Private jet FBO transfers also available."
         primaryCtaLabel="Book on WhatsApp"
-        primaryCtaHref="https://wa.me/27711081227?text=Hey%2C%20I%27m%20interested%20in%20booking%20a%20private%20chauffeur%20or%20tour%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
+        primaryCtaHref="https://wa.me/27711081227?text=Hi%2C%20I%27m%20interested%20in%20arranging%20a%20private%20chauffeur%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
         secondaryCtaLabel="Explore Services"
         secondaryCtaHref="/chauffeur-services"
         image="/images/car.jpg"
-        imageAlt="Luxury chauffeur fleet in Cape Town featuring premium private transport vehicles"
+        imageAlt="Private chauffeur service Cape Town — Sigma VIP luxury fleet"
       />
 
       <TestimonialsSection />
       <TestimonialsCta />
 
-      <FeaturedVehicles items={featuredVehicleItems} />
+      <PrivateServiceSection />
 
-      <MultiDaySection />
+      <FeaturedVehicles items={featuredVehicleItems} />
 
       <WhyChooseUs items={trustItems} />
 

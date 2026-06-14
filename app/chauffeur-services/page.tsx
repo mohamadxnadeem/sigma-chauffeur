@@ -3,105 +3,10 @@ import ChauffeurServicesPage from "../../components/sections/chauffeur-services/
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
-type CarPhoto = {
-  id: number;
-  cover_photos: string;
-  is_featured?: boolean;
-  order?: number;
-};
-
-type Car = {
-  title?: string;
-  slug?: string;
-  short_description?: string;
-  highlight?: string;
-  body?: string;
-  number_of_seats?: number;
-  cover_photos?: CarPhoto[];
-  images?: CarPhoto[];
-};
-
-type CarsApiItem = {
-  car?: Car;
-} & Partial<Car>;
-
-function isBrowserRenderable(url?: string): boolean {
-  if (!url) return false;
-  const lower = url.toLowerCase();
-  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
-}
-
-function stripHtml(html: string) {
-  return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
-}
-
-function truncateText(text: string, maxLength: number) {
-  if (!text) return "";
-  if (text.length <= maxLength) return text;
-  return `${text.slice(0, maxLength).trim()}...`;
-}
-
-async function getVehicles() {
-  try {
-    const res = await fetch(
-      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
-      { next: { revalidate: 3600 } }
-    );
-    if (!res.ok) return [];
-    const data = await res.json();
-    const items: CarsApiItem[] = Array.isArray(data)
-      ? data
-      : Array.isArray(data?.results)
-      ? data.results
-      : [];
-
-    return items
-      .map((item) => {
-        const car = item?.car || item;
-        if (!car?.title) return null;
-        const imageArray = (car.cover_photos || car.images || []).filter((p) =>
-          isBrowserRenderable(p.cover_photos)
-        );
-        const sorted = [...imageArray].sort(
-          (a, b) => (a.order || 0) - (b.order || 0)
-        );
-        const image =
-          sorted.find((p) => p.is_featured)?.cover_photos ||
-          sorted[0]?.cover_photos ||
-          "";
-        return {
-          title: car.title,
-          description:
-            car.short_description ||
-            car.highlight ||
-            truncateText(stripHtml(car.body || ""), 200) ||
-            "Luxury chauffeur vehicle for private travel in Cape Town.",
-          href:
-            car.slug?.trim()
-              ? `/chauffeur-services/${car.slug.trim().toLowerCase()}`
-              : "/chauffeur-services",
-          image,
-          alt: `${car.title} chauffeur service Cape Town`,
-          seats: car.number_of_seats,
-        };
-      })
-      .filter(Boolean) as {
-      title: string;
-      description: string;
-      href: string;
-      image: string;
-      alt: string;
-      seats?: number;
-    }[];
-  } catch {
-    return [];
-  }
-}
-
 export const metadata: Metadata = {
-  title: "Private Chauffeur Service Cape Town | VIP Driver Hire | Sigma VIP",
+  title: "Chauffeur Service Cape Town | Luxury Private Driver & Airport Transfers",
   description:
-    "Hire a private chauffeur in Cape Town with Sigma VIP. VIP airport transfers, luxury day hire, corporate transport, and private tours. Mercedes S-Class, Range Rover, G-Wagon fleet. Professional drivers available 24/7.",
+    "Book a luxury chauffeur service in Cape Town for airport transfers, private tours, executive travel, and bespoke day hire. Premium vehicles, professional drivers, and tailored itineraries.",
   alternates: {
     canonical: `${SITE_URL}/chauffeur-services`,
   },
@@ -117,9 +22,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Private Chauffeur Service Cape Town | VIP Driver Hire | Sigma VIP",
+    title: "Chauffeur Service Cape Town | Luxury Private Driver & Airport Transfers",
     description:
-      "Luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, executive travel, and bespoke day hire.",
+      "Luxury chauffeur service in Cape Town for airport transfers, private tours, executive travel, and bespoke day hire.",
     url: `${SITE_URL}/chauffeur-services`,
     siteName: "Sigma VIP",
     type: "website",
@@ -134,15 +39,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Private Chauffeur Service Cape Town | VIP Driver Hire | Sigma VIP",
+    title: "Chauffeur Service Cape Town | Luxury Private Driver & Airport Transfers",
     description:
-      "Book a luxury chauffeur service in Cape Town with Sigma VIP for airport transfers, private tours, and executive travel.",
+      "Book a luxury chauffeur service in Cape Town for airport transfers, private tours, and executive travel.",
     images: [`${SITE_URL}/images/hero-car.jpg`],
   },
 };
 
-export default async function ChauffeurServicesLandingPage() {
-  const vehicles = await getVehicles();
+export default function ChauffeurServicesLandingPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -245,7 +149,7 @@ export default async function ChauffeurServicesLandingPage() {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <ChauffeurServicesPage vehicles={vehicles} />
+      <ChauffeurServicesPage />
     </>
   );
 }

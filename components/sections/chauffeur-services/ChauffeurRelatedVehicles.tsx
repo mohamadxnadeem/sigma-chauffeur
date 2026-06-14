@@ -1,6 +1,5 @@
 "use client";
 
-import MonitoredImage from "../../common/MonitoredImage";
 import Link from "next/link";
 import styled from "styled-components";
 import { RelatedVehicle } from "./types";
@@ -44,19 +43,15 @@ const RelatedCard = styled(Link)`
   box-shadow: ${({ theme }) => theme.shadows.soft};
 `;
 
-const RelatedImageWrap = styled.div`
-  position: relative;
+const RelatedImage = styled.div<{ $image?: string }>`
   height: 230px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.16), rgba(168, 137, 56, 0.08));
-`;
-
-const RelatedImageOverlay = styled.div`
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.04));
-  pointer-events: none;
+  background: ${({ $image }) =>
+    $image
+      ? `linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.04)), url(${$image})`
+      : `linear-gradient(135deg, rgba(201, 168, 76, 0.16), rgba(168, 137, 56, 0.08))`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const RelatedBody = styled.div`
@@ -105,26 +100,17 @@ export default function ChauffeurRelatedVehicles({ items }: Props) {
       <RelatedGrid>
         {items.map((vehicle, index) => (
           <RelatedCard key={`${vehicle.title}-${index}`} href={vehicle.href}>
-            <RelatedImageWrap>
-              {vehicle.image && (
-                <MonitoredImage
-                  src={vehicle.image}
-                  alt={`${vehicle.title} chauffeur service Cape Town`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 380px"
-                  style={{ objectFit: "cover" }}
-                  placeholder="blur"
-                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTJlOGYwIi8+PC9zdmc+"
-                />
-              )}
-              <RelatedImageOverlay />
-            </RelatedImageWrap>
+            <RelatedImage $image={vehicle.image} />
             <RelatedBody>
               <RelatedTitle>{vehicle.title}</RelatedTitle>
 
               <RelatedMeta>
                 {vehicle.seats ? (
                   <RelatedBadge>{vehicle.seats} Seats</RelatedBadge>
+                ) : null}
+
+                {vehicle.price ? (
+                  <RelatedBadge>{normalizeUsdPrice(vehicle.price)}</RelatedBadge>
                 ) : null}
               </RelatedMeta>
 
