@@ -48,7 +48,7 @@ const RelatedImage = styled.div<{ $image?: string }>`
   background: ${({ $image }) =>
     $image
       ? `linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.04)), url(${$image})`
-      : `linear-gradient(135deg, rgba(201, 168, 76, 0.16), rgba(168, 137, 56, 0.08))`};
+      : `linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%)`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
