@@ -132,11 +132,20 @@ function normalizeCars(items: CarsApiItem[]): Car[] {
 }
 
 function getVehicleBySlug(cars: Car[], slug: string) {
-  return cars.find((car) => car.slug === slug) || null;
+  const lower = slug.toLowerCase();
+  return cars.find((car) => car.slug?.toLowerCase() === lower) || null;
+}
+
+function isBrowserRenderable(url?: string): boolean {
+  if (!url) return false;
+  const lower = url.toLowerCase();
+  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
 }
 
 function getPrimaryImage(car: Car) {
-  const imageArray = car.cover_photos || car.images || [];
+  const imageArray = (car.cover_photos || car.images || []).filter((p) =>
+    isBrowserRenderable(p.cover_photos)
+  );
   const sorted = [...imageArray].sort((a, b) => (a.order || 0) - (b.order || 0));
   return (
     sorted.find((photo) => photo.is_featured)?.cover_photos ||
@@ -296,7 +305,7 @@ export async function generateStaticParams() {
   const vehicles = normalizeCars(await getAllVehicles());
   return vehicles
     .filter((car) => Boolean(car.slug))
-    .map((car) => ({ slug: car.slug as string }));
+    .map((car) => ({ slug: (car.slug as string).toLowerCase() }));
 }
 
 // ─────────────────────────────────────────────
