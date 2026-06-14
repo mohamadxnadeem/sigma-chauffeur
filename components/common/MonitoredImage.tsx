@@ -27,11 +27,11 @@ const ShimmerOverlay = styled.div<{ $visible: boolean }>`
   overflow: hidden;
   background: linear-gradient(
     135deg,
-    rgba(201, 168, 76, 0.06),
-    rgba(168, 137, 56, 0.03)
+    #1a1a1a 0%,
+    #0d0d0d 100%
   );
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
   pointer-events: none;
 
   &::after {
@@ -39,15 +39,17 @@ const ShimmerOverlay = styled.div<{ $visible: boolean }>`
     position: absolute;
     top: 0;
     left: -100%;
-    width: 50%;
+    width: 60%;
     height: 100%;
     background: linear-gradient(
       90deg,
-      transparent,
-      rgba(255, 255, 255, 0.25),
-      transparent
+      transparent 0%,
+      rgba(201, 168, 76, 0.15) 40%,
+      rgba(201, 168, 76, 0.25) 50%,
+      rgba(201, 168, 76, 0.15) 60%,
+      transparent 100%
     );
-    animation: ${shimmerSweep} 1.6s ease-in-out infinite;
+    animation: ${shimmerSweep} 1.8s ease-in-out infinite;
   }
 `;
 

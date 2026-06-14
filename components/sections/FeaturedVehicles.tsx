@@ -171,7 +171,7 @@ const CardImageWrap = styled.div`
   position: relative;
   height: 260px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(168, 137, 56, 0.1));
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
 `;
 
 const ImageOverlay = styled.div`
@@ -187,22 +187,24 @@ const ShimmerLayer = styled.div`
   inset: 0;
   z-index: 1;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(168, 137, 56, 0.06));
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -150%;
-    width: 50%;
+    left: -100%;
+    width: 60%;
     height: 100%;
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.55) 50%,
-      rgba(255, 255, 255, 0) 100%
+      transparent 0%,
+      rgba(201, 168, 76, 0.15) 40%,
+      rgba(201, 168, 76, 0.25) 50%,
+      rgba(201, 168, 76, 0.15) 60%,
+      transparent 100%
     );
-    animation: ${shimmer} 1.4s infinite;
+    animation: ${shimmer} 1.8s ease-in-out infinite;
   }
 `;
 

@@ -12,17 +12,8 @@ type Props = {
 };
 
 const shimmerSweep = keyframes`
-  0% {
-    transform: translateX(-120%);
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateX(120%);
-    opacity: 0.4;
-  }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 `;
 
 const Wrapper = styled.div`
@@ -37,25 +28,26 @@ const ShimmerMask = styled.div`
   inset: 0;
   z-index: 2;
   overflow: hidden;
-
   background: linear-gradient(
     135deg,
-    rgba(201, 168, 76, 0.06),
-    rgba(168, 137, 56, 0.03)
+    #1a1a1a 0%,
+    #0d0d0d 100%
   );
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -140%;
+    left: -100%;
     width: 60%;
     height: 100%;
     background: linear-gradient(
       90deg,
-      transparent,
-      rgba(255, 255, 255, 0.25),
-      transparent
+      transparent 0%,
+      rgba(201, 168, 76, 0.15) 40%,
+      rgba(201, 168, 76, 0.25) 50%,
+      rgba(201, 168, 76, 0.15) 60%,
+      transparent 100%
     );
     animation: ${shimmerSweep} 1.8s ease-in-out infinite;
   }
@@ -92,8 +84,6 @@ export default function SmartImage({
           sizes={sizes}
           style={{ objectFit: "cover" }}
           onLoad={() => setLoaded(true)}
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTJlOGYwIi8+PC9zdmc+"
         />
       </FadeLayer>
     </Wrapper>

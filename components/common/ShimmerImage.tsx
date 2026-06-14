@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import styled from "styled-components";
+import { useState } from "react";
+import MonitoredImage from "./MonitoredImage";
+import styled, { keyframes } from "styled-components";
 
 type ShimmerImageProps = {
   src: string;
@@ -11,6 +12,11 @@ type ShimmerImageProps = {
   fill?: boolean;
 };
 
+const shimmerSweep = keyframes`
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+`;
+
 const ImageShell = styled.div`
   position: relative;
   width: 100%;
@@ -18,28 +24,42 @@ const ImageShell = styled.div`
   overflow: hidden;
 `;
 
-function shimmer(width: number, height: number) {
-  return `
-    <svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="g">
-          <stop stop-color="#f2f4f3" offset="20%" />
-          <stop stop-color="#e8ece9" offset="50%" />
-          <stop stop-color="#f2f4f3" offset="70%" />
-        </linearGradient>
-      </defs>
-      <rect width="${width}" height="${height}" fill="#f2f4f3" />
-      <rect id="r" width="${width}" height="${height}" fill="url(#g)" />
-      <animate xlink:href="#r" attributeName="x" from="-${width}" to="${width}" dur="1.2s" repeatCount="indefinite"  />
-    </svg>`;
-}
+const ShimmerMask = styled.div`
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #0d0d0d 100%
+  );
 
-function toBase64(str: string) {
-  if (typeof window === "undefined") {
-    return Buffer.from(str).toString("base64");
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(201, 168, 76, 0.15) 40%,
+      rgba(201, 168, 76, 0.25) 50%,
+      rgba(201, 168, 76, 0.15) 60%,
+      transparent 100%
+    );
+    animation: ${shimmerSweep} 1.8s ease-in-out infinite;
   }
-  return window.btoa(str);
-}
+`;
+
+const FadeLayer = styled.div<{ $loaded: boolean }>`
+  position: absolute;
+  inset: 0;
+  opacity: ${({ $loaded }) => ($loaded ? 1 : 0)};
+  transition: opacity 0.5s ease;
+`;
 
 export default function ShimmerImage({
   src,
@@ -48,18 +68,22 @@ export default function ShimmerImage({
   sizes = "100vw",
   fill = true,
 }: ShimmerImageProps) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <ImageShell>
-      <Image
-        src={src}
-        alt={alt}
-        fill={fill}
-        sizes={sizes}
-        priority={priority}
-        placeholder="blur"
-        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(1200, 800))}`}
-        style={{ objectFit: "cover" }}
-      />
+      {!loaded && <ShimmerMask />}
+      <FadeLayer $loaded={loaded}>
+        <MonitoredImage
+          src={src}
+          alt={alt}
+          fill={fill}
+          sizes={sizes}
+          priority={priority}
+          style={{ objectFit: "cover" }}
+          onLoad={() => setLoaded(true)}
+        />
+      </FadeLayer>
     </ImageShell>
   );
 }
