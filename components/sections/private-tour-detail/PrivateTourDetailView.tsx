@@ -198,6 +198,7 @@ export default function PrivateTourDetailView({
         <Container>
           <PrivateTourRelatedTours
             items={relatedTours}
+            bundleWhatsappLink={whatsappLink}
           />
         </Container>
       </Section>
