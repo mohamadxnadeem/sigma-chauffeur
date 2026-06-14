@@ -430,11 +430,12 @@ export default async function HomePage() {
       />
 
       <TestimonialsSection />
-      <TestimonialsCta />
 
       <PrivateServiceSection />
 
       <FeaturedVehicles items={featuredVehicleItems} />
+
+      <TestimonialsCta />
 
       <WhyChooseUs items={trustItems} />
 
