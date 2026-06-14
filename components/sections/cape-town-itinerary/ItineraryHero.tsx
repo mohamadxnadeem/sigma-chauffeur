@@ -116,7 +116,7 @@ export default function ItineraryHero() {
               <Button as="span">Plan My 7 Day Itinerary</Button>
             </Anchor>
 
-            <StyledLink href="/chauffeur-services">
+            <StyledLink href="/#fleet">
               <Button as="span" $variant="secondary">
                 View Chauffeur Services
               </Button>

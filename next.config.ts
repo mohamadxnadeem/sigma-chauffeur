@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         destination: "/airport-transfers-cape-town",
         permanent: true,
       },
+      {
+        source: "/chauffeur-services",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
   compiler: {

@@ -24,7 +24,7 @@ type Props = {
 export default function PrivateJetTransferPage({ vehicles = [] }: Props) {
   const vehicleItems = vehicles.map((v) => ({
     ...v,
-    href: "/chauffeur-services",
+    href: "/",
   }));
 
   return (

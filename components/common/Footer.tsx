@@ -162,7 +162,6 @@ export default function Footer() {
           <div>
             <ColTitle>Services</ColTitle>
             <NavList>
-              <NavLink href="/chauffeur-services">Chauffeur Services</NavLink>
               <NavLink href="/airport-transfers-cape-town">Airport Transfers</NavLink>
               <NavLink href="/best-activities-to-do-in-cape-town">Cape Town Experiences</NavLink>
               <NavLink href="/best-wine-farms-in-cape-town">Wine Farms</NavLink>

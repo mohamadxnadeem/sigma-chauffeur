@@ -276,7 +276,7 @@ export default function ItineraryTimeline({ items }: Props) {
                         <Button as="span">Plan This Day</Button>
                       </Anchor>
 
-                      <StyledLink href="/chauffeur-services">
+                      <StyledLink href="/#fleet">
                         <Button as="span" $variant="secondary">
                           View Chauffeur Services
                         </Button>

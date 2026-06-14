@@ -153,9 +153,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <NavLink href="/" onClick={onClose}>
             Home
           </NavLink>
-          <NavLink href="/chauffeur-services" onClick={onClose}>
-            Chauffeur Services
-          </NavLink>
           <NavLink href="/airport-transfers-cape-town" onClick={onClose}>
             Airport Transfers
           </NavLink>

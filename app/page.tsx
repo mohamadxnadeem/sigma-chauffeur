@@ -261,7 +261,7 @@ async function getFeaturedVehicles(): Promise<FeaturedVehicleItem[]> {
         const href =
           typeof car.slug === "string" && car.slug.trim()
             ? `/chauffeur-services/${car.slug.trim()}`
-            : "/chauffeur-services";
+            : "/#fleet";
 
         return {
           title: car.title,
@@ -423,8 +423,8 @@ export default async function HomePage() {
         description="Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. One vehicle, one professional chauffeur, your itinerary — all-inclusive. Private jet FBO transfers also available."
         primaryCtaLabel="Book on WhatsApp"
         primaryCtaHref="https://wa.me/27711081227?text=Hi%2C%20I%27m%20interested%20in%20arranging%20a%20private%20chauffeur%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
-        secondaryCtaLabel="Explore Services"
-        secondaryCtaHref="/chauffeur-services"
+        secondaryCtaLabel="View Fleet"
+        secondaryCtaHref="#fleet"
         image="/images/car.jpg"
         imageAlt="Private chauffeur service Cape Town — Sigma VIP luxury fleet"
       />
@@ -433,7 +433,9 @@ export default async function HomePage() {
 
       <PrivateServiceSection />
 
-      <FeaturedVehicles items={featuredVehicleItems} />
+      <div id="fleet">
+        <FeaturedVehicles items={featuredVehicleItems} />
+      </div>
 
       <TestimonialsCta />
 

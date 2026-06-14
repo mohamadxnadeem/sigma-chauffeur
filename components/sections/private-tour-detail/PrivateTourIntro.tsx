@@ -133,7 +133,7 @@ export default function PrivateTourIntro({
           highlight ||
           "Experience Cape Town like never before with a luxury private tour designed around comfort, flexibility, and unforgettable scenic moments."}{" "}
         Explore more curated <InlineLink href="/best-activities-to-do-in-cape-town">experiences</InlineLink>{" "}
-        or pair this with our <InlineLink href="/chauffeur-services">chauffeur services</InlineLink>{" "}
+        or pair this with our <InlineLink href="/#fleet">chauffeur services</InlineLink>{" "}
         for a smoother luxury travel experience.
       </SubText>
 

@@ -57,11 +57,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/chauffeur-services`,
-      lastModified: new Date(),
-      priority: 0.95,
-    },
-    {
       url: `${SITE_URL}/airport-transfers-cape-town`,
       lastModified: new Date(),
       priority: 0.95,
