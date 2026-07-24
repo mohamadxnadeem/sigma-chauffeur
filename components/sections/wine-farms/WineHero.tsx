@@ -73,11 +73,10 @@ export default function WineHero() {
 
           <Description>
             Discover some of the most beautiful wine estates in Stellenbosch,
-            Franschhoek, and the surrounding Cape Winelands — from luxury wine
-            tastings and fine dining to relaxed countryside escapes. The best
-            way to experience them is with a private chauffeur-driven wine tour
-            that lets you enjoy the day without worrying about driving, timing,
-            or planning the route.
+            Franschhoek, and the surrounding Cape Winelands. From private
+            tastings and fine dining to relaxed countryside escapes, the best
+            way to experience them is with a dedicated chauffeur who handles
+            the driving, timing, and route so you can focus entirely on the day.
           </Description>
 
           <ButtonRow>

@@ -339,7 +339,7 @@ export async function generateMetadata({
       description,
       url: canonicalUrl,
       siteName: "Sigma VIP",
-      type: "article",
+      type: "website",
       images: image
         ? [
             {

@@ -101,7 +101,7 @@ export default function PrivateJetHero() {
           <Description>
             Sigma VIP tracks your flight in real time and stages your
             vehicle at Cape Town International Airport before you land.
-            From commercial arrivals to private jet FBO coordination —
+            From commercial arrivals to private jet FBO coordination,
             your chauffeur handles luggage, meet-and-greet, and the
             first mile of your Cape Town stay. Quietly, precisely,
             and without delay.

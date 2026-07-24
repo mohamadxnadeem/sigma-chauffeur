@@ -366,9 +366,9 @@ const serviceFaqs = [
       "Our fleet includes premium chauffeur-driven vehicles suited to executive travel, airport transfers, family transport, private day hire, and VIP group travel.",
   },
   {
-    question: "Is private chauffeur service better than self-drive in Cape Town?",
+    question: "Do you offer multi-day chauffeur packages in Cape Town?",
     answer:
-      "For many travellers, yes. A private chauffeur gives you more comfort, flexibility, and convenience, especially for airport transfers, wine routes, long scenic drives, and clients who want a more polished luxury experience.",
+      "Yes. Multi-day packages cover Cape Town, the Cape Peninsula, Stellenbosch Winelands, Hermanus, and the Garden Route. The same vehicle and chauffeur travel with you throughout. Book the full package as a single arrangement via WhatsApp.",
   },
 ];
 

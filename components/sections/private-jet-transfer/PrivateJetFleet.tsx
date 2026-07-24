@@ -44,7 +44,7 @@ const vehicles: Vehicle[] = [
     title: "Mercedes G-Wagon",
     ideal: "Statement arrivals · safari day-trips",
     description:
-      "Commanding presence. Military heritage, interior luxury — for clients whose arrival should be noticed, on their terms.",
+      "Commanding presence. Military heritage, interior luxury. For clients whose arrival should be noticed, on their terms.",
     features: ["4 passengers", "All-terrain capable", "High clearance"],
   },
 ];
@@ -149,7 +149,7 @@ export default function PrivateJetFleet() {
           <SectionText>
             Three vehicles built for the standard of client who expects
             more from an airport transfer. Choose your preference when
-            you book — or let us recommend based on party size and
+            you book, or let us recommend based on party size and
             onward schedule.
           </SectionText>
         </SectionHeader>

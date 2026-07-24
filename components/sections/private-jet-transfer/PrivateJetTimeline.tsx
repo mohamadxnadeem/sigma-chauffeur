@@ -27,7 +27,7 @@ const steps: Step[] = [
     label: "Step 02",
     title: "Flight-Tracked from Departure",
     description:
-      "Your flight is on our screens from the moment it departs. Delays, early arrivals, gate changes — your chauffeur adjusts in real time so you never wait.",
+      "Your flight is on our screens from the moment it departs. Delays, early arrivals, gate changes: your chauffeur adjusts in real time so you never wait.",
   },
   {
     label: "Step 03",
@@ -45,7 +45,7 @@ const steps: Step[] = [
     label: "Step 05",
     title: "Discreet Departure",
     description:
-      "From aircraft door to vehicle in under five minutes. Luggage loaded by your chauffeur. You are on the road to your hotel, villa, or next engagement — quietly.",
+      "From aircraft door to vehicle in under five minutes. Luggage loaded by your chauffeur. You are on the road to your hotel, villa, or next engagement. Quietly.",
   },
 ];
 

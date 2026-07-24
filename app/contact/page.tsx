@@ -4,9 +4,9 @@ import ContactContent from "./ContactContent";
 const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
-  title: "Contact Sigma VIP | Luxury Chauffeur Service Cape Town",
+  title: "Contact Sigma VIP | Private Chauffeur Service Cape Town",
   description:
-    "Get in touch with Sigma VIP for luxury chauffeur services, private tours, and airport transfers in Cape Town. Reach us via WhatsApp, phone, or email.",
+    "Reach Sigma VIP via WhatsApp, phone, or email. We arrange private chauffeur hire, airport transfers, multi-day packages, and bespoke Cape Town itineraries.",
   alternates: {
     canonical: `${SITE_URL}/contact`,
   },
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Contact Sigma VIP | Luxury Chauffeur Service Cape Town",
+    title: "Contact Sigma VIP | Private Chauffeur Service Cape Town",
     description:
-      "Reach Sigma VIP for luxury chauffeur services, private tours, and airport transfers in Cape Town.",
+      "Reach Sigma VIP via WhatsApp, phone, or email for private chauffeur hire, airport transfers, and bespoke Cape Town itineraries.",
     url: `${SITE_URL}/contact`,
     siteName: "Sigma VIP",
     type: "website",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/logo.png`,
         width: 520,
         height: 520,
-        alt: "Sigma VIP — Luxury Chauffeur & Tourism",
+        alt: "Sigma VIP. Private Chauffeur Service Cape Town.",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Contact Sigma VIP | Luxury Chauffeur Service Cape Town",
+    title: "Contact Sigma VIP | Private Chauffeur Service Cape Town",
     description:
-      "Reach Sigma VIP for luxury chauffeur services, private tours, and airport transfers in Cape Town.",
+      "Reach Sigma VIP via WhatsApp, phone, or email for private chauffeur hire, airport transfers, and bespoke Cape Town itineraries.",
     images: [`${SITE_URL}/images/logo.png`],
   },
 };

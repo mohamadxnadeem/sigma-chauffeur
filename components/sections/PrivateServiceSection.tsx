@@ -110,8 +110,8 @@ export default function PrivateServiceSection() {
               handled, transfer completed in minutes.
             </Feature>
             <Feature>
-              <FeatureLabel>One WhatsApp message</FeatureLabel> — your entire
-              Cape Town schedule handled from arrival to departure.
+              <FeatureLabel>One WhatsApp message</FeatureLabel> handles your entire
+              Cape Town schedule from arrival to departure.
             </Feature>
           </FeatureList>
 

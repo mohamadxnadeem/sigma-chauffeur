@@ -7,9 +7,9 @@ const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:
-    "10 Best Wine Farms in Cape Town, Stellenbosch & Franschhoek (2026 Guide) | Sigma VIP",
+    "Best Wine Farms in Cape Town, Stellenbosch and Franschhoek (2026 Guide) | Sigma VIP",
   description:
-    "Discover the best wine farms in Cape Town, Stellenbosch, and Franschhoek. Explore luxury estates like Delaire Graff, Babylonstoren, and Boschendal. Book a private chauffeur-driven wine tour with Sigma VIP today.",
+    "Private chauffeur wine tours across the Cape Winelands. Delaire Graff, Babylonstoren, Boschendal, and Tokara, visited at your own pace with a dedicated driver and no pressure on timing.",
 
   alternates: {
     canonical: `${SITE_URL}/best-wine-farms-in-cape-town`,
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "10 Best Wine Farms in Cape Town, Stellenbosch & Franschhoek | Sigma VIP",
+      "Best Wine Farms in Cape Town, Stellenbosch and Franschhoek | Sigma VIP",
     description:
-      "Explore the top wine farms in Cape Town including Delaire Graff, Babylonstoren, Boschendal, and more. Plan your private wine tour with a Sigma VIP chauffeur.",
+      "Delaire Graff, Babylonstoren, Boschendal, and more. Private chauffeur wine tours across Stellenbosch, Franschhoek, and Constantia with Sigma VIP.",
     url: `${SITE_URL}/best-wine-farms-in-cape-town`,
     siteName: "Sigma VIP",
     type: "article",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "10 Best Wine Farms in Cape Town (Luxury Wine Guide) | Sigma VIP",
+      "Best Wine Farms in Cape Town and the Winelands | Sigma VIP",
     description:
-      "Plan your Cape Winelands experience with Sigma VIP — the best wine farms in Stellenbosch, Franschhoek, and Constantia.",
+      "Private chauffeur wine tours across Stellenbosch, Franschhoek, and Constantia. Sigma VIP arranges the route, tastings, and transport for the day.",
     images: [`${SITE_URL}/images/wine/graff.jpg`],
   },
 };

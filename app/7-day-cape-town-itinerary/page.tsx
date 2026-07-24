@@ -7,9 +7,9 @@ const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:
-    "7 Day Cape Town Itinerary (Luxury Travel Guide 2026) | Sigma VIP Private Tours",
+    "7 Day Cape Town Itinerary | Private Chauffeur Travel Guide 2026 | Sigma VIP",
   description:
-    "Plan the perfect 7 day Cape Town itinerary with Sigma VIP private chauffeur-driven travel. Explore Table Mountain, Cape Peninsula, wine farms, beaches, and luxury experiences with a curated day-by-day guide.",
+    "A curated seven-day Cape Town itinerary for private chauffeur travel. Cape Peninsula, Winelands, Hermanus, and the city, arranged around your schedule with the same vehicle and driver throughout.",
   alternates: {
     canonical: `${SITE_URL}/7-day-cape-town-itinerary`,
   },
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "7 Day Cape Town Itinerary (Luxury Travel Guide) | Sigma VIP",
+      "7 Day Cape Town Itinerary | Private Chauffeur Travel Guide | Sigma VIP",
     description:
-      "A complete 7 day Cape Town itinerary including private tours, wine routes, scenic drives, and luxury experiences with Sigma VIP.",
+      "Seven days in Cape Town with a private chauffeur. Cape Peninsula, Winelands, Hermanus, and more, arranged as a single booking with Sigma VIP.",
     url: `${SITE_URL}/7-day-cape-town-itinerary`,
     siteName: "Sigma VIP",
     type: "article",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "7 Day Cape Town Itinerary (Luxury Travel Guide) | Sigma VIP",
+      "7 Day Cape Town Itinerary | Private Chauffeur Travel Guide | Sigma VIP",
     description:
-      "Plan your Cape Town trip with a full 7-day itinerary including wine tours, beaches, and private chauffeur experiences from Sigma VIP.",
+      "Seven days in Cape Town, arranged by Sigma VIP. Cape Peninsula, Winelands, Hermanus, and the city, with private chauffeur travel throughout.",
     images: [`${SITE_URL}/images/itinerary/cape-point.jpg`],
   },
 };

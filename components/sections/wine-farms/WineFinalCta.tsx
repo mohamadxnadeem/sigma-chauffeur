@@ -52,9 +52,9 @@ export default function WineFinalCta() {
           <Title>Plan Your Private Wine Tour in Cape Town</Title>
 
           <Text>
-            Let us help you create the perfect wine experience — from selecting
-            the best estates to planning your route, reservations, and
-            chauffeur-driven travel for a seamless, stress-free day.
+            Tell us which estates interest you, or let us recommend. We
+            plan the route, arrange reservations where needed, and have
+            your chauffeur ready for the day so you can focus on the wine.
           </Text>
 
           <TrustRow>

@@ -68,9 +68,9 @@ async function getVehicles() {
 
 export const metadata: Metadata = {
   title:
-    "Airport Transfers Cape Town | Luxury Chauffeur Pickup & Drop-off | Sigma VIP",
+    "Airport Transfers Cape Town | Private Chauffeur Pickup and FBO Transfers | Sigma VIP",
   description:
-    "Premium airport transfers at Cape Town International Airport. Flight tracking, meet-and-greet, private jet FBO coordination, and luxury chauffeur service. Available 24/7.",
+    "Private airport transfers at Cape Town International. Flight tracking from the moment you depart, meet-and-greet service, and FBO ramp coordination for private jets. Available 24 hours, seven days.",
 
   alternates: {
     canonical: `${SITE_URL}/airport-transfers-cape-town`,
@@ -89,9 +89,9 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Airport Transfers Cape Town | Luxury Chauffeur Pickup & Drop-off | Sigma VIP",
+      "Airport Transfers Cape Town | Private Chauffeur Pickup and FBO Transfers | Sigma VIP",
     description:
-      "Premium airport transfers in Cape Town. Flight tracking, luxury vehicles, and professional chauffeur service for arrivals and departures.",
+      "Private airport transfers in Cape Town. Flight tracking, meet-and-greet, luxury vehicles, and FBO coordination for arrivals and departures.",
     url: `${SITE_URL}/airport-transfers-cape-town`,
     siteName: "Sigma VIP",
     type: "website",
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Airport Transfers Cape Town | Sigma VIP",
     description:
-      "Luxury airport transfers with flight tracking and professional chauffeur service in Cape Town.",
+      "Private airport transfers with real-time flight tracking and professional chauffeur service in Cape Town.",
     images: [`${SITE_URL}/images/logo.png`],
   },
 };

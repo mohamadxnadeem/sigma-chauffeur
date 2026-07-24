@@ -5,9 +5,9 @@ const SITE_URL = "https://sigmachauffeur.vip";
 
 export const metadata: Metadata = {
   title:
-    "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
+    "Best Activities in Cape Town (2026 Guide) | Private Chauffeur Day Tours | Sigma VIP",
   description:
-    "Discover the best activities to do in Cape Town, from Table Mountain and Cape Point to wine tours, helicopter rides, safaris, and private chauffeur-driven experiences. Plan the perfect Cape Town itinerary with luxury transport and curated experiences.",
+    "Table Mountain, Cape Peninsula, Boulders Beach, the Winelands, and more, arranged as private chauffeur day tours from Cape Town. Curated experiences for families and private groups.",
   alternates: {
     canonical: `${SITE_URL}/best-activities-in-cape-town`,
   },
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
+      "Best Activities in Cape Town (2026 Guide) | Private Chauffeur Day Tours | Sigma VIP",
     description:
-      "Explore top Cape Town activities including Table Mountain, Cape Peninsula, wine tours, helicopter rides, and chauffeur-driven private experiences.",
+      "Cape Town activities including Table Mountain, Cape Peninsula, wine tours, and private chauffeur-driven experiences, arranged for families and private groups.",
     url: `${SITE_URL}/best-activities-in-cape-town`,
     siteName: "Sigma VIP",
     type: "article",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Best Activities to Do in Cape Town (2026 Guide) | Private Tours & Chauffeur",
+      "Best Activities in Cape Town (2026 Guide) | Private Chauffeur Day Tours | Sigma VIP",
     description:
-      "Discover top Cape Town activities with private chauffeur service, curated tours, scenic routes, and luxury experiences.",
+      "Cape Town activities including Table Mountain, Cape Point, wine tours, and private chauffeur-driven experiences for families and private groups.",
     images: [`${SITE_URL}/images/activities/table-mountain.jpg`],
   },
 };
@@ -105,10 +105,10 @@ export default function BestActivitiesToDoInCapeTownPage() {
           },
           {
             "@type": "Question",
-            name: "Are Cape Town private tours better than self-drive planning?",
+            name: "How do I arrange a private chauffeur for Cape Town activities?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Private tours are often a better option for travellers who want local knowledge, route planning, flexibility, and a more premium experience without the stress of driving and logistics.",
+              text: "Message us on WhatsApp with your dates, group size, and the activities you want to include. We will suggest a route, confirm your vehicle and chauffeur, and have everything arranged before you arrive.",
             },
           },
           {

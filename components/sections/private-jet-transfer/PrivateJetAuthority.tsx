@@ -78,13 +78,13 @@ const pillars: Pillar[] = [
     icon: "✈",
     title: "Live Flight Tracking",
     description:
-      "We monitor your tail number from departure. If your arrival shifts, your chauffeur moves with it — no recalculation on your side.",
+      "We monitor your tail number from departure. If your arrival shifts, your chauffeur moves with it, with no recalculation on your side.",
   },
   {
     icon: "✦",
     title: "FBO Coordination",
     description:
-      "We work directly with the FBO team on the private terminal side. Ramp passes, vehicle clearance, luggage handling — all arranged before you land.",
+      "We work directly with the FBO team on the private terminal side. Ramp passes, vehicle clearance, luggage handling, all arranged before you land.",
   },
   {
     icon: "⌾",

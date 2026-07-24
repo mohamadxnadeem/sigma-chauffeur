@@ -143,7 +143,7 @@ export default function ChauffeurAuthoritySection() {
             Sigma VIP is a private chauffeur service built for clients who
             expect more than transport. Full-day hire, multi-day packages
             across the Western Cape, and private jet FBO coordination at
-            Cape Town International — every booking handled with complete
+            Cape Town International. Every booking is handled with complete
             discretion and no room for error.
           </p>
 
@@ -158,12 +158,12 @@ export default function ChauffeurAuthoritySection() {
 
           <p>
             Most clients arrive with a destination in mind and leave with a
-            week they didn&apos;t expect. The{" "}
+            week they did not expect. The{" "}
             <InlineLink href="/best-activities-to-do-in-cape-town">
               Cape Peninsula
             </InlineLink>{" "}
             in the morning, Franschhoek for lunch, back in Cape Town for
-            sunset — arranged over WhatsApp in under thirty minutes.
+            sunset, arranged over WhatsApp in under thirty minutes.
             Multi-day packages across{" "}
             <InlineLink href="/best-wine-farms-in-cape-town">
               Stellenbosch and the Winelands
@@ -199,9 +199,9 @@ export default function ChauffeurAuthoritySection() {
                   understand your schedule, your preferences, and your
                   expectations before we confirm anything. For single-day
                   bookings this takes minutes. For multi-day packages we
-                  take the time to understand the full itinerary — which
+                  take the time to understand the full itinerary, which
                   estates to visit, where to stop on the Garden Route, how
-                  many hours you want at each location — and build the
+                  many hours you want at each location, and build the
                   schedule around you.
                 </p>
 
@@ -218,9 +218,9 @@ export default function ChauffeurAuthoritySection() {
                   For private aviation clients, we provide a dedicated FBO
                   service at Cape Town International. We coordinate directly
                   with the private terminal team on ramp access, luggage
-                  handling, and vehicle staging — so your transfer from
-                  aircraft to vehicle takes under five minutes. NDAs
-                  available on request.
+                  handling, and vehicle staging. Your transfer from aircraft
+                  to vehicle takes under five minutes. NDAs available on
+                  request.
                 </p>
 
                 <p>

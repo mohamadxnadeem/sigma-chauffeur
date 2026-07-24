@@ -13,7 +13,7 @@ const SITE_URL = "https://sigmachauffeur.vip";
 export const metadata: Metadata = {
   title: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
   description:
-    "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover. All-inclusive — book via WhatsApp.",
+    "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover. All-inclusive. Arrange via WhatsApp.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -429,8 +429,8 @@ export default async function HomePage() {
 
       <HeroBanner
         eyebrow="Sigma VIP"
-        title="Private Chauffeur Cape Town — Full-Day Hire & Multi-Day Packages"
-        description="Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. One vehicle, one professional chauffeur, your itinerary — all-inclusive. Private jet FBO transfers also available."
+        title="Private Chauffeur Cape Town. Full-Day Hire and Multi-Day Packages"
+        description="Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. One vehicle, one professional chauffeur, your itinerary. All-inclusive. Private jet FBO transfers also available."
         primaryCtaLabel="Book on WhatsApp"
         primaryCtaHref="https://wa.me/27711081227?text=Hi%2C%20I%27m%20interested%20in%20arranging%20a%20private%20chauffeur%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
         secondaryCtaLabel="View Fleet"
@@ -449,7 +449,11 @@ export default async function HomePage() {
 
       <TestimonialsCta />
 
-      <WhyChooseUs items={trustItems} />
+      <WhyChooseUs
+        title="The Details That Make the Difference"
+        description="Private travel requires precision at every point. Here is how we structure every booking to deliver exactly that."
+        items={trustItems}
+      />
 
       <ChauffeurAuthoritySection />
 

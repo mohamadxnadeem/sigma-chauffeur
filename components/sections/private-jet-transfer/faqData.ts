@@ -33,7 +33,7 @@ export const privateJetFaqItems: PrivateJetFaqItem[] = [
   {
     question: "How is pricing handled?",
     answer:
-      "Every airport transfer is priced to the itinerary — onward distance, chauffeur hours, vehicle choice, and any multi-day extensions. Share your flight details and onward plan via WhatsApp and we will come back with a tailored quote within 30 minutes.",
+      "Every airport transfer is priced to the itinerary: onward distance, chauffeur hours, vehicle choice, and any multi-day extensions. Share your flight details and onward plan via WhatsApp and we will come back with a tailored quote within 30 minutes.",
   },
   {
     question: "How far in advance should I book?",

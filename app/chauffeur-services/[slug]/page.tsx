@@ -75,7 +75,8 @@ function getSeoKeyword(car: Car): string {
 }
 
 // ─────────────────────────────────────────────
-// PRICE HELPERS (unchanged)
+// PRICE HELPERS
+// formatPrice used in mapRelatedVehicles; getNumericPriceValue used in structured data offers
 // ─────────────────────────────────────────────
 function formatPrice(
   price?: string | number,
@@ -183,11 +184,7 @@ function getMetaFriendlyRate(car: Car) {
 function getPageTitle(car: Car) {
   if (car.meta_title) return car.meta_title; // CMS override wins
   const keyword = getSeoKeyword(car);
-  const rate = getMetaFriendlyRate(car);
-  // Append price if it fits — increases CTR significantly for HNWI searches
-  return rate
-    ? `${keyword} | From ${rate} | Sigma VIP`
-    : `${keyword} | Sigma VIP`;
+  return `${keyword} | Sigma VIP`;
 }
 
 // ─────────────────────────────────────────────
@@ -198,25 +195,20 @@ function getPageTitle(car: Car) {
 function getPageDescription(car: Car) {
   if (car.meta_description) return car.meta_description; // CMS override wins
   const keyword = getSeoKeyword(car);
-  const rate = getMetaFriendlyRate(car);
-  const seats = car.number_of_seats ? ` ${car.number_of_seats} seats.` : "";
-  const rateStr = rate ? ` From ${rate}/day.` : "";
+  const seats = car.number_of_seats ? ` ${car.number_of_seats} passengers.` : "";
   return truncateText(
-    `${keyword} — private airport transfers, full-day tours & bespoke Cape Town hire.${rateStr}${seats} Professional chauffeur. Book via WhatsApp.`,
+    `${keyword}. Private airport transfers, full-day tours, and bespoke Cape Town hire.${seats} Professional chauffeur. Arrange via WhatsApp.`,
     155
   );
 }
 
 function getShortVehicleDescription(car: Car) {
   const keyword = getSeoKeyword(car);
-  const rate = getFormattedDailyRate(car);
   return (
     car.short_description ||
     car.highlight ||
     truncateText(car.body, 180) ||
-    (rate
-      ? `${keyword} — ${rate.toLowerCase()} for private airport transfers, tours, and full-day hire in Cape Town.`
-      : `Premium ${keyword} for private travel, airport transfers, and chauffeur-driven experiences.`)
+    `${keyword} for private airport transfers, full-day tours, and chauffeur-driven experiences in Cape Town.`
   );
 }
 
@@ -243,7 +235,7 @@ function mapRelatedVehicles(cars: Car[], currentSlug: string): RelatedVehicle[] 
 // New: 8 questions, first 3 embed the exact SEO keyword naturally
 // This is what triggers FAQ rich results in Google — specificity matters
 // ─────────────────────────────────────────────
-function buildVehicleFaqs(car: Car, formattedPrice: string) {
+function buildVehicleFaqs(car: Car) {
   const name = car.title || "this luxury vehicle";
   const keyword = getSeoKeyword(car);
   const seats = car.number_of_seats ? `${car.number_of_seats}` : "multiple";
@@ -252,10 +244,8 @@ function buildVehicleFaqs(car: Car, formattedPrice: string) {
   return [
     {
       // Q1: Primary keyword in question — strongest FAQ schema signal
-      question: `How much does ${keyword} cost?`,
-      answer: formattedPrice
-        ? `${keyword} starts ${formattedPrice.toLowerCase()} per vehicle per day. This includes your professional chauffeur and fuel. Airport entrance fees and national park entry are not included. Contact us via WhatsApp for a tailored quote.`
-        : `Pricing for ${keyword} depends on your route, duration, and itinerary. Contact us via WhatsApp for availability and a personalised quote.`,
+      question: `How do I book the ${keyword}?`,
+      answer: `Message us on WhatsApp with your dates, group size, and itinerary. We confirm availability and vehicle details within 30 minutes. Pricing for the ${keyword} is tailored to your route and duration.`,
     },
     {
       // Q2: Airport transfer — high search volume variant
@@ -400,9 +390,8 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
   const pageTitle = getPageTitle(car);
   const pageDescription = getPageDescription(car);
   const keyword = getSeoKeyword(car);
-  const formattedPrice = formatPrice(car.price, car.price_from, car.price_to, car.currency);
   const numericPrice = getNumericPriceValue(car.price, car.price_from, car.price_to);
-  const vehicleFaqs = buildVehicleFaqs(car, formattedPrice);
+  const vehicleFaqs = buildVehicleFaqs(car);
 
   // ─────────────────────────────────────────────
   // FIX 11: EXPANDED STRUCTURED DATA

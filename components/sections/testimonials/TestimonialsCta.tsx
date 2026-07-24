@@ -54,18 +54,19 @@ export default function TestimonialsCta() {
   return (
     <Section>
       <Container>
-        <Title>Ready to Experience Cape Town Like This?</Title>
+        <Title>Your Cape Town Visit, Arranged from Start to Finish</Title>
 
         <Text>
-          Message us on WhatsApp and we’ll plan your entire trip — from chauffeur
-          drives and tours to wine farms and luxury experiences.
+          Message us on WhatsApp and we will plan your entire visit, from
+          private chauffeur drives and day tours to wine estates and
+          multi-day packages across the Western Cape.
         </Text>
 
         <TrustRow>
           <TrustItem>Private Chauffeur</TrustItem>
           <TrustItem>Custom Itinerary</TrustItem>
-          <TrustItem>Luxury Experiences</TrustItem>
-          <TrustItem>Local Expertise</TrustItem>
+          <TrustItem>Multi-Day Packages</TrustItem>
+          <TrustItem>One Point of Contact</TrustItem>
         </TrustRow>
 
         <Anchor
@@ -75,11 +76,11 @@ export default function TestimonialsCta() {
           onClick={() =>
             trackWhatsAppClick({
               source: "testimonial_cta",
-              label: "Plan My Trip",
+              label: "Arrange My Visit",
             })
           }
         >
-          <Button as="span">Plan My Cape Town Trip</Button>
+          <Button as="span">Arrange My Cape Town Visit</Button>
         </Anchor>
       </Container>
     </Section>
