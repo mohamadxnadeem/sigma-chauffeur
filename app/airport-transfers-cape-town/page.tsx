@@ -13,6 +13,7 @@ type CarPhoto = {
 
 type Car = {
   title?: string;
+  slug?: string;
   short_description?: string;
   highlight?: string;
   number_of_seats?: number;
@@ -47,6 +48,7 @@ async function getVehicles() {
         );
         return {
           title: car.title,
+          slug: car.slug,
           description:
             car.short_description ||
             car.highlight ||
@@ -57,6 +59,7 @@ async function getVehicles() {
       })
       .filter(Boolean) as {
       title: string;
+      slug?: string;
       description: string;
       image: string;
       seats?: number;

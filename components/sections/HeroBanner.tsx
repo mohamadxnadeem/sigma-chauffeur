@@ -126,8 +126,8 @@ export default function HeroBanner({
           alt={imageAlt}
           fill
           priority
-          quality={90}
-          sizes="100vw"
+          quality={75}
+          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, 1440px"
           style={{ objectFit: "cover" }}
           placeholder="blur"
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTJlOGYwIi8+PC9zdmc+"

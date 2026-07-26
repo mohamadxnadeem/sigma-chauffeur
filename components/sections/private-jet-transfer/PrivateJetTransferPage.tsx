@@ -12,6 +12,7 @@ import FeaturedVehicles from "../FeaturedVehicles";
 
 type VehicleItem = {
   title: string;
+  slug?: string;
   description: string;
   image: string;
   seats?: number;
@@ -24,7 +25,7 @@ type Props = {
 export default function PrivateJetTransferPage({ vehicles = [] }: Props) {
   const vehicleItems = vehicles.map((v) => ({
     ...v,
-    href: "/",
+    href: typeof v.slug === "string" && v.slug.trim() ? `/chauffeur-services/${v.slug.trim()}` : "/#fleet",
   }));
 
   return (

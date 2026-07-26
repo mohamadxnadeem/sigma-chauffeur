@@ -280,16 +280,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
-    // FIX 8: Add keywords — minor signal but costs nothing
-    keywords: [
-      keyword,
-      `${car.title} chauffeur cape town`,
-      `${car.title} hire with driver cape town`,
-      `${car.title} private driver cape town`,
-      "luxury chauffeur cape town",
-      "private chauffeur cape town",
-      "cape town vip transport",
-    ].filter(Boolean),
     alternates: { canonical: canonicalUrl },
     robots: {
       index: true,
