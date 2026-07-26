@@ -3,7 +3,6 @@ export const sigmaVipBrand = {
   siteUrl: "https://sigmachauffeur.vip",
   tagline:
     "Private chauffeur hire, multi-day packages, and bespoke travel across Cape Town and the Western Cape",
-  contactEmail: "info@sigmavip.co.za",
   phone: "+27 71 108 1227",
   colors: {
     primary: "#C9A84C",

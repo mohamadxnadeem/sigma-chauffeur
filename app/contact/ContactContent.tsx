@@ -46,10 +46,6 @@ export default function ContactContent() {
           <a href="tel:+27711081227">+27 71 108 1227</a>
         </div>
         <div>
-          <strong>Email:</strong>{" "}
-          <a href="mailto:info@sigmavip.co.za">info@sigmavip.co.za</a>
-        </div>
-        <div>
           <strong>Hours:</strong> Available 7 days a week, 24 hours
         </div>
       </div>

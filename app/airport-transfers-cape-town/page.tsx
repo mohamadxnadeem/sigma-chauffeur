@@ -137,7 +137,6 @@ export default async function AirportTransfersRoute() {
             url: `${SITE_URL}/images/logo.png`,
           },
           telephone: "+27 71 108 1227",
-          email: "info@sigmavip.co.za",
         },
         areaServed: {
           "@type": "City",

@@ -300,7 +300,6 @@ export default async function HomePage() {
         name: "Sigma VIP",
         url: SITE_URL,
         telephone: "+27711081227",
-        email: "info@sigmavip.co.za",
         priceRange: "RRRR",
         logo: `${SITE_URL}/images/logo.png`,
         address: {

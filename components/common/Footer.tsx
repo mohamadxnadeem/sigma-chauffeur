@@ -175,9 +175,6 @@ export default function Footer() {
               <ContactLink href="tel:+27711081227">
                 +27 71 108 1227
               </ContactLink>
-              <ContactLink href="mailto:info@sigmavip.co.za">
-                info@sigmavip.co.za
-              </ContactLink>
               <WhatsAppLink
                 href={whatsappLink}
                 target="_blank"

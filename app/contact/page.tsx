@@ -54,7 +54,6 @@ export default function ContactPage() {
       name: "Sigma VIP",
       url: SITE_URL,
       telephone: "+27 71 108 1227",
-      email: "info@sigmavip.co.za",
     },
   };
 
