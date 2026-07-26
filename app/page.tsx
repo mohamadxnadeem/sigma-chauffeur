@@ -13,7 +13,7 @@ const SITE_URL = "https://sigmachauffeur.vip";
 export const metadata: Metadata = {
   title: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
   description:
-    "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover. All-inclusive. Arrange via WhatsApp.",
+    "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, BMW X5, V-Class. All-inclusive. Arrange via WhatsApp.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/hero-car.jpg`,
         width: 1200,
         height: 630,
-        alt: "Private chauffeur service Cape Town — Sigma VIP luxury fleet",
+        alt: "Private chauffeur service Cape Town, Sigma VIP luxury fleet",
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
     description:
-      "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
+      "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, BMW X5, V-Class.",
     images: [`${SITE_URL}/images/hero-car.jpg`],
   },
 };
@@ -334,7 +334,7 @@ export default async function HomePage() {
         name: "Private Chauffeur Cape Town | Full-Day & Multi-Day Hire | Sigma VIP",
         url: SITE_URL,
         description:
-          "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, G-Wagon, Range Rover.",
+          "Private full-day chauffeur hire in Cape Town. Multi-day packages, private jet FBO transfers, and bespoke itineraries. Mercedes S-Class, BMW X5, V-Class.",
         image: [`${SITE_URL}/images/hero-car.jpg`],
       },
       {
@@ -364,7 +364,7 @@ export default async function HomePage() {
             name: "Do you offer multi-day chauffeur packages in Cape Town?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes. Multi-day packages are available across Cape Town and the Western Cape — covering the Cape Peninsula, Stellenbosch Winelands, Hermanus, and the Garden Route. Same vehicle and chauffeur throughout.",
+              text: "Yes. Multi-day packages are available across Cape Town and the Western Cape, covering the Cape Peninsula, Stellenbosch Winelands, Hermanus, and the Garden Route. Same vehicle and chauffeur throughout.",
             },
           },
           {
@@ -380,7 +380,7 @@ export default async function HomePage() {
             name: "Which vehicles are available for full-day hire?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Our fleet includes the Mercedes S-Class, Mercedes G-Wagon, Range Rover Sport, BMW X5, Mercedes V-Class, Hyundai Staria, and BMW 5-Series. Choose based on party size and preference or let us recommend.",
+              text: "Our fleet includes the Mercedes S-Class, Range Rover Sport, BMW X5, BMW 5-Series, Mercedes V-Class, and Hyundai Staria. Choose based on party size and preference or let us recommend.",
             },
           },
           {
@@ -430,7 +430,7 @@ export default async function HomePage() {
         secondaryCtaLabel="View Fleet"
         secondaryCtaHref="#fleet"
         image="/images/car.jpg"
-        imageAlt="Private chauffeur service Cape Town — Sigma VIP luxury fleet"
+        imageAlt="Private chauffeur service Cape Town, Sigma VIP luxury fleet"
       />
 
       <TestimonialsSection />

@@ -213,7 +213,7 @@ function buildVehicleFaqs(car: Car) {
     {
       // Q3: Cape Peninsula — the #1 tour search
       question: `Can I use ${name} for a private Cape Peninsula tour?`,
-      answer: `Yes. ${name} is ideal for a private Cape Peninsula tour. Your chauffeur will take you through Chapman's Peak Drive, Hout Bay, Boulders Beach penguin colony, and Cape Point — at your own pace, with no group schedules.`,
+      answer: `Yes. ${name} is ideal for a private Cape Peninsula tour. Your chauffeur will take you through Chapman's Peak Drive, Hout Bay, Boulders Beach penguin colony, and Cape Point, at your own pace with no group schedules.`,
     },
     {
       // Q4: Capacity

@@ -4,7 +4,7 @@ export const testimonials = [
     image: "/images/testimonials/Aashish.jpg",
     service: "Cape Peninsula Private Tour",
     review:
-      "We had the full Cape Peninsula in one day — Chapman's Peak, Boulders Beach, Cape Point — all at our own pace. Our chauffeur knew exactly where to stop for the best views and even arranged a lunch reservation in Kalk Bay. Far better than any group tour.",
+      "We had the full Cape Peninsula in one day: Chapman's Peak, Boulders Beach, Cape Point. All at our own pace. Our chauffeur knew exactly where to stop for the best views and even arranged a lunch reservation in Kalk Bay. Far better than any group tour.",
   },
   {
     name: "Achmat",
@@ -32,7 +32,7 @@ export const testimonials = [
     image: "/images/testimonials/gunnar.jpg",
     service: "Aquila Safari Day Trip",
     review:
-      "Picked up at 6am from our hotel in the G-Wagon, arrived at Aquila before the crowds. The drive through the Karoo was stunning. Our chauffeur waited the entire day and had the vehicle cooled and ready when we finished. Seamless.",
+      "Picked up at 6am from our hotel in the BMW X5, arrived at Aquila before the crowds. The drive through the Karoo was stunning. Our chauffeur waited the entire day and had the vehicle cooled and ready when we finished. Seamless.",
   },
   {
     name: "Jana",
@@ -60,14 +60,14 @@ export const testimonials = [
     image: "/images/testimonials/kazi.png",
     service: "Cape Peninsula Private Tour",
     review:
-      "One of the best days of our trip. Our chauffeur took us on a route we would never have found on our own — quiet coastal roads, a hidden viewpoint above Hout Bay, and lunch at a spot only locals know about. This is why you hire a private driver.",
+      "One of the best days of our trip. Our chauffeur took us on a route we would never have found on our own. Quiet coastal roads, a hidden viewpoint above Hout Bay, and lunch at a spot only locals know about. This is why you hire a private driver.",
   },
   {
     name: "Kresmir",
     image: "/images/testimonials/kresmir.jpg",
     service: "Stellenbosch Winelands Tour",
     review:
-      "Third time using Sigma VIP for Winelands days. They remember our preferences — which estates we like, where we want to eat, how long we spend at each stop. That kind of personal service is rare and it keeps us coming back.",
+      "Third time using Sigma VIP for Winelands days. They remember our preferences: which estates we like, where we want to eat, how long we spend at each stop. That kind of personal service is rare and it keeps us coming back.",
   },
   {
     name: "Luka",
@@ -88,7 +88,7 @@ export const testimonials = [
     image: "/images/testimonials/mampuru.png",
     service: "Airport Transfer",
     review:
-      "Our flight was delayed by two hours. No phone calls needed — they tracked the flight automatically and the driver was there when we walked out. That level of service sets them apart from every other transfer company we've used.",
+      "Our flight was delayed by two hours. No phone calls needed. They tracked the flight automatically and the driver was there when we walked out. That level of service sets them apart from every other transfer company we've used.",
   },
   {
     name: "Marie",
@@ -109,14 +109,14 @@ export const testimonials = [
     image: "/images/testimonials/nadine.jpg",
     service: "Multi-Day Package",
     review:
-      "Booked Sigma VIP for five days — airport transfer on arrival, Peninsula day tour, Winelands, Hermanus, and a final transfer back. Same driver the entire time. By day three he felt like part of the family. The consistency made the whole trip effortless.",
+      "Booked Sigma VIP for five days: airport transfer on arrival, Peninsula day tour, Winelands, Hermanus, and a final transfer back. Same driver the entire time. By day three he felt like part of the family. The consistency made the whole trip effortless.",
   },
   {
     name: "Nicholas",
     image: "/images/testimonials/nicholas.png",
     service: "Aquila Safari Day Trip",
     review:
-      "Long drive to Aquila but the G-Wagon made it comfortable and our driver knew exactly where to stop for the best views along the N1. The safari itself was incredible and having private transport there and back made it a proper luxury experience.",
+      "Long drive to Aquila but the BMW X5 made it comfortable and our driver knew exactly where to stop for the best views along the N1. The safari itself was incredible and having private transport there and back made it a proper luxury experience.",
   },
   {
     name: "Noor",
@@ -130,14 +130,14 @@ export const testimonials = [
     image: "/images/testimonials/rachel.png",
     service: "Cape Peninsula Private Tour",
     review:
-      "We skipped the cable car queues at Table Mountain, drove the entire Peninsula at our own pace, and ended the day watching the sunset from Signal Hill — all arranged by our chauffeur on the spot. That kind of flexibility is priceless.",
+      "We skipped the cable car queues at Table Mountain, drove the entire Peninsula at our own pace, and ended the day watching the sunset from Signal Hill, all arranged by our chauffeur on the spot. That kind of flexibility is priceless.",
   },
   {
     name: "Ru",
     image: "/images/testimonials/ru.jpg",
     service: "Airport Transfer",
     review:
-      "International flight landing at 5am — not a problem. Driver was there with a name board, helped with all four suitcases, and the S-Class was waiting right outside. After 14 hours of flying, that level of comfort made all the difference.",
+      "International flight landing at 5am. Not a problem. Driver was there with a name board, helped with all four suitcases, and the S-Class was waiting right outside. After 14 hours of flying, that level of comfort made all the difference.",
   },
   {
     name: "Ruth",
@@ -158,7 +158,7 @@ export const testimonials = [
     image: "/images/testimonials/sarah.jpg",
     service: "Cape Peninsula Private Tour",
     review:
-      "Our chauffeur rearranged the entire day when the weather changed — moved Table Mountain to the morning when it was clear and saved the Peninsula drive for the afternoon. That kind of real-time flexibility is exactly why you go private.",
+      "Our chauffeur rearranged the entire day when the weather changed, moving Table Mountain to the morning when it was clear and saving the Peninsula drive for the afternoon. That kind of real-time flexibility is exactly why you go private.",
   },
   {
     name: "Tim",
@@ -172,14 +172,14 @@ export const testimonials = [
     image: "/images/testimonials/tuleen.jpg",
     service: "City & Table Mountain Tour",
     review:
-      "Every detail was considered — from the temperature of the water bottles to the route timing to avoid traffic. Our chauffeur treated the day like it was his own family's trip. That personal touch is what separates Sigma VIP from the rest.",
+      "Every detail was considered, from the temperature of the water bottles to the route timing to avoid traffic. Our chauffeur treated the day like it was his own family's trip. That personal touch is what separates Sigma VIP from the rest.",
   },
   {
     name: "Yasir",
     image: "/images/testimonials/yaasir.png",
     service: "Stellenbosch Winelands Tour",
     review:
-      "Organised a Winelands day for a group of eight across two vehicles. Both drivers arrived together, followed the same route, and coordinated stops perfectly. The logistics were handled entirely by Sigma VIP — we just enjoyed the wine.",
+      "Organised a Winelands day for a group of eight across two vehicles. Both drivers arrived together, followed the same route, and coordinated stops perfectly. The logistics were handled entirely by Sigma VIP. We just enjoyed the wine.",
   },
   {
     name: "Yasmin",

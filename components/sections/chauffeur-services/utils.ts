@@ -45,7 +45,7 @@ export function buildFaqs(vehicleTitle: string, seoKeyword?: string): FaqItem[] 
     // Q1: primary keyword in the question — strongest FAQ schema trigger
     {
       question: `How do I arrange the ${kw}?`,
-      answer: `Message us on WhatsApp with your dates, group size, and itinerary. We confirm availability and vehicle details within 30 minutes. Pricing is tailored to your route and duration — no fixed meter, no surprises on the day.`,
+      answer: `Message us on WhatsApp with your dates, group size, and itinerary. We confirm availability and vehicle details within 30 minutes. Pricing is tailored to your route and duration. No fixed meter, no surprises on the day.`,
     },
 
     // Q2: airport transfer — high search volume
@@ -57,7 +57,7 @@ export function buildFaqs(vehicleTitle: string, seoKeyword?: string): FaqItem[] 
     // Q3: Cape Peninsula — #1 tour keyword
     {
       question: `Can I use the ${vehicleTitle} for a private Cape Peninsula tour?`,
-      answer: `Yes. The ${vehicleTitle} is an excellent choice for a private Cape Peninsula tour. Your chauffeur will take you through Chapman's Peak Drive, Hout Bay, Boulders Beach penguin colony, and Cape Point — entirely at your own pace with no group schedules or fixed stops. Full-day tours typically run 8 to 10 hours.`,
+      answer: `Yes. The ${vehicleTitle} is an excellent choice for a private Cape Peninsula tour. Your chauffeur will take you through Chapman's Peak Drive, Hout Bay, Boulders Beach penguin colony, and Cape Point, entirely at your own pace with no group schedules or fixed stops. Full-day tours typically run 8 to 10 hours.`,
     },
 
     // Q4: Winelands — #2 tour keyword
@@ -69,7 +69,7 @@ export function buildFaqs(vehicleTitle: string, seoKeyword?: string): FaqItem[] 
     // Q5: full day hire
     {
       question: `Can I hire the ${vehicleTitle} for a full day in Cape Town?`,
-      answer: `Yes. Full-day private hire is available with the ${vehicleTitle}. You choose your itinerary — whether that is city sightseeing, a coastal drive along the Atlantic Seaboard, the Cape Peninsula, or the Winelands — and your chauffeur manages all routing and timing. Full-day hire typically runs 8 to 10 hours.`,
+      answer: `Yes. Full-day private hire is available with the ${vehicleTitle}. You choose your itinerary: city sightseeing, a coastal drive along the Atlantic Seaboard, the Cape Peninsula, or the Winelands. Your chauffeur manages all routing and timing. Full-day hire typically runs 8 to 10 hours.`,
     },
 
     // Q6: capacity

@@ -54,10 +54,10 @@ function buildAuthorityCards(car: Car, seoKeyword: string) {
 
   // Card 1: vehicle character — derived from type + seats
   const card1 = {
-    title: `${name} — Built for Private Travel`,
+    title: `${name}: Built for Private Travel`,
     text: seats
       ? `Comfortably seating up to ${seats} passengers, this ${vehicleType} delivers the space, presence, and refinement expected by clients who travel privately in Cape Town.`
-      : `This ${vehicleType} is selected for its combination of presence, comfort, and performance — ideal for clients who want a polished private travel experience across Cape Town.`,
+      : `This ${vehicleType} is selected for its combination of presence, comfort, and performance, ideal for clients who want a polished private travel experience across Cape Town.`,
   };
 
   // Card 2: use case — derived from ideal_for if present
@@ -68,7 +68,7 @@ function buildAuthorityCards(car: Car, seoKeyword: string) {
 
   const card2 = {
     title: "Flexible Hire, Your Itinerary",
-    text: `Whether you need ${primaryUse}, full-day private hire, or a curated Cape Town experience, your chauffeur works around your schedule — not a group timetable.`,
+    text: `Whether you need ${primaryUse}, full-day private hire, or a curated Cape Town experience, your chauffeur works around your schedule, not a group timetable.`,
   };
 
   // Card 3: premium positioning — uses seoKeyword once naturally
@@ -99,7 +99,7 @@ function buildAuthorityBody(car: Car, seoKeyword: string): string[] {
 
   const para1 = `Booking a ${seoKeyword} is about more than getting from one place to another. It is about arriving at each destination feeling composed, private, and well looked after. The ${name}${seatsStr}${luggageStr} is chosen by our clients specifically because it balances a commanding road presence with the kind of interior refinement that makes every journey worthwhile.`;
 
-  const para2 = `Our clients regularly choose this ${vehicleType} for Cape Town airport transfers, Cape Peninsula private tours, Cape Winelands day hire in Stellenbosch and Franschhoek, and full-day executive travel across the city. Because every booking is private — no shared vehicles, no group schedules — your chauffeur is entirely focused on your comfort and timing from start to finish.`;
+  const para2 = `Our clients regularly choose this ${vehicleType} for Cape Town airport transfers, Cape Peninsula private tours, Cape Winelands day hire in Stellenbosch and Franschhoek, and full-day executive travel across the city. Every booking is private. No shared vehicles, no group schedules. Your chauffeur is entirely focused on your comfort and timing from start to finish.`;
 
   const para3 = `If you are visiting Cape Town and want a dependable, premium chauffeur experience with a ${name}, we can confirm availability and pricing within 30 minutes via WhatsApp. Same-day bookings are accommodated where possible. We serve clients arriving from the United States, United Kingdom, and across South Africa.`;
 
@@ -345,7 +345,7 @@ export default function ChauffeurDetailView({
   const authorityIntro =
     car.short_description ||
     car.highlight ||
-    `${seoKeyword} — private airport transfers, full-day tours, and bespoke hire across Cape Town and the Western Cape. Professional chauffeur service designed for clients who value comfort, discretion, and reliability.`;
+    `${seoKeyword}. Private airport transfers, full-day tours, and bespoke hire across Cape Town and the Western Cape. Professional chauffeur service designed for clients who value comfort, discretion, and reliability.`;
 
   // Expand body — uses car.body from CMS if available, otherwise generates
   // vehicle-specific paragraphs (no more generic identical text)

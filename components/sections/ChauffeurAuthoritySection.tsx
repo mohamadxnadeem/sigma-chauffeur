@@ -150,9 +150,9 @@ export default function ChauffeurAuthoritySection() {
 
           <p>
             Our fleet covers every private travel requirement. The Mercedes
-            S-Class and G-Wagon for clients who want the best in the
+            S-Class and BMW X5 for clients who want the best in the
             vehicle. The Mercedes V-Class and Hyundai Staria for families
-            and groups travelling together. The BMW X5 and Range Rover
+            and groups travelling together. The BMW 5-Series and Range Rover
             Sport for full-day touring across the{" "}
             <InlineLink href="/best-activities-to-do-in-cape-town">
               Cape Peninsula

@@ -367,7 +367,7 @@ export default function PrivateTourVehicles({ items, tourTitle }: Props) {
         <SectionTitle>Travel Cape Town in Complete Comfort & Privacy</SectionTitle>
         <SectionText>
           Enjoy a fully private, chauffeur-driven experience with everything
-          taken care of — from hotel pickup to scenic routes, local insight, and
+          taken care of, from hotel pickup to scenic routes, local insight, and
           seamless travel throughout your day.
         </SectionText>
       </SectionHeader>

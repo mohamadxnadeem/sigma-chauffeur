@@ -123,7 +123,7 @@ export default function Header() {
               <LogoImage>
                 <Image
                   src="/images/logo.png"
-                  alt="Sigma VIP — Luxury Chauffeur & Tourism"
+                  alt="Sigma VIP Luxury Chauffeur and Tourism"
                   fill
                   priority
                   sizes="(max-width: 768px) 72px, 92px"

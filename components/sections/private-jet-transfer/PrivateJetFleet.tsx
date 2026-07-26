@@ -40,12 +40,12 @@ const vehicles: Vehicle[] = [
     features: ["4 passengers", "Panoramic roof", "Meridian audio"],
   },
   {
-    badge: "Statement Vehicle",
-    title: "Mercedes G-Wagon",
-    ideal: "Statement arrivals · safari day-trips",
+    badge: "Executive SUV",
+    title: "BMW X5",
+    ideal: "Full-day touring · executive transfers",
     description:
-      "Commanding presence. Military heritage, interior luxury. For clients whose arrival should be noticed, on their terms.",
-    features: ["4 passengers", "All-terrain capable", "High clearance"],
+      "A refined SUV with elevated seating, panoramic roof, and a cabin built for long-form comfort. Equally at home on the Cape Peninsula and in the city.",
+    features: ["4 passengers", "Panoramic roof", "Chauffeur included"],
   },
 ];
 

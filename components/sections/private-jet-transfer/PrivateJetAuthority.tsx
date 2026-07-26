@@ -90,7 +90,7 @@ const pillars: Pillar[] = [
     icon: "⌾",
     title: "Vehicle Staged Early",
     description:
-      "Your Mercedes S-Class, Range Rover or G-Wagon is positioned at the FBO before your wheels touch down. You step off, the door opens, you are already moving.",
+      "Your Mercedes S-Class, BMW X5 or V-Class is positioned at the FBO before your wheels touch down. You step off, the door opens, you are already moving.",
   },
   {
     icon: "◆",

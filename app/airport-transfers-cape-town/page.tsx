@@ -103,7 +103,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/logo.png`,
         width: 520,
         height: 520,
-        alt: "Sigma VIP — airport transfers Cape Town",
+        alt: "Sigma VIP airport transfers Cape Town",
       },
     ],
   },
@@ -125,7 +125,7 @@ export default async function AirportTransfersRoute() {
       {
         "@type": "Service",
         serviceType: "Airport Transfer Service",
-        name: "Sigma VIP Airport Transfers — Cape Town",
+        name: "Sigma VIP Airport Transfers Cape Town",
         description:
           "Premium airport transfers at Cape Town International Airport. Includes flight tracking, meet-and-greet, private jet FBO coordination, vehicle staging, and luxury chauffeur service. Available 24/7.",
         provider: {

@@ -75,7 +75,7 @@ export default function MultiDaySection() {
         <Body>
           Most of our clients don&apos;t stop at one booking. They combine the
           Cape Peninsula, Stellenbosch Winelands, Hermanus, and the Garden Route
-          across 3, 5, or 7 days — with the same private vehicle and chauffeur
+          across 3, 5, or 7 days, with the same private vehicle and chauffeur
           throughout. No logistics to coordinate, no new bookings to manage. One
           WhatsApp message and your entire Western Cape transport is handled,
           from FBO arrival to final hotel drop-off.
