@@ -96,9 +96,10 @@ export default function PrivateServiceSection() {
               clients.
             </Feature>
             <Feature>
-              <FeatureLabel>Arabic-speaking drivers</FeatureLabel> available
-              on request. Halal-aware itinerary planning and prayer-time
-              consideration arranged for every booking that requires it.
+              <FeatureLabel>Same chauffeur throughout</FeatureLabel> for
+              multi-day packages. By day two, they know your preferences,
+              your timing, and how your party travels. Confirmed in advance,
+              not substituted on the morning.
             </Feature>
             <Feature>
               <FeatureLabel>Family and multi-vehicle convoys</FeatureLabel>{" "}

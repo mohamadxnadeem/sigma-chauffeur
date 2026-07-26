@@ -166,12 +166,11 @@ export default function ChauffeurAuthoritySection() {
           </p>
 
           <p>
-            Gulf families travelling with an entourage, principals arriving
+            Families travelling with an entourage, principals arriving
             by private jet, and EAs arranging a visit on behalf of a client
-            represent the majority of our bookings. Arabic-speaking drivers
-            are available on request. Halal-aware planning and prayer-time
-            consideration are arranged as standard for every booking that
-            requires it. NDAs on request.
+            represent the majority of our bookings. Every chauffeur is
+            vetted and personally briefed before each booking. NDAs
+            available on request for clients who require them.
           </p>
 
           <p>
