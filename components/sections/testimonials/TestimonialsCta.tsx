@@ -57,9 +57,9 @@ export default function TestimonialsCta() {
         <Title>Your Cape Town Visit, Arranged from Start to Finish</Title>
 
         <Text>
-          Message us on WhatsApp and we will plan your entire visit, from
-          private chauffeur drives and day tours to wine estates and
-          multi-day packages across the Western Cape.
+          Send us your travel dates and the size of your party. We will
+          confirm your vehicles, your chauffeurs, and your itinerary, and
+          have everything in place before you land.
         </Text>
 
         <TrustRow>

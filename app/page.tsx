@@ -57,22 +57,22 @@ const trustItems = [
   {
     title: "Family & Multi-Vehicle Convoys",
     description:
-      "Principal in the Mercedes S-Class, family in the V-Class or Staria, luggage in a separate vehicle. One coordinated booking, one point of contact.",
+      "Your principal vehicle, a family carrier, and a luggage vehicle dispatched together and coordinated throughout. One arrangement, one point of contact, no separate bookings to manage.",
   },
   {
     title: "Complete Discretion & Privacy",
     description:
-      "Fully private vehicles, vetted chauffeurs, NDAs available on request. No shared schedules, no groups — every booking is exclusively yours.",
+      "Every vehicle is exclusively yours. Chauffeurs are vetted and personally briefed before each booking. NDAs available on request. No shared schedules, no other clients, no exceptions.",
   },
   {
     title: "Arabic-Speaking Chauffeurs on Request",
     description:
-      "Request an Arabic-speaking driver when you book. Halal-aware itineraries and prayer-time flexibility arranged as standard.",
+      "Arabic-speaking drivers available when you book. Halal-aware itinerary planning and prayer-time consideration are part of every booking that requires it, not an add-on.",
   },
   {
     title: "Private Jet FBO Coordination",
     description:
-      "We coordinate directly with Cape Town's private terminal on ramp access, vehicle staging, and luggage handling. Your vehicle is in position before you land.",
+      "We liaise directly with the private terminal team at Cape Town International on ramp access, vehicle staging, and luggage handling. Your vehicle is confirmed and in position before your wheels touch down.",
   },
 ];
 
@@ -429,8 +429,8 @@ export default async function HomePage() {
 
       <HeroBanner
         eyebrow="Sigma VIP"
-        title="Private Chauffeur Cape Town. Full-Day Hire and Multi-Day Packages"
-        description="Private full-day chauffeur hire and multi-day packages across Cape Town and the Western Cape. One vehicle, one professional chauffeur, your itinerary. All-inclusive. Private jet FBO transfers also available."
+        title="Private Chauffeur Cape Town. Everything Arranged Before You Land."
+        description="Sigma VIP coordinates your vehicles, chauffeurs, and itinerary as a single arrangement from arrival to departure. Family convoys, FBO ramp access for private jet arrivals, Arabic-speaking drivers on request, and multi-day packages across Cape Town and the Western Cape. One WhatsApp message to start."
         primaryCtaLabel="Book on WhatsApp"
         primaryCtaHref="https://wa.me/27711081227?text=Hi%2C%20I%27m%20interested%20in%20arranging%20a%20private%20chauffeur%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
         secondaryCtaLabel="View Fleet"

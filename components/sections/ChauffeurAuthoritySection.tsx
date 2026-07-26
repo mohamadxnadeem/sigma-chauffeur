@@ -135,52 +135,55 @@ export default function ChauffeurAuthoritySection() {
       <Container>
         <SectionHeader>
           <Eyebrow>Chauffeur Service Cape Town</Eyebrow>
-          <Title>The Premier Chauffeur & Private Tour Service in Cape Town</Title>
+          <Title>A Private Chauffeur Service Built Around How You Travel</Title>
         </SectionHeader>
 
         <RichText style={{ marginBottom: 24 }}>
           <p>
-            Sigma VIP is a private chauffeur service built for clients who
-            expect more than transport. Full-day hire, multi-day packages
-            across the Western Cape, and private jet FBO coordination at
-            Cape Town International. Every booking is handled with complete
-            discretion and no room for error.
+            Sigma VIP is a private chauffeur service for clients who travel
+            with specific requirements. Full-day hire, multi-day packages
+            across the Western Cape, FBO coordination for private jet
+            arrivals, and family convoys across multiple vehicles are handled
+            as a single coordinated booking. Every detail confirmed before
+            you arrive.
           </p>
 
           <p>
-            Our fleet is positioned for discerning travel. The Mercedes
-            S-Class and G-Wagon for clients who require the pinnacle. The
-            Range Rover Sport for those who want presence and performance.
-            The Mercedes V-Class for private groups and families travelling
-            together. Every vehicle maintained to the same standard, every
-            chauffeur vetted and briefed before each booking.
-          </p>
-
-          <p>
-            Most clients arrive with a destination in mind and leave with a
-            week they did not expect. The{" "}
+            Our fleet covers every private travel requirement. The Mercedes
+            S-Class and G-Wagon for clients who want the best in the
+            vehicle. The Mercedes V-Class and Hyundai Staria for families
+            and groups travelling together. The BMW X5 and Range Rover
+            Sport for full-day touring across the{" "}
             <InlineLink href="/best-activities-to-do-in-cape-town">
               Cape Peninsula
             </InlineLink>{" "}
-            in the morning, Franschhoek for lunch, back in Cape Town for
-            sunset, arranged over WhatsApp in under thirty minutes.
-            Multi-day packages across{" "}
+            and{" "}
             <InlineLink href="/best-wine-farms-in-cape-town">
-              Stellenbosch and the Winelands
+              Winelands
             </InlineLink>
-            , Hermanus, and the Garden Route handled as a single booking.
-            Private jet arrivals managed from ramp to villa.
+            . All vehicles maintained to the same standard, all chauffeurs
+            vetted and briefed before each booking.
           </p>
 
           <p>
-            If you know what you want, message us. If you want
-            recommendations, we&apos;ll plan the whole thing.
+            Gulf families travelling with an entourage, principals arriving
+            by private jet, and EAs arranging a visit on behalf of a client
+            represent the majority of our bookings. Arabic-speaking drivers
+            are available on request. Halal-aware planning and prayer-time
+            consideration are arranged as standard for every booking that
+            requires it. NDAs on request.
+          </p>
+
+          <p>
+            If your schedule is confirmed, send us the details and we will
+            arrange everything. If you are still planning, we can build the
+            itinerary for you.
           </p>
         </RichText>
 
         <ExpandWrap>
           <ExpandButton type="button" onClick={() => setOpen((v) => !v)}>
-            <ExpandTitle>Why our chauffeur service stands out in Cape Town</ExpandTitle>
+            <ExpandTitle>How every Sigma VIP booking is handled</ExpandTitle>
             <ExpandIcon $open={open}>+</ExpandIcon>
           </ExpandButton>
 
@@ -188,46 +191,43 @@ export default function ChauffeurAuthoritySection() {
             <ExpandInner>
               <RichText>
                 <p>
-                  What separates Sigma VIP from other Cape Town chauffeur
-                  services is the combination of fleet quality, operational
-                  precision, and a client-first approach that extends well
-                  beyond the vehicle.
+                  What separates Sigma VIP is the way each booking is
+                  treated as a private arrangement. Before the vehicle
+                  leaves for your pickup, the chauffeur has been briefed on
+                  your preferences, your schedule, and your party. There is
+                  no briefing at the door.
                 </p>
 
                 <p>
-                  Every booking begins with a conversation. We want to
-                  understand your schedule, your preferences, and your
-                  expectations before we confirm anything. For single-day
-                  bookings this takes minutes. For multi-day packages we
-                  take the time to understand the full itinerary, which
-                  estates to visit, where to stop on the Garden Route, how
-                  many hours you want at each location, and build the
-                  schedule around you.
+                  For same-day or next-day bookings, the confirmation takes
+                  minutes over WhatsApp. For multi-day packages, we plan
+                  each day with you: which estates to visit, where the
+                  convoy vehicles meet, how the schedule runs across the
+                  party. Then we manage it on the day.
                 </p>
 
                 <p>
-                  Our fleet spans the full range of private transport
-                  requirements. From the Mercedes S-Class and G-Wagon for
-                  clients who require the absolute best, to the BMW X5 and
-                  Range Rover Sport for full-day touring, the Mercedes
-                  V-Class for group and family travel, and the Hyundai
-                  Staria for larger parties on multi-day routes.
+                  Our fleet is built for the range of requirements private
+                  clients bring. From the S-Class for a principal travelling
+                  alone, to two V-Classes and a Staria for a family of
+                  twelve. If the right vehicle combination is not immediately
+                  obvious, we recommend based on your party and your
+                  schedule.
                 </p>
 
                 <p>
-                  For private aviation clients, we provide a dedicated FBO
-                  service at Cape Town International. We coordinate directly
-                  with the private terminal team on ramp access, luggage
-                  handling, and vehicle staging. Your transfer from aircraft
-                  to vehicle takes under five minutes. NDAs available on
-                  request.
+                  For private aviation arrivals, we coordinate directly with
+                  Cape Town International&apos;s private terminal team. Ramp
+                  access, vehicle staging, and luggage handling are confirmed
+                  before you land. Your transfer from aircraft to vehicle is
+                  completed in under five minutes.
                 </p>
 
                 <p>
-                  All bookings are all-inclusive. One arrangement covers the
-                  vehicle, chauffeur, fuel, tolls, and parking. There are no
-                  hidden fees, no end-of-day additions, and no surprises on
-                  the invoice.
+                  Every booking is all-inclusive. One arrangement covers the
+                  vehicle, the chauffeur, fuel, tolls, and parking. Nothing
+                  is added on the day. No meter, no extras, no conversation
+                  about costs at the end.
                 </p>
               </RichText>
             </ExpandInner>

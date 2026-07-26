@@ -85,33 +85,36 @@ export default function PrivateServiceSection() {
     <Section>
       <Container>
         <Inner>
-          <Eyebrow>Private Chauffeur Service</Eyebrow>
-          <Title>Arranged Entirely Around You</Title>
+          <Eyebrow>For Private Clients and Their Families</Eyebrow>
+          <Title>Everything Your Party Needs, Managed as One Arrangement</Title>
 
           <FeatureList>
             <Feature>
-              <FeatureLabel>Fully private vehicles</FeatureLabel> with vetted
-              chauffeurs. NDAs available on request. No shared schedules, no
-              groups.
+              <FeatureLabel>Fully private vehicles</FeatureLabel> with
+              chauffeurs who are vetted and briefed before every booking.
+              NDAs available on request. No shared schedules, no other
+              clients.
             </Feature>
             <Feature>
-              <FeatureLabel>Arabic-speaking drivers</FeatureLabel> available on
-              request. Halal-aware itineraries and prayer-time flexibility built
-              into every day.
+              <FeatureLabel>Arabic-speaking drivers</FeatureLabel> available
+              on request. Halal-aware itinerary planning and prayer-time
+              consideration arranged for every booking that requires it.
             </Feature>
             <Feature>
               <FeatureLabel>Family and multi-vehicle convoys</FeatureLabel>{" "}
               coordinated across the S-Class, V-Class, Staria, and Sprinter.
-              One booking, one point of contact.
+              Your principal&apos;s vehicle, your family&apos;s carrier, and
+              luggage transport as a single booking.
             </Feature>
             <Feature>
-              <FeatureLabel>Private jet FBO coordination</FeatureLabel> at Cape
-              Town International. Vehicle staged before you land, luggage
-              handled, transfer completed in minutes.
+              <FeatureLabel>FBO ramp coordination</FeatureLabel> at Cape Town
+              International&apos;s private terminal. Vehicle staged, luggage
+              handled, transfer from aircraft completed in under five minutes.
             </Feature>
             <Feature>
-              <FeatureLabel>One WhatsApp message</FeatureLabel> handles your entire
-              Cape Town schedule from arrival to departure.
+              <FeatureLabel>One WhatsApp thread</FeatureLabel> manages every
+              vehicle, every chauffeur, and every day of your Cape Town
+              schedule from first arrival to final departure.
             </Feature>
           </FeatureList>
 
@@ -122,11 +125,11 @@ export default function PrivateServiceSection() {
             onClick={() =>
               trackWhatsAppClick({
                 source: "private_service_section",
-                label: "Arrange My Trip",
+                label: "Start the Arrangement",
               })
             }
           >
-            <Button as="span">Arrange My Trip</Button>
+            <Button as="span">Start the Arrangement</Button>
           </Anchor>
         </Inner>
       </Container>
