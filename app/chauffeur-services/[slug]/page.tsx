@@ -400,19 +400,6 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
           name: "Sigma VIP",
           url: SITE_URL,
           telephone: "+27711081227",
-          // FIX 13: Add address — critical for local SEO ranking
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Cape Town",
-            addressRegion: "Western Cape",
-            addressCountry: "ZA",
-          },
-          // FIX 14: Add geo — helps Google Maps and local pack ranking
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: -33.9249,
-            longitude: 18.4241,
-          },
           priceRange: "$$$$",
           sameAs: [
             "https://www.facebook.com/capetownconcierge",

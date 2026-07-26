@@ -302,12 +302,6 @@ export default async function HomePage() {
         telephone: "+27711081227",
         priceRange: "RRRR",
         logo: `${SITE_URL}/images/logo.png`,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Cape Town",
-          addressRegion: "Western Cape",
-          addressCountry: "ZA",
-        },
         openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: [
