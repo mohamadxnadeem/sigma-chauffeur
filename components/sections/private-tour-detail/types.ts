@@ -44,7 +44,6 @@ export type TourVehicle = {
   image?: string;
   seats?: number;
   description?: string;
-  price?: string;
 };
 
 export type ReviewItem = {
@@ -58,5 +57,4 @@ export type RelatedTour = {
   href: string;
   image?: string;
   description?: string;
-  price?: string;
 };

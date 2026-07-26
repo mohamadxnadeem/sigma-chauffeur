@@ -81,8 +81,7 @@ export default function MultiDaySection() {
           from FBO arrival to final hotel drop-off.
         </Body>
         <Pricing>
-          Multi-day packages from R6,850 per vehicle per day, all-inclusive —
-          fuel, tolls, chauffeur, hotel pickups, and flexible daily scheduling.
+          All-inclusive pricing covers your vehicle, chauffeur, fuel, tolls, and hotel pickups. Message us for a tailored quote based on your dates and itinerary.
         </Pricing>
         <Anchor
           href={MULTI_DAY_WHATSAPP}

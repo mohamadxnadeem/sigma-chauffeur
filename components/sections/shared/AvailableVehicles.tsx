@@ -65,8 +65,6 @@ function normalizeVehicles(data: CarsForHireApiItem[]): VehicleCardItem[] {
     .filter((item) => item?.car?.is_active !== false && item?.car?.title)
     .map((item) => {
       const car = item.car!;
-      const priceValue = car.price_from ?? car.price ?? "";
-
       return {
         title: car.title,
         description:
@@ -75,7 +73,6 @@ function normalizeVehicles(data: CarsForHireApiItem[]): VehicleCardItem[] {
           "A premium chauffeur-driven vehicle suitable for wine tours and private travel in Cape Town.",
         image: pickImage(item),
         seats: car.number_of_seats,
-        price: priceValue ? String(priceValue) : "",
       };
     });
 }

@@ -8,15 +8,6 @@ type Props = {
   items: RelatedVehicle[];
 };
 
-function normalizeUsdPrice(price?: string) {
-  if (!price) return "";
-
-  return price
-    .replace(/^From\s+R/i, "From $")
-    .replace(/^R/i, "$")
-    .replace(/\s+R(?=\d)/gi, " $");
-}
-
 const Title = styled.h2`
   margin: 0 0 18px;
   color: ${({ theme }) => theme.colors.heading};
@@ -109,9 +100,6 @@ export default function ChauffeurRelatedVehicles({ items }: Props) {
                   <RelatedBadge>{vehicle.seats} Seats</RelatedBadge>
                 ) : null}
 
-                {vehicle.price ? (
-                  <RelatedBadge>{normalizeUsdPrice(vehicle.price)}</RelatedBadge>
-                ) : null}
               </RelatedMeta>
 
               <RelatedText>

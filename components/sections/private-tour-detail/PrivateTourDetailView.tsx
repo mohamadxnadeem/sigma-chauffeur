@@ -40,18 +40,6 @@ const Section = styled.section`
   padding: 64px 0;
 `;
 
-function formatPriceRange(
-  priceFrom?: string,
-  priceTo?: string,
-  currency?: string
-) {
-  if (!priceFrom && !priceTo) return "";
-  const symbol = "$";
-  if (priceFrom && priceTo) return `From ${symbol}${priceFrom} - ${symbol}${priceTo}`;
-  if (priceFrom) return `From ${symbol}${priceFrom}`;
-  return `${symbol}${priceTo}`;
-}
-
 const faqItems: FAQItem[] = [
   {
     question: "How long does the Cape Peninsula private tour take?",

@@ -22,39 +22,6 @@ export function getPrimaryImage(experience: Experience) {
   );
 }
 
-export function formatCurrency(amount: number) {
-  if (!amount || Number.isNaN(amount)) return "";
-  return `$${amount.toFixed(0)}`;
-}
-
-export function formatPrice(
-  price?: string | number,
-  priceFrom?: string | number,
-  priceTo?: string | number
-) {
-  if (price !== undefined && price !== null && price !== "") {
-    return `From $${price}`;
-  }
-
-  if (priceFrom && priceTo) {
-    return `From $${priceFrom} - $${priceTo}`;
-  }
-
-  if (priceFrom) return `From $${priceFrom}`;
-  if (priceTo) return `$${priceTo}`;
-
-  return "";
-}
-
-export function normalizeUsdPrice(price?: string) {
-  if (!price) return "";
-
-  return price
-    .replace(/^From\s+R/i, "From $")
-    .replace(/^R/i, "$")
-    .replace(/\s+R(?=\d)/gi, " $");
-}
-
 export function buildTourFaqs(tourTitle: string): FaqItem[] {
   return [
     {

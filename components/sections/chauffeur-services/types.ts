@@ -37,7 +37,6 @@ export type RelatedVehicle = {
   image?: string;
   description?: string;
   seats?: number;
-  price?: string;
   href: string;
 };
 

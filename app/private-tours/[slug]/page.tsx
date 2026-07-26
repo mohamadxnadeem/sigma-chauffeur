@@ -99,39 +99,6 @@ type PageProps = {
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
-function formatPriceRange(
-  priceFrom?: string | number,
-  priceTo?: string | number,
-  currency?: string
-) {
-  if (
-    (priceFrom === undefined || priceFrom === null || priceFrom === "") &&
-    (priceTo === undefined || priceTo === null || priceTo === "")
-  ) {
-    return "";
-  }
-
-  const symbol = currency === "ZAR" || !currency ? "R" : `${currency} `;
-
-  if (priceFrom && priceTo) return `From ${symbol}${priceFrom} - ${symbol}${priceTo}`;
-  if (priceFrom) return `From ${symbol}${priceFrom}`;
-  return `${symbol}${priceTo}`;
-}
-
-function formatVehiclePrice(
-  price?: string | number,
-  priceFrom?: string | number,
-  priceTo?: string | number,
-  currency?: string
-) {
-  if (price !== undefined && price !== null && price !== "") {
-    const symbol = currency === "ZAR" || !currency ? "R" : `${currency} `;
-    return `From ${symbol}${price}`;
-  }
-
-  return formatPriceRange(priceFrom, priceTo, currency);
-}
-
 function truncateText(text?: string, maxLength = 140) {
   if (!text) return "";
   if (text.length <= maxLength) return text;

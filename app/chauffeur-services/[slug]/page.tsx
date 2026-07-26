@@ -74,37 +74,6 @@ function getSeoKeyword(car: Car): string {
   return `${name} Chauffeur Service Cape Town`;
 }
 
-// ─────────────────────────────────────────────
-// PRICE HELPERS
-// formatPrice used in mapRelatedVehicles; getNumericPriceValue used in structured data offers
-// ─────────────────────────────────────────────
-function formatPrice(
-  price?: string | number,
-  priceFrom?: string | number,
-  priceTo?: string | number,
-  currency?: string
-) {
-  const symbol = currency === "ZAR" || !currency ? "$" : `${currency} `;
-  if (price !== undefined && price !== null && price !== "") {
-    return `From ${symbol}${price}`;
-  }
-  if (priceFrom && priceTo) return `From ${symbol}${priceFrom} - ${symbol}${priceTo}`;
-  if (priceFrom) return `From ${symbol}${priceFrom}`;
-  if (priceTo) return `${symbol}${priceTo}`;
-  return "";
-}
-
-function getNumericPriceValue(
-  price?: string | number,
-  priceFrom?: string | number,
-  priceTo?: string | number
-): string | number | undefined {
-  if (price !== undefined && price !== null && price !== "") return price;
-  if (priceFrom !== undefined && priceFrom !== null && priceFrom !== "") return priceFrom;
-  if (priceTo !== undefined && priceTo !== null && priceTo !== "") return priceTo;
-  return undefined;
-}
-
 function truncateText(text?: string, maxLength = 155) {
   if (!text) return "";
   if (text.length <= maxLength) return text;
@@ -164,16 +133,6 @@ function getVehicleImageAlt(car: Car) {
   return getSeoKeyword(car);
 }
 
-function getFormattedDailyRate(car: Car) {
-  return formatPrice(car.price, car.price_from, car.price_to, car.currency);
-}
-
-function getMetaFriendlyRate(car: Car) {
-  const value = getFormattedDailyRate(car);
-  if (!value) return "";
-  return value.replace(/^From\s+/i, "");
-}
-
 // ─────────────────────────────────────────────
 // FIX 4: META TITLE — exact keyword first, brand second
 // Old: "[Name] | VIP Chauffeur Hire Cape Town"  (generic, brand-heavy)
@@ -224,7 +183,6 @@ function mapRelatedVehicles(cars: Car[], currentSlug: string): RelatedVehicle[] 
         truncateText(car.body, 120) ||
         "Premium chauffeur-driven vehicle for Cape Town travel.",
       seats: car.number_of_seats,
-      price: formatPrice(car.price, car.price_from, car.price_to, car.currency),
       href: `/chauffeur-services/${car.slug}`,
     }));
 }
@@ -390,7 +348,6 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
   const pageTitle = getPageTitle(car);
   const pageDescription = getPageDescription(car);
   const keyword = getSeoKeyword(car);
-  const numericPrice = getNumericPriceValue(car.price, car.price_from, car.price_to);
   const vehicleFaqs = buildVehicleFaqs(car);
 
   // ─────────────────────────────────────────────
@@ -440,17 +397,6 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
                 worstRating: "1",
               },
             }),
-        ...(numericPrice
-          ? {
-              offers: {
-                "@type": "Offer",
-                priceCurrency: car.currency || "USD",
-                price: numericPrice,
-                availability: "https://schema.org/InStock",
-                url: canonicalUrl,
-              },
-            }
-          : {}),
       },
 
       // 2. Service schema — the chauffeur service itself

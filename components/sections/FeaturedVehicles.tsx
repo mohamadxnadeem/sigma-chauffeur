@@ -13,7 +13,6 @@ type VehicleItem = {
   image?: string;
   alt?: string;
   seats?: number;
-  price?: string;
 };
 
 type FeaturedVehiclesProps = {
@@ -22,15 +21,6 @@ type FeaturedVehiclesProps = {
   description?: string;
   items?: VehicleItem[];
 };
-
-function normalizeUsdPrice(price?: string) {
-  if (!price) return "";
-
-  return price
-    .replace(/^From\s+R/i, "From $")
-    .replace(/^R/i, "$")
-    .replace(/\s+R(?=\d)/gi, " $");
-}
 
 const shimmer = keyframes`
   0% {

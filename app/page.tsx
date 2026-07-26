@@ -146,11 +146,6 @@ function truncateText(text: string, maxLength: number) {
   return `${text.slice(0, maxLength).trim()}...`;
 }
 
-function formatPrice(price?: string | number) {
-  if (price === undefined || price === null || price === "") return "";
-  return `R${price}`;
-}
-
 function isBrowserRenderable(url?: string): boolean {
   if (!url) return false;
   const lower = url.toLowerCase();
@@ -280,7 +275,6 @@ async function getFeaturedVehicles(): Promise<FeaturedVehicleItem[]> {
           image: featuredPhoto,
           alt: `Luxury ${car.title} Chauffeur Service Cape Town - VIP Transport`,
           seats: car.number_of_seats,
-          price: formatPrice(car.price),
         };
       }
     );

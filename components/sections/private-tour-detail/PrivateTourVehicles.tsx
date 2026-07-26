@@ -16,13 +16,6 @@ type Props = {
   tourTitle: string;
 };
 
-function getMinimumUsdPerDay(price?: string | number) {
-  if (!price) return "";
-  const raw = String(price).replace(/[^0-9.]/g, "").trim();
-  if (!raw) return "";
-  return `From $${raw}/day`;
-}
-
 function shimmer(w: number, h: number) {
   return `
     <svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
@@ -411,8 +404,6 @@ export default function PrivateTourVehicles({ items, tourTitle }: Props) {
               buildVehicleForTourWhatsAppMessage(item.title, tourTitle)
             );
 
-            const minPerDay = getMinimumUsdPerDay(item.price);
-
             return (
               <Card key={`${item.title}-${index}`}>
                 <CardImage>
@@ -429,7 +420,6 @@ export default function PrivateTourVehicles({ items, tourTitle }: Props) {
                     {item.seats ? (
                       <MetaBadge>Up to {item.seats} guests</MetaBadge>
                     ) : null}
-                    {minPerDay ? <MetaBadge>{minPerDay}</MetaBadge> : null}
                     <MetaBadge>Fuel Included</MetaBadge>
                     <MetaBadge>Toll Fees Included</MetaBadge>
                     <MetaBadge>Local Guide</MetaBadge>
