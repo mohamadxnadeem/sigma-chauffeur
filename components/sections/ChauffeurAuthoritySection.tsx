@@ -166,11 +166,15 @@ export default function ChauffeurAuthoritySection() {
           </p>
 
           <p>
-            Families travelling with an entourage, principals arriving
-            by private jet, and EAs arranging a visit on behalf of a client
-            represent the majority of our bookings. Every chauffeur is
-            vetted and personally briefed before each booking. NDAs
-            available on request for clients who require them.
+            Corporate executives in Cape Town for meetings, personal
+            assistants arranging a high-net-worth family visit, and private
+            clients travelling with an entourage represent the majority of
+            our bookings. Whether it is a C-suite arrival requiring a staged
+            airport transfer and a briefed driver, or a family of eight
+            needing a three-vehicle convoy for ten days across the Cape
+            Peninsula and Winelands, the booking is managed the same way:
+            one point of contact, every detail confirmed before you arrive.
+            NDAs available on request.
           </p>
 
           <p>

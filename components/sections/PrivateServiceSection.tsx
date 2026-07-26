@@ -85,7 +85,7 @@ export default function PrivateServiceSection() {
     <Section>
       <Container>
         <Inner>
-          <Eyebrow>For Private Clients and Their Families</Eyebrow>
+          <Eyebrow>For Corporate Executives, PAs, and Private Families</Eyebrow>
           <Title>Everything Your Party Needs, Managed as One Arrangement</Title>
 
           <FeatureList>

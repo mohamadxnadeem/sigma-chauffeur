@@ -430,7 +430,7 @@ export default async function HomePage() {
       <HeroBanner
         eyebrow="Sigma VIP"
         title="Private Chauffeur Cape Town. Everything Arranged Before You Land."
-        description="Sigma VIP coordinates your vehicles, chauffeurs, and itinerary as a single arrangement from arrival to departure. Family convoys, FBO ramp access for private jet arrivals, and multi-day packages across Cape Town and the Western Cape. One WhatsApp message to start."
+        description="Sigma VIP is the private chauffeur service that corporate executives, personal assistants, and private families call when standards matter. Full-day executive hire, V-Class family convoys, FBO coordination for private jet arrivals, and multi-day packages across Cape Town and the Western Cape. One WhatsApp message handles everything."
         primaryCtaLabel="Book on WhatsApp"
         primaryCtaHref="https://wa.me/27711081227?text=Hi%2C%20I%27m%20interested%20in%20arranging%20a%20private%20chauffeur%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
         secondaryCtaLabel="View Fleet"
