@@ -12,8 +12,11 @@ import {
   SectionText,
   SectionTitle,
   StyledLink,
-  whatsappLink,
 } from "./shared";
+import {
+  buildWhatsAppLink,
+  buildActivityWhatsAppMessage,
+} from "../../../lib/whatsapp";
 
 type ActivityItem = {
   title: string;
@@ -234,7 +237,11 @@ export default function ActivitiesTimeline({ activities }: Props) {
         </SectionHeader>
 
         <ActivitiesList>
-          {activities.map((activity, index) => (
+          {activities.map((activity, index) => {
+            const activityLink = buildWhatsAppLink(
+              buildActivityWhatsAppMessage(activity.title)
+            );
+            return (
             <ActivityRow key={activity.title}>
               <ProgressColumn>
                 <ProgressRail />
@@ -268,7 +275,7 @@ export default function ActivitiesTimeline({ activities }: Props) {
 
                     <RowActions>
                       <Anchor
-                        href={whatsappLink}
+                        href={activityLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() =>
@@ -292,7 +299,8 @@ export default function ActivitiesTimeline({ activities }: Props) {
                 </ActivityInner>
               </ActivityCard>
             </ActivityRow>
-          ))}
+            );
+          })}
         </ActivitiesList>
       </Container>
     </Section>

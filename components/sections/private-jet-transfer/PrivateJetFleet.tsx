@@ -10,9 +10,12 @@ import {
   SectionHeader,
   SectionTitle,
   SectionText,
-  whatsappLink,
 } from "./shared";
 import { trackWhatsAppClick } from "../../../lib/tracking";
+import {
+  buildWhatsAppLink,
+  buildVehicleForAirportTransferMessage,
+} from "../../../lib/whatsapp";
 
 type Vehicle = {
   badge: string;
@@ -155,7 +158,11 @@ export default function PrivateJetFleet() {
         </SectionHeader>
 
         <Grid>
-          {vehicles.map((vehicle) => (
+          {vehicles.map((vehicle) => {
+            const vehicleLink = buildWhatsAppLink(
+              buildVehicleForAirportTransferMessage(vehicle.title)
+            );
+            return (
             <Card key={vehicle.title}>
               <CardHeader>
                 <Badge>{vehicle.badge}</Badge>
@@ -174,7 +181,7 @@ export default function PrivateJetFleet() {
 
               <CardFoot>
                 <Anchor
-                  href={whatsappLink}
+                  href={vehicleLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() =>
@@ -188,7 +195,8 @@ export default function PrivateJetFleet() {
                 </Anchor>
               </CardFoot>
             </Card>
-          ))}
+            );
+          })}
         </Grid>
       </Container>
     </Section>
