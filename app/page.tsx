@@ -419,7 +419,7 @@ export default async function HomePage() {
         title="Private Chauffeur Cape Town. Everything Arranged Before You Land."
         description="Sigma VIP is the private chauffeur service that corporate executives, personal assistants, and private families call when standards matter. Full-day executive hire, V-Class family convoys, FBO coordination for private jet arrivals, and multi-day packages across Cape Town and the Western Cape. One WhatsApp message handles everything."
         primaryCtaLabel="Book on WhatsApp"
-        primaryCtaHref="https://wa.me/27711081227?text=Hi%2C%20I%27m%20interested%20in%20arranging%20a%20private%20chauffeur%20in%20Cape%20Town.%20Please%20can%20you%20assist%3F"
+        primaryCtaHref="https://wa.me/27711081227?text=Hi%2C%20I%27d%20like%20to%20arrange%20executive%20chauffeur%20service%20in%20Cape%20Town.%20My%20dates%20and%20party%20size%3A"
         secondaryCtaLabel="View Fleet"
         secondaryCtaHref="#fleet"
         image="/images/car.jpg"

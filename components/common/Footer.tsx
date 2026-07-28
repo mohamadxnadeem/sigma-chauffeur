@@ -3,10 +3,10 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { buildWhatsAppLink, buildGeneralWhatsAppMessage } from "../../lib/whatsapp";
-import { trackWhatsAppClick } from "../../lib/tracking";
+import { trackWhatsAppClick, trackPhoneClick } from "../../lib/tracking";
 
 const whatsappLink = buildWhatsAppLink(
-  buildGeneralWhatsAppMessage()
+  "Hi, I'd like to make a booking. Details:"
 );
 
 const Wrapper = styled.footer`
@@ -163,16 +163,18 @@ export default function Footer() {
             <ColTitle>Services</ColTitle>
             <NavList>
               <NavLink href="/airport-transfers-cape-town">Airport Transfers</NavLink>
-              <NavLink href="/best-activities-to-do-in-cape-town">Cape Town Experiences</NavLink>
-              <NavLink href="/best-wine-farms-in-cape-town">Wine Farms</NavLink>
-              <NavLink href="/7-day-cape-town-itinerary">7-Day Itinerary</NavLink>
             </NavList>
           </div>
 
           <div>
             <ColTitle>Contact</ColTitle>
             <ContactList>
-              <ContactLink href="tel:+27711081227">
+              <ContactLink
+                href="tel:+27711081227"
+                onClick={() =>
+                  trackPhoneClick({ source: "footer", label: "Call" })
+                }
+              >
                 +27 71 108 1227
               </ContactLink>
               <WhatsAppLink

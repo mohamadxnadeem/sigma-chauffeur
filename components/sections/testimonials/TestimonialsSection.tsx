@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 import { testimonials } from "./data";
 
+const sigmaTestimonials = testimonials.filter((t) => t.brand === "sigma");
+
 const Section = styled.section`
   padding: 80px 0;
   background: ${({ theme }) => theme.colors.background};
@@ -271,10 +273,10 @@ export default function TestimonialsSection() {
       <Container>
         <Header>
           <Eyebrow>Client Reviews</Eyebrow>
-          <Title>Trusted by Travellers Visiting Cape Town</Title>
+          <Title>Trusted by Executives, PAs, and Private Clients</Title>
           <Description>
-            Real feedback from clients who booked private chauffeur drives, tours,
-            and curated Cape Town experiences with us.
+            Feedback from C-suite executives, personal assistants, and private
+            clients who rely on Sigma VIP for chauffeur hire in Cape Town.
           </Description>
         </Header>
 
@@ -302,7 +304,7 @@ export default function TestimonialsSection() {
           onTouchStart={stopAutoScroll}
           onTouchEnd={startAutoScroll}
         >
-          {testimonials.map((item, index) => (
+          {sigmaTestimonials.map((item, index) => (
             <Card key={`${item.name}-${index}`}>
               <CardHeader>
                 <Avatar>

@@ -14,6 +14,21 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/7-day-cape-town-itinerary",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/best-wine-farms-in-cape-town",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/best-activities-to-do-in-cape-town",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
   compiler: {

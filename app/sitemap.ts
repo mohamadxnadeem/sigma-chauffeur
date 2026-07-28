@@ -62,17 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.95,
     },
     {
-      url: `${SITE_URL}/best-wine-farms-in-cape-town`,
-      lastModified: new Date(),
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/best-activities-to-do-in-cape-town`,
-      lastModified: new Date(),
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/7-day-cape-town-itinerary`,
+      url: `${SITE_URL}/private-jet-transfers-cape-town`,
       lastModified: new Date(),
       priority: 0.9,
     },

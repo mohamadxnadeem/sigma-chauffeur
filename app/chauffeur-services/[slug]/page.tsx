@@ -84,15 +84,19 @@ function truncateText(text?: string, maxLength = 155) {
 // DATA FETCHING
 // ─────────────────────────────────────────────
 async function getAllVehicles(): Promise<CarsApiItem[]> {
-  const response = await fetch(
-    "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
-    { next: { revalidate: 3600 } } // FIX 2: Cache for 1hr instead of no-store — better Core Web Vitals & crawl efficiency
-  );
-  if (!response.ok) throw new Error("Failed to fetch vehicles");
-  const data = await response.json();
-  if (Array.isArray(data)) return data;
-  if (Array.isArray(data?.results)) return data.results;
-  return [];
+  try {
+    const response = await fetch(
+      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
+      { next: { revalidate: 3600 } }
+    );
+    if (!response.ok) return [];
+    const data = await response.json();
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data?.results)) return data.results;
+    return [];
+  } catch {
+    return [];
+  }
 }
 
 function normalizeCars(items: CarsApiItem[]): Car[] {

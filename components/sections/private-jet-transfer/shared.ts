@@ -8,9 +8,7 @@ import {
 } from "../../../lib/whatsapp";
 
 export const whatsappLink = buildWhatsAppLink(
-  buildGeneralWhatsAppMessage(
-    "arranging an airport transfer in Cape Town"
-  )
+  "Hi, we have a private jet arrival at Cape Town. Can you coordinate FBO ground transport?"
 );
 
 export const PageWrap = styled.main`

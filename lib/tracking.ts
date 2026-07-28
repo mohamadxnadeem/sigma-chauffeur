@@ -69,4 +69,33 @@ export function trackWhatsAppClick({
   });
 }
 
-export {};
+type PhoneTrackingParams = {
+  source: string;
+  label?: string;
+};
+
+export function trackPhoneClick({
+  source,
+  label = "phone_call",
+}: PhoneTrackingParams) {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "sigma_phone_click", {
+    event_category: "lead",
+    event_label: label,
+    source,
+  });
+
+  if (process.env.NEXT_PUBLIC_GOOGLE_ADS_SEND_TO) {
+    window.gtag?.("event", "conversion", {
+      send_to: process.env.NEXT_PUBLIC_GOOGLE_ADS_SEND_TO,
+    });
+  }
+
+  window.fbq?.("track", "Lead", {
+    source,
+    label,
+    value: META_LEAD_VALUE_ZAR,
+    currency: "ZAR",
+  });
+}

@@ -6,9 +6,7 @@ import { buildWhatsAppLink, buildGeneralWhatsAppMessage } from "../../lib/whatsa
 import { trackWhatsAppClick } from "../../lib/tracking";
 
 const whatsappLink = buildWhatsAppLink(
-  buildGeneralWhatsAppMessage(
-    "arranging a private chauffeur in Cape Town. Please can you assist with availability and vehicle options"
-  )
+  "Hi, I'm arranging travel for an executive visit to Cape Town. Can you advise on vehicles?"
 );
 
 const Section = styled.section`

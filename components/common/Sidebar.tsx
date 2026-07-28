@@ -2,7 +2,12 @@
 
 import Link from "next/link";
 import styled from "styled-components";
-import { trackWhatsAppClick } from "../../lib/tracking";
+import { trackWhatsAppClick, trackPhoneClick } from "../../lib/tracking";
+import { buildWhatsAppLink } from "../../lib/whatsapp";
+
+const sidebarWhatsappLink = buildWhatsAppLink(
+  "Hi, I'd like to arrange a private chauffeur in Cape Town. Dates:"
+);
 
 const Overlay = styled.div<{ $isOpen: boolean }>`
   position: fixed;
@@ -159,25 +164,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
           <Divider />
 
-          <NavLink href="/best-wine-farms-in-cape-town" onClick={onClose}>
-            Wine Farms Guide
-          </NavLink>
-          <NavLink href="/best-activities-to-do-in-cape-town" onClick={onClose}>
-            Cape Town Activities
-          </NavLink>
-          <NavLink href="/7-day-cape-town-itinerary" onClick={onClose}>
-            7-Day Itinerary
-          </NavLink>
-
-          <Divider />
-
           <NavLink href="/contact" onClick={onClose}>
             Contact
           </NavLink>
         </Nav>
 
         <WhatsAppButton
-          href="https://wa.me/27711081227"
+          href={sidebarWhatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() =>
@@ -190,7 +183,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           WhatsApp Us
         </WhatsAppButton>
 
-        <CallButton href="tel:+27711081227" style={{ marginTop: 10 }}>
+        <CallButton
+          href="tel:+27711081227"
+          style={{ marginTop: 10 }}
+          onClick={() =>
+            trackPhoneClick({ source: "sidebar_menu", label: "Call" })
+          }
+        >
           Call +27 71 108 1227
         </CallButton>
 

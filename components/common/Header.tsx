@@ -11,10 +11,10 @@ import {
   buildGeneralWhatsAppMessage,
   buildWhatsAppLink,
 } from "../../lib/whatsapp";
-import { trackWhatsAppClick } from "../../lib/tracking";
+import { trackWhatsAppClick, trackPhoneClick } from "../../lib/tracking";
 
 const headerWhatsappLink = buildWhatsAppLink(
-  buildGeneralWhatsAppMessage("booking a private chauffeur or tour in Cape Town")
+  "Hi, I’d like to arrange a private chauffeur in Cape Town. Dates:"
 );
 
 const Wrapper = styled.header`
@@ -138,6 +138,9 @@ export default function Header() {
               <HeaderCta
                 href="tel:+27711081227"
                 aria-label="Call Sigma VIP"
+                onClick={() =>
+                  trackPhoneClick({ source: "header_cta", label: "Call" })
+                }
               >
                 ✆ Call
               </HeaderCta>

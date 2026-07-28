@@ -306,7 +306,7 @@ export default function ChauffeurDetailView({
   const heroImage = getPrimaryImage(car);
 
   const mainWhatsAppLink = buildWhatsAppLink(
-    `Hey, I'm interested in booking the ${safeTitle}. Please can you share pricing and availability?`
+    `Hi, I'd like to book the ${safeTitle} with a chauffeur. Dates:`
   );
 
   // ── Features & ideal-for ──────────────────
