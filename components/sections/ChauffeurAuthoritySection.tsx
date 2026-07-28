@@ -205,8 +205,8 @@ export default function ChauffeurAuthoritySection() {
                 <p>
                   Our fleet is built for the range of requirements private
                   clients bring. From the S-Class for a principal travelling
-                  alone, to two V-Classes and a Staria for a family of
-                  twelve. If the right vehicle combination is not immediately
+                  alone, to a V-Class and Staria for a family of fourteen.
+                  If the right vehicle combination is not immediately
                   obvious, we recommend based on your party and your
                   schedule.
                 </p>
