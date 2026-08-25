@@ -214,15 +214,15 @@ const packages: Package[] = [
     ideal: "Ideal for luxury extended stays and anniversary trips.",
     includes: [
       "Everything in the 5-Day package",
-      "Garden Route day excursion (Knysna, Tsitsikamma, or Oudtshoorn)",
-      "Aquila Private Game Reserve safari transfer",
-      "Five fully flexible days for custom exploration",
+      "4-day Garden Route extension (Knysna, Tsitsikamma, and Oudtshoorn)",
+      "Botlierskop Private Game Reserve safari transfer",
+      "One fully flexible day for custom exploration",
       "Priority vehicle and chauffeur reservation",
     ],
     expandTitle: "Ten days done properly",
     expandText: [
-      "Ten days with a private chauffeur is the fullest Cape Town experience available. You see the Peninsula, the Winelands, Hermanus, the Garden Route, and a Big Five safari — all without touching a steering wheel or waiting for a group tour to assemble.",
-      "The five flexible days in the ten-day programme are yours to use however you choose. A return to a wine farm, a half-day in Kalk Bay, a private yacht charter, or simply a late morning in Clifton. Your chauffeur is there, ready, whenever you are.",
+      "Ten days with a private chauffeur covers the full Western Cape experience. The Garden Route alone deserves four days — Mossel Bay, George, Wilderness, Knysna, the Tsitsikamma forest, and the drive back through Oudtshoorn and the Swartberg Pass are a journey in themselves, not a day trip.",
+      "Botlierskop Private Game Reserve near Mossel Bay is one of the best Big Five reserves in the Western Cape and sits perfectly on the Garden Route route. Your chauffeur transfers you in, you spend the night or half-day on game drives, and you continue along the Route without backtracking. The final flexible day is yours — a second Winelands visit, time in Clifton, or a private yacht charter out of the V&A.",
     ],
     whatsappText:
       "Hi, I'm interested in the 10-Day Full Cape Experience package. My travel dates and party size:",

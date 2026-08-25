@@ -20,7 +20,7 @@ const faqItems: FaqItem[] = [
   {
     question: "What is included in a multi-day package?",
     answer:
-      "Every multi-day package includes airport transfers on arrival and departure, full-day touring on scheduled itinerary days, and the same dedicated chauffeur and vehicle throughout. Activities such as cable car tickets, wine-tasting fees, or entry to Aquila Game Reserve are arranged on request and can be included in your quote.",
+      "Every multi-day package includes airport transfers on arrival and departure, full-day touring on scheduled itinerary days, and the same dedicated chauffeur and vehicle throughout. Activities such as cable car tickets, wine-tasting fees, or entry to Botlierskop Private Game Reserve are arranged on request and can be included in your quote.",
   },
   {
     question: "Do we get the same driver every day?",
