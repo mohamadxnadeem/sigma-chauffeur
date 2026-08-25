@@ -209,23 +209,23 @@ const packages: Package[] = [
       "Hi, I'm interested in the 5-Day Cape Town & Winelands package. My travel dates and party size:",
   },
   {
-    badge: "7 Days",
+    badge: "10 Days",
     title: "Full Cape Experience",
     ideal: "Ideal for luxury extended stays and anniversary trips.",
     includes: [
       "Everything in the 5-Day package",
       "Garden Route day excursion (Knysna, Tsitsikamma, or Oudtshoorn)",
       "Aquila Private Game Reserve safari transfer",
-      "Two fully flexible days for custom exploration",
+      "Five fully flexible days for custom exploration",
       "Priority vehicle and chauffeur reservation",
     ],
-    expandTitle: "Seven days done properly",
+    expandTitle: "Ten days done properly",
     expandText: [
-      "Seven days with a private chauffeur is the fullest Cape Town experience available. You see the Peninsula, the Winelands, Hermanus, the Garden Route, and a Big Five safari — all without touching a steering wheel or waiting for a group tour to assemble.",
-      "The two flexible days in the seven-day programme are yours to use however you choose. A return to a wine farm, a half-day in Kalk Bay, a private yacht charter, or simply a late morning in Clifton. Your chauffeur is there, ready, whenever you are.",
+      "Ten days with a private chauffeur is the fullest Cape Town experience available. You see the Peninsula, the Winelands, Hermanus, the Garden Route, and a Big Five safari — all without touching a steering wheel or waiting for a group tour to assemble.",
+      "The five flexible days in the ten-day programme are yours to use however you choose. A return to a wine farm, a half-day in Kalk Bay, a private yacht charter, or simply a late morning in Clifton. Your chauffeur is there, ready, whenever you are.",
     ],
     whatsappText:
-      "Hi, I'm interested in the 7-Day Full Cape Experience package. My travel dates and party size:",
+      "Hi, I'm interested in the 10-Day Full Cape Experience package. My travel dates and party size:",
   },
 ];
 

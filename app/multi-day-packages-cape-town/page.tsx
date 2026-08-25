@@ -221,9 +221,9 @@ export default async function MultiDayPackagesRoute() {
               "@type": "Offer",
               itemOffered: {
                 "@type": "TouristTrip",
-                name: "7-Day Full Cape Experience Package",
+                name: "10-Day Full Cape Experience Package",
                 description:
-                  "The complete Cape Town programme: Peninsula, Winelands, Hermanus, Garden Route, Aquila Game Reserve, and two fully flexible days with a dedicated chauffeur.",
+                  "The complete Cape Town programme: Peninsula, Winelands, Hermanus, Garden Route, Aquila Game Reserve, and five fully flexible days with a dedicated chauffeur.",
                 touristType: "Luxury extended stays, anniversary trips, repeat visitors",
               },
             },

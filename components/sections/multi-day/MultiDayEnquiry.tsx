@@ -388,7 +388,7 @@ export default function MultiDayEnquiry() {
                       <option value="">Select...</option>
                       <option value="3-Day Cape Town Highlight">3-Day Highlight</option>
                       <option value="5-Day Cape Town & Winelands">5-Day Winelands</option>
-                      <option value="7-Day Full Cape Experience">7-Day Full Experience</option>
+                      <option value="10-Day Full Cape Experience">10-Day Full Experience</option>
                       <option value="Custom">Custom / Not sure yet</option>
                     </Select>
                   </FieldWrap>
