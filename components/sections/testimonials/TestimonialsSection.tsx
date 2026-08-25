@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import styled from "styled-components";
 
 import { testimonials } from "./data";
@@ -168,6 +169,7 @@ const Avatar = styled.div`
   flex: 0 0 auto;
   border: 2px solid rgba(201, 168, 76, 0.12);
   box-shadow: 0 8px 20px rgba(201, 168, 76, 0.1);
+  position: relative;
 `;
 
 const ClientMeta = styled.div`
@@ -308,9 +310,13 @@ export default function TestimonialsSection() {
             <Card key={`${item.name}-${index}`}>
               <CardHeader>
                 <Avatar>
-                  <span style={{ fontSize: "1.2rem", fontWeight: 700, color: "#C9A84C" }}>
-                    {item.name.charAt(0).toUpperCase()}
-                  </span>
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="64px"
+                  />
                 </Avatar>
 
                 <ClientMeta>
