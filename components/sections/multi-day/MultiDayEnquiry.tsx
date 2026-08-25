@@ -329,11 +329,11 @@ export default function MultiDayEnquiry() {
                 </FieldWrap>
 
                 <FieldWrap>
-                  <Label htmlFor="md-contact">WhatsApp Number or Email</Label>
+                  <Label htmlFor="md-contact">WhatsApp Number</Label>
                   <Input
                     id="md-contact"
-                    type="text"
-                    placeholder="+1 555 000 0000 or email@example.com"
+                    type="tel"
+                    placeholder="+1 555 000 0000"
                     value={contact}
                     onChange={(e) => setContact(e.target.value)}
                   />
