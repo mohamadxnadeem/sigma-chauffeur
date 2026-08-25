@@ -161,6 +161,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <NavLink href="/airport-transfers-cape-town" onClick={onClose}>
             Airport Transfers
           </NavLink>
+          <NavLink href="/multi-day-packages-cape-town" onClick={onClose}>
+            Multi-Day Packages
+          </NavLink>
 
           <Divider />
 

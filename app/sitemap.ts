@@ -67,6 +67,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/multi-day-packages-cape-town`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: "yearly",
