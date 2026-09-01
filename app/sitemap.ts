@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { API_BASE } from "../lib/api";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -15,7 +16,7 @@ type ExperienceApiItem = {
 async function getVehicleSlugs(): Promise<string[]> {
   try {
     const res = await fetch(
-      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
+      `${API_BASE}/api/cars-for-hire/all/`,
       { next: { revalidate: 3600 } }
     );
     if (!res.ok) return [];
@@ -31,7 +32,7 @@ async function getVehicleSlugs(): Promise<string[]> {
 async function getTourSlugs(): Promise<string[]> {
   try {
     const res = await fetch(
-      "https://web-production-1ab9.up.railway.app/api/experiences/all/",
+      `${API_BASE}/api/experiences/all/`,
       { next: { revalidate: 3600 } }
     );
     if (!res.ok) return [];
@@ -72,17 +73,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/7-day-cape-town-itinerary`,
+      url: `${SITE_URL}/winelands-chauffeur-days`,
       lastModified: new Date(),
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/best-wine-farms-in-cape-town`,
+      url: `${SITE_URL}/private-experiences-cape-town`,
       lastModified: new Date(),
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/best-activities-to-do-in-cape-town`,
+      url: `${SITE_URL}/multi-day-itineraries-cape-town`,
       lastModified: new Date(),
       priority: 0.8,
     },
@@ -101,7 +102,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const tourRoutes: MetadataRoute.Sitemap = tourSlugs.map((slug) => ({
-    url: `${SITE_URL}/private-tours/${slug}`,
+    url: `${SITE_URL}/chauffeur-drive-days/${slug}`,
     lastModified: new Date(),
     priority: 0.85,
   }));

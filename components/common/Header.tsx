@@ -51,6 +51,32 @@ const LogoImage = styled.div`
   }
 `;
 
+const DesktopNav = styled.nav`
+  display: none;
+  align-items: center;
+  gap: 4px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: flex;
+  }
+`;
+
+const NavLink = styled(Link)`
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+`;
+
 const RightSide = styled.div`
   display: flex;
   align-items: center;
@@ -133,6 +159,14 @@ export default function Header() {
                 />
               </LogoImage>
             </Logo>
+
+            <DesktopNav>
+              <NavLink href="/airport-transfers-cape-town">Airport Transfers</NavLink>
+              <NavLink href="/private-jet-transfers-cape-town">Private Jet</NavLink>
+              <NavLink href="/multi-day-packages-cape-town">Multi-Day Packages</NavLink>
+              <NavLink href="/winelands-chauffeur-days">Winelands</NavLink>
+              <NavLink href="/private-experiences-cape-town">Experiences</NavLink>
+            </DesktopNav>
 
             <RightSide>
               <HeaderCta

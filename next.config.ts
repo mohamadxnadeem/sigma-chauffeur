@@ -14,6 +14,26 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/best-wine-farms-in-cape-town",
+        destination: "/winelands-chauffeur-days",
+        permanent: true,
+      },
+      {
+        source: "/best-activities-to-do-in-cape-town",
+        destination: "/private-experiences-cape-town",
+        permanent: true,
+      },
+      {
+        source: "/7-day-cape-town-itinerary",
+        destination: "/multi-day-itineraries-cape-town",
+        permanent: true,
+      },
+      {
+        source: "/private-tours/:slug*",
+        destination: "/chauffeur-drive-days/:slug*",
+        permanent: true,
+      },
     ];
   },
   compiler: {

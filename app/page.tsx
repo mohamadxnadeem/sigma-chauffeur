@@ -7,6 +7,7 @@ import TestimonialsSection from "../components/sections/testimonials/Testimonial
 import TestimonialsCta from "../components/sections/testimonials/TestimonialsCta";
 import ChauffeurAuthoritySection from "../components/sections/ChauffeurAuthoritySection";
 import PrivateServiceSection from "../components/sections/PrivateServiceSection";
+import { API_BASE } from "../lib/api";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -167,7 +168,7 @@ function isFeaturedVehicleItem(
 async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
   try {
     const response = await fetch(
-      "https://web-production-1ab9.up.railway.app/api/experiences/all/",
+      `${API_BASE}/api/experiences/all/`,
       {
         next: { revalidate: 3600 },
       }
@@ -222,7 +223,7 @@ async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
 async function getFeaturedVehicles(): Promise<FeaturedVehicleItem[]> {
   try {
     const response = await fetch(
-      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
+      `${API_BASE}/api/cars-for-hire/all/`,
       {
         next: { revalidate: 3600 },
       }

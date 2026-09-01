@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ChauffeurDetailView from "../../../components/sections/chauffeur-services/ChauffeurDetailView";
+import { API_BASE } from "../../../lib/api";
 
 // ─────────────────────────────────────────────
 // TYPES
@@ -86,7 +87,7 @@ function truncateText(text?: string, maxLength = 155) {
 async function getAllVehicles(): Promise<CarsApiItem[]> {
   try {
     const response = await fetch(
-      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
+      `${API_BASE}/api/cars-for-hire/all/`,
       { next: { revalidate: 3600 } }
     );
     if (!response.ok) return [];

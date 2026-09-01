@@ -108,10 +108,9 @@ function truncateText(text?: string, maxLength = 140) {
 
 async function getAllExperiences(): Promise<ExperienceListItem[]> {
   try {
-    const response = await fetch(
-      `${API_BASE}/api/experiences/all/`,
-      { next: { revalidate: 3600 } }
-    );
+    const response = await fetch(`${API_BASE}/api/experiences/all/`, {
+      next: { revalidate: 3600 },
+    });
     if (!response.ok) return [];
     return response.json();
   } catch {
@@ -121,10 +120,9 @@ async function getAllExperiences(): Promise<ExperienceListItem[]> {
 
 async function getAllVehicles(): Promise<CarsApiItem[]> {
   try {
-    const response = await fetch(
-      `${API_BASE}/api/cars-for-hire/all/`,
-      { next: { revalidate: 3600 } }
-    );
+    const response = await fetch(`${API_BASE}/api/cars-for-hire/all/`, {
+      next: { revalidate: 3600 },
+    });
     if (!response.ok) return [];
     const data = await response.json();
     if (Array.isArray(data)) return data;
@@ -138,36 +136,38 @@ async function getAllVehicles(): Promise<CarsApiItem[]> {
 async function getExperienceIdBySlug(slug: string) {
   const data = await getAllExperiences();
   const lower = slug.toLowerCase();
-  const match = data.find((item) => item?.experience?.slug?.toLowerCase() === lower);
+  const match = data.find(
+    (item) => item?.experience?.slug?.toLowerCase() === lower
+  );
   return match?.experience?.id || null;
 }
 
 async function getExperienceDetails(
   id: number
 ): Promise<ExperienceDetailResponse | Experience> {
-  const response = await fetch(
-    `${API_BASE}/api/experiences/${id}/details/`,
-    {
-      // ISR: cache for 1 hour. Required for static generation.
-      next: { revalidate: 3600 },
-    }
-  );
-
+  const response = await fetch(`${API_BASE}/api/experiences/${id}/details/`, {
+    next: { revalidate: 3600 },
+  });
   if (!response.ok) {
     throw new Error("Failed to fetch experience details");
   }
-
   return response.json();
 }
 
-function normalizeExperience(data: ExperienceDetailResponse | Experience): Experience {
+function normalizeExperience(
+  data: ExperienceDetailResponse | Experience
+): Experience {
   return (data as ExperienceDetailResponse)?.experience || (data as Experience);
 }
 
 function isBrowserRenderable(url?: string): boolean {
   if (!url) return false;
   const lower = url.toLowerCase();
-  return !lower.endsWith(".heic") && !lower.endsWith(".heif") && !lower.endsWith(".tiff");
+  return (
+    !lower.endsWith(".heic") &&
+    !lower.endsWith(".heif") &&
+    !lower.endsWith(".tiff")
+  );
 }
 
 function getPrimaryImage(experience: Experience) {
@@ -185,7 +185,7 @@ function getPrimaryImage(experience: Experience) {
 function getPageTitle(experience: Experience) {
   return (
     experience.meta_title ||
-    `${experience.title || "Private Tour"} | Sigma VIP`
+    `${experience.title || "Chauffeur Drive Day"} | Sigma VIP`
   );
 }
 
@@ -194,7 +194,7 @@ function getPageDescription(experience: Experience) {
     experience.meta_description ||
     experience.short_description ||
     experience.highlight ||
-    "Luxury private tours in Cape Town with premium chauffeur-led experiences."
+    "Private chauffeur drive days in Cape Town with Sigma VIP."
   );
 }
 
@@ -206,17 +206,17 @@ function mapRelatedTours(
     .map((item) => item.experience)
     .filter((tour) => tour.slug && tour.slug !== currentSlug)
     .map((tour) => ({
-      title: tour.title || "Private Tour",
+      title: tour.title || "Chauffeur Drive Day",
       description:
         tour.short_description ||
         tour.highlight ||
-        "Discover another premium private tour experience in Cape Town.",
+        "Discover another private chauffeur drive day in Cape Town.",
       image:
         [...(tour.cover_photos || [])]
           .sort((a, b) => a.order - b.order)
           .filter((p) => isBrowserRenderable(p.cover_photos))[0]
           ?.cover_photos || "",
-      href: `/private-tours/${tour.slug}`,
+      href: `/chauffeur-drive-days/${tour.slug}`,
     }));
 }
 
@@ -266,8 +266,8 @@ export async function generateMetadata({
 
   if (!experienceId) {
     return {
-      title: "Private Tour | Sigma VIP",
-      description: "Luxury private tours in Cape Town",
+      title: "Chauffeur Drive Day | Sigma VIP",
+      description: "Private chauffeur drive days in Cape Town",
       robots: {
         index: true,
         follow: true,
@@ -286,7 +286,7 @@ export async function generateMetadata({
   const title = getPageTitle(experience);
   const description = getPageDescription(experience);
   const image = getPrimaryImage(experience);
-  const canonicalUrl = `${SITE_URL}/private-tours/${slug}`;
+  const canonicalUrl = `${SITE_URL}/chauffeur-drive-days/${slug}`;
 
   return {
     title,
@@ -313,7 +313,7 @@ export async function generateMetadata({
         ? [
             {
               url: image,
-              alt: experience.title || "Private tour in Cape Town",
+              alt: experience.title || "Private chauffeur drive day Cape Town",
             },
           ]
         : [],
@@ -327,7 +327,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function PrivateTourDetailPage({ params }: PageProps) {
+export default async function ChauffeurDriveDayPage({ params }: PageProps) {
   const { slug } = await params;
 
   const [allExperiences, allVehicles, experienceId] = await Promise.all([
@@ -351,7 +351,7 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
   const vehicles = mapVehicles(allVehicles);
 
   const primaryImage = getPrimaryImage(experience);
-  const canonicalUrl = `${SITE_URL}/private-tours/${slug}`;
+  const canonicalUrl = `${SITE_URL}/chauffeur-drive-days/${slug}`;
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -359,15 +359,15 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
     mainEntity: [
       {
         "@type": "Question",
-        name: `How long does the ${experience.title || "private tour"} usually take?`,
+        name: `How long does the ${experience.title || "chauffeur drive day"} usually take?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `The ${experience.title || "private tour"} usually runs for a full day, depending on the route, your pace, and any custom stops you would like to include.`,
+          text: `The ${experience.title || "chauffeur drive day"} usually runs for a full day, depending on the route, your pace, and any custom stops you would like to include.`,
         },
       },
       {
         "@type": "Question",
-        name: `Is the ${experience.title || "private tour"} a private experience?`,
+        name: `Is the ${experience.title || "chauffeur drive day"} a private experience?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. This is a private experience designed around your schedule, comfort, and travel preferences.",
@@ -375,7 +375,7 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
       },
       {
         "@type": "Question",
-        name: `Can the ${experience.title || "private tour"} itinerary be customised?`,
+        name: `Can the ${experience.title || "chauffeur drive day"} itinerary be customised?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. We can tailor the route, timing, and stops to create a more personalised Cape Town experience.",
@@ -383,10 +383,10 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
       },
       {
         "@type": "Question",
-        name: `Does the ${experience.title || "private tour"} include chauffeur transport?`,
+        name: `Does the ${experience.title || "chauffeur drive day"} include chauffeur transport?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Your experience is designed around premium private transport for a seamless and comfortable journey.",
+          text: "Yes. Your experience includes premium private chauffeur transport throughout the day for a seamless and comfortable journey.",
         },
       },
     ],
@@ -405,13 +405,13 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Private Tours",
-        item: `${SITE_URL}/private-tours`,
+        name: "Chauffeur Drive Days",
+        item: `${SITE_URL}/chauffeur-drive-days`,
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: experience.title || "Private Tour",
+        name: experience.title || "Chauffeur Drive Day",
         item: canonicalUrl,
       },
     ],
@@ -420,7 +420,7 @@ export default async function PrivateTourDetailPage({ params }: PageProps) {
   const tourJsonLd = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    name: experience.title || "Private Tour",
+    name: experience.title || "Chauffeur Drive Day",
     description: getPageDescription(experience),
     image: primaryImage ? [primaryImage] : [],
     url: canonicalUrl,
