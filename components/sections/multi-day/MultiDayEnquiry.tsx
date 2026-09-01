@@ -4,7 +4,7 @@ import { useState, FormEvent } from "react";
 import styled from "styled-components";
 import Button from "../../common/Button";
 import { Container, Anchor, whatsappLink } from "./shared";
-import { trackWhatsAppClick } from "../../../lib/tracking";
+import { trackWhatsAppClick, trackPhoneClick } from "../../../lib/tracking";
 import { buildWhatsAppLink } from "../../../lib/whatsapp";
 
 const Section = styled.section`
@@ -100,6 +100,20 @@ const TrustCheck = styled.span`
   flex-shrink: 0;
   font-size: 0.85rem;
   margin-top: 1px;
+`;
+
+const PhoneLink = styled.a`
+  display: block;
+  margin-top: 16px;
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-size: 0.92rem;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 const FormCard = styled.div`
@@ -283,6 +297,18 @@ export default function MultiDayEnquiry() {
                 WhatsApp Us Directly
               </Button>
             </WhatsAppCta>
+
+            <PhoneLink
+              href="tel:+27711081227"
+              onClick={() =>
+                trackPhoneClick({
+                  source: "multiday_enquiry_phone",
+                  label: "Call — Enquiry Section",
+                })
+              }
+            >
+              or call +27 71 108 1227
+            </PhoneLink>
 
             <OrDivider>or use the enquiry form</OrDivider>
 

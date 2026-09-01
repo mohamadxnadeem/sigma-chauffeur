@@ -164,6 +164,15 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <NavLink href="/multi-day-packages-cape-town" onClick={onClose}>
             Multi-Day Packages
           </NavLink>
+          <NavLink href="/7-day-cape-town-itinerary" onClick={onClose}>
+            7-Day Itinerary
+          </NavLink>
+          <NavLink href="/best-wine-farms-in-cape-town" onClick={onClose}>
+            Best Wine Farms
+          </NavLink>
+          <NavLink href="/best-activities-to-do-in-cape-town" onClick={onClose}>
+            Best Activities
+          </NavLink>
 
           <Divider />
 

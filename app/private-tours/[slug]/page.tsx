@@ -106,39 +106,32 @@ function truncateText(text?: string, maxLength = 140) {
 }
 
 async function getAllExperiences(): Promise<ExperienceListItem[]> {
-  const response = await fetch(
-    "https://web-production-1ab9.up.railway.app/api/experiences/all/",
-    {
-      // ISR: cache for 1 hour. Required for static generation.
-      next: { revalidate: 3600 },
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error("Failed to fetch experiences list");
+  try {
+    const response = await fetch(
+      "https://web-production-1ab9.up.railway.app/api/experiences/all/",
+      { next: { revalidate: 3600 } }
+    );
+    if (!response.ok) return [];
+    return response.json();
+  } catch {
+    return [];
   }
-
-  return response.json();
 }
 
 async function getAllVehicles(): Promise<CarsApiItem[]> {
-  const response = await fetch(
-    "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
-    {
-      // ISR: cache for 1 hour. Required for static generation.
-      next: { revalidate: 3600 },
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error("Failed to fetch vehicles");
+  try {
+    const response = await fetch(
+      "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/",
+      { next: { revalidate: 3600 } }
+    );
+    if (!response.ok) return [];
+    const data = await response.json();
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data?.results)) return data.results;
+    return [];
+  } catch {
+    return [];
   }
-
-  const data = await response.json();
-
-  if (Array.isArray(data)) return data;
-  if (Array.isArray(data?.results)) return data.results;
-  return [];
 }
 
 async function getExperienceIdBySlug(slug: string) {
@@ -254,6 +247,14 @@ function mapVehicles(items: CarsApiItem[]): TourVehicle[] {
         description,
       };
     });
+}
+
+export async function generateStaticParams() {
+  const experiences = await getAllExperiences();
+  return experiences
+    .map((item) => item?.experience?.slug?.toLowerCase())
+    .filter((slug): slug is string => Boolean(slug))
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

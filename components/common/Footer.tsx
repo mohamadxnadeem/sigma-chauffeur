@@ -163,6 +163,10 @@ export default function Footer() {
             <ColTitle>Services</ColTitle>
             <NavList>
               <NavLink href="/airport-transfers-cape-town">Airport Transfers</NavLink>
+              <NavLink href="/multi-day-packages-cape-town">Multi-Day Packages</NavLink>
+              <NavLink href="/7-day-cape-town-itinerary">7-Day Cape Town Itinerary</NavLink>
+              <NavLink href="/best-wine-farms-in-cape-town">Best Wine Farms</NavLink>
+              <NavLink href="/best-activities-to-do-in-cape-town">Best Activities in Cape Town</NavLink>
             </NavList>
           </div>
 

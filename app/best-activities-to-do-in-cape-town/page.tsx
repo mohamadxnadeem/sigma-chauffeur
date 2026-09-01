@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Table Mountain, Cape Peninsula, Boulders Beach, the Winelands, and more, arranged as private chauffeur day tours from Cape Town. Curated experiences for families and private groups.",
   alternates: {
-    canonical: `${SITE_URL}/best-activities-in-cape-town`,
+    canonical: `${SITE_URL}/best-activities-to-do-in-cape-town`,
   },
   robots: {
     index: true,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Best Activities in Cape Town (2026 Guide) | Private Chauffeur Day Tours | Sigma VIP",
     description:
       "Cape Town activities including Table Mountain, Cape Peninsula, wine tours, and private chauffeur-driven experiences, arranged for families and private groups.",
-    url: `${SITE_URL}/best-activities-in-cape-town`,
+    url: `${SITE_URL}/best-activities-to-do-in-cape-town`,
     siteName: "Sigma VIP",
     type: "article",
     images: [
@@ -73,7 +73,7 @@ export default function BestActivitiesToDoInCapeTownPage() {
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${SITE_URL}/best-activities-in-cape-town`,
+          "@id": `${SITE_URL}/best-activities-to-do-in-cape-town`,
         },
       },
       {
@@ -134,7 +134,7 @@ export default function BestActivitiesToDoInCapeTownPage() {
             "@type": "ListItem",
             position: 2,
             name: "Best Activities in Cape Town",
-            item: `${SITE_URL}/best-activities-in-cape-town`,
+            item: `${SITE_URL}/best-activities-to-do-in-cape-town`,
           },
         ],
       },
