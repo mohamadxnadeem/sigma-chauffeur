@@ -17,9 +17,7 @@ export default function EngagementTracking() {
         event_label: "30_seconds",
       });
 
-      window.fbq?.("trackCustom", "Engaged30s", {
-        seconds: 30,
-      });
+      // window.fbq?.("trackCustom", "Engaged30s", { seconds: 30 }); // re-enable with Sigma Pixel
     }, 30000);
 
     return () => {

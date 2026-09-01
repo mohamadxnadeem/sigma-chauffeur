@@ -59,34 +59,9 @@ const Description = styled.p`
 
 const TopBar = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 24px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-`;
-
-const MetaStrip = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
-const MetaBadge = styled.div`
-  min-height: 36px;
-  display: inline-flex;
   align-items: center;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.12);
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.8rem;
-  font-weight: 700;
+  justify-content: flex-end;
+  margin-bottom: 24px;
 `;
 
 const Controls = styled.div`
@@ -170,6 +145,17 @@ const Avatar = styled.div`
   border: 2px solid rgba(201, 168, 76, 0.12);
   box-shadow: 0 8px 20px rgba(201, 168, 76, 0.1);
   position: relative;
+  background: rgba(201, 168, 76, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const AvatarInitials = styled.span`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
 `;
 
 const ClientMeta = styled.div`
@@ -217,6 +203,21 @@ const FooterNote = styled.div`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.78rem;
   font-weight: 700;
+`;
+
+const GoogleLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 function StarRating({ count = 5 }: { count?: number }) {
@@ -283,12 +284,6 @@ export default function TestimonialsSection() {
         </Header>
 
         <TopBar>
-          <MetaStrip>
-            <MetaBadge>5-Star Rated Experience</MetaBadge>
-            <MetaBadge>Verified Client Reviews</MetaBadge>
-            <MetaBadge>Luxury Travel Service</MetaBadge>
-          </MetaStrip>
-
           <Controls>
             <Arrow type="button" aria-label="Scroll testimonials left" onClick={() => scroll("left")}>
               ←
@@ -310,18 +305,24 @@ export default function TestimonialsSection() {
             <Card key={`${item.name}-${index}`}>
               <CardHeader>
                 <Avatar>
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="64px"
-                  />
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="64px"
+                    />
+                  ) : (
+                    <AvatarInitials aria-hidden="true">
+                      {item.name.charAt(0).toUpperCase()}
+                    </AvatarInitials>
+                  )}
                 </Avatar>
 
                 <ClientMeta>
                   <Name>{item.name}</Name>
-                  <VerifiedBadge>Verified Client</VerifiedBadge>
+                  <VerifiedBadge>Google Review</VerifiedBadge>
                 </ClientMeta>
               </CardHeader>
 
@@ -329,12 +330,20 @@ export default function TestimonialsSection() {
                 <StarRating />
               </Stars>
 
-              <Review>“{item.review}”</Review>
+              <Review>"{item.review}"</Review>
 
-              <FooterNote>{item.service}</FooterNote>
+              {item.service && <FooterNote>{item.service}</FooterNote>}
             </Card>
           ))}
         </Slider>
+
+        <GoogleLink
+          href="https://share.google/MGmGJd2UjR7Z1EUFp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ★ Read our reviews on Google
+        </GoogleLink>
       </Container>
     </Section>
   );

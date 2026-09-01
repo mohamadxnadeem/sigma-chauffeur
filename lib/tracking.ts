@@ -50,23 +50,19 @@ export function trackWhatsAppClick({
     });
   }
 
-  // Meta standard lead event
-  window.fbq?.("track", "Lead", {
-    ...cleanPayload,
-    value: META_LEAD_VALUE_ZAR,
-    currency: "ZAR",
-  });
-
-  // Custom Meta event for debugging / segmentation
-  window.fbq?.("trackCustom", "WhatsAppClick", cleanPayload);
-
-  // Higher intent custom Meta event
-  window.fbq?.("trackCustom", "HighIntentLead", {
-    ...cleanPayload,
-    intent: "whatsapp_click",
-    value: META_LEAD_VALUE_ZAR,
-    currency: "ZAR",
-  });
+  // Meta Pixel events disabled — re-enable when Sigma's own Pixel ID is configured
+  // window.fbq?.("track", "Lead", {
+  //   ...cleanPayload,
+  //   value: META_LEAD_VALUE_ZAR,
+  //   currency: "ZAR",
+  // });
+  // window.fbq?.("trackCustom", "WhatsAppClick", cleanPayload);
+  // window.fbq?.("trackCustom", "HighIntentLead", {
+  //   ...cleanPayload,
+  //   intent: "whatsapp_click",
+  //   value: META_LEAD_VALUE_ZAR,
+  //   currency: "ZAR",
+  // });
 }
 
 type PhoneTrackingParams = {
@@ -92,10 +88,10 @@ export function trackPhoneClick({
     });
   }
 
-  window.fbq?.("track", "Lead", {
-    source,
-    label,
-    value: META_LEAD_VALUE_ZAR,
-    currency: "ZAR",
-  });
+  // window.fbq?.("track", "Lead", {
+  //   source,
+  //   label,
+  //   value: META_LEAD_VALUE_ZAR,
+  //   currency: "ZAR",
+  // });
 }

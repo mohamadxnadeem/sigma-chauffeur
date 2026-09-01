@@ -32,9 +32,7 @@ export default function ScrollTracking() {
           value: 50,
         });
 
-        window.fbq?.("trackCustom", "ScrollDepth", {
-          percent: 50,
-        });
+        // window.fbq?.("trackCustom", "ScrollDepth", { percent: 50 }); // re-enable with Sigma Pixel
       }
 
       if (!hasTracked90 && percent >= 90) {
@@ -46,9 +44,7 @@ export default function ScrollTracking() {
           value: 90,
         });
 
-        window.fbq?.("trackCustom", "ScrollDepth", {
-          percent: 90,
-        });
+        // window.fbq?.("trackCustom", "ScrollDepth", { percent: 90 }); // re-enable with Sigma Pixel
       }
     };
 

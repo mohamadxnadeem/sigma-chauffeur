@@ -35,14 +35,6 @@ const vehicles: Vehicle[] = [
     features: ["4 passengers", "Long wheelbase", "Chauffeur included"],
   },
   {
-    badge: "Supreme Tier",
-    title: "Range Rover Autobiography",
-    ideal: "Multi-day hire · extended Cape Peninsula drives",
-    description:
-      "Massage seats, panoramic roof, Meridian audio. Supreme comfort for long-form itineraries from the moment you land.",
-    features: ["4 passengers", "Panoramic roof", "Meridian audio"],
-  },
-  {
     badge: "Executive SUV",
     title: "BMW X5",
     ideal: "Full-day touring · executive transfers",
@@ -150,7 +142,7 @@ export default function PrivateJetFleet() {
             The Right Vehicle Waiting at the Airport
           </SectionTitle>
           <SectionText>
-            Three vehicles built for the standard of client who expects
+            Vehicles built for the standard of client who expects
             more from an airport transfer. Choose your preference when
             you book, or let us recommend based on party size and
             onward schedule.

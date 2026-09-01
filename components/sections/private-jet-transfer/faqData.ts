@@ -18,7 +18,7 @@ export const privateJetFaqItems: PrivateJetFaqItem[] = [
   {
     question: "Which vehicles are available for airport transfers?",
     answer:
-      "Our fleet includes the Mercedes S-Class, Range Rover Autobiography, BMW X5, and Mercedes V-Class. Choose at booking or let us recommend based on passenger count and onward schedule.",
+      "Our fleet includes the Mercedes S-Class, BMW X5, and Mercedes V-Class. Choose at booking or let us recommend based on passenger count and onward schedule.",
   },
   {
     question: "Can you accommodate multi-stop onward itineraries?",

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
-const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+// const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID; // FB Pixel disabled — re-enable when Sigma's own Pixel ID is set
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 
 export default function RootLayout({
@@ -95,7 +95,7 @@ export default function RootLayout({
           </>
         ) : null}
 
-        {/* Meta Pixel */}
+        {/* Meta Pixel — disabled until Sigma's own Pixel ID is configured
         {metaPixelId ? (
           <>
             <Script id="meta-pixel" strategy="afterInteractive">
@@ -125,6 +125,7 @@ export default function RootLayout({
             </noscript>
           </>
         ) : null}
+        */}
       </body>
     </html>
   );

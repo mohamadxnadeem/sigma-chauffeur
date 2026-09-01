@@ -380,17 +380,7 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
                 worstRating: 1,
               },
             }
-          : // Fallback: use a conservative global rating from your site reviews
-            // Replace 4.9 and 28 with your actual verified figures
-            {
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "28",
-                bestRating: "5",
-                worstRating: "1",
-              },
-            }),
+          : {}),
       },
 
       // 2. Service schema — the chauffeur service itself
