@@ -30,7 +30,7 @@ const TopRow = styled.div`
   margin-bottom: 48px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr 0.7fr 1fr;
     gap: 32px;
   }
 `;
@@ -167,6 +167,14 @@ export default function Footer() {
               <NavLink href="/7-day-cape-town-itinerary">7-Day Cape Town Itinerary</NavLink>
               <NavLink href="/best-wine-farms-in-cape-town">Best Wine Farms</NavLink>
               <NavLink href="/best-activities-to-do-in-cape-town">Best Activities in Cape Town</NavLink>
+            </NavList>
+          </div>
+
+          <div>
+            <ColTitle>Quick Links</ColTitle>
+            <NavList>
+              <NavLink href="/private-jet-transfers-cape-town">Private Jet Transfers</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
             </NavList>
           </div>
 

@@ -395,10 +395,7 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
           url: SITE_URL,
           telephone: "+27711081227",
           priceRange: "$$$$",
-          sameAs: [
-            "https://www.facebook.com/capetownconcierge",
-            // Add your actual social profiles here
-          ],
+          sameAs: [],
         },
         areaServed: [
           { "@type": "City", name: "Cape Town" },
