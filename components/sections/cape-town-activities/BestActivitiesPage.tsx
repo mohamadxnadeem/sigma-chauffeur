@@ -9,6 +9,7 @@ import { PageWrap } from "./shared";
 import TestimonialsSection from "../testimonials/TestimonialsSection";
 import TestimonialsCta from "../testimonials/TestimonialsCta";
 import FeaturedExperiences from "../FeaturedExperiences";
+import GuideEnquirySection from "../shared/GuideEnquirySection";
 
 type FeaturedExperienceItem = {
   title: string;
@@ -39,6 +40,20 @@ export default function BestActivitiesPage({
 
       <ActivitiesTravellerTypes items={travelerTypes} />
 
+      <GuideEnquirySection
+        eyebrow="Arrange Your Cape Town Experience"
+        title="Tell Us What You'd Like to Do"
+        description="We coordinate the transport side of any Cape Town experience — Peninsula drives, helicopter transfers, Boulders Beach, wine farms, safari days, or a full custom day."
+        formTitle="Arrange a Private Experience"
+        trustPoints={[
+          "Private vehicle — no shared transfers",
+          "One chauffeur manages your whole day",
+          "Can combine multiple experiences in one day",
+          "Suitable for individuals, families, and corporate groups",
+        ]}
+        waContext="a private experience day in Cape Town"
+        trackingSource="activities_enquiry"
+      />
       <TestimonialsSection />
       <TestimonialsCta />
     </PageWrap>

@@ -4,9 +4,16 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   async redirects() {
     return [
+      // Airport transfers slug rename
+      {
+        source: "/airport-transfers-cape-town",
+        destination: "/private-airport-transfers-cape-town",
+        permanent: true,
+      },
+      // Old private-jet-transfer slug → new airport page
       {
         source: "/private-jet-transfer",
-        destination: "/airport-transfers-cape-town",
+        destination: "/private-airport-transfers-cape-town",
         permanent: true,
       },
       {
@@ -14,6 +21,7 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Slug renames (old "best X" → distinct Sigma slugs)
       {
         source: "/best-wine-farms-in-cape-town",
         destination: "/winelands-chauffeur-days",
@@ -29,9 +37,26 @@ const nextConfig: NextConfig = {
         destination: "/multi-day-itineraries-cape-town",
         permanent: true,
       },
+      // Tour detail slug rename
       {
         source: "/private-tours/:slug*",
         destination: "/chauffeur-drive-days/:slug*",
+        permanent: true,
+      },
+      // Lowercase vehicle slugs (CMS returns mixed-case; normalise for inbound links)
+      {
+        source: "/chauffeur-services/BMW-X5-for-hire-with-driver",
+        destination: "/chauffeur-services/bmw-x5-for-hire-with-driver",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/Mercedes-s-class-for-hire-with-driver",
+        destination: "/chauffeur-services/mercedes-s-class-for-hire-with-driver",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/Mercedes-v-class-private-chauffeur-service",
+        destination: "/chauffeur-services/mercedes-v-class-private-chauffeur-service",
         permanent: true,
       },
     ];

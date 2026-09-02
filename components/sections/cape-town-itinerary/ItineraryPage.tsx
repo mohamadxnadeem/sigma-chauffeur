@@ -18,19 +18,11 @@ export default function ItineraryPage() {
       <ItineraryHero />
       <ItineraryTimeline items={itineraryDays} />
       <ItineraryAuthoritySection />
+      <AvailableVehicles title="Multi-Day Cape Town Itinerary" />
+      <ItineraryAddOns />
+      <ItineraryFaq items={itineraryFaqItems} />
       <TestimonialsSection />
       <TestimonialsCta />
-      <AvailableVehicles title="7 Day Cape Town Itinerary" />
-
-
-      
-
-
-      <ItineraryAddOns />
-
-      
-
-      <ItineraryFaq items={itineraryFaqItems} />
       <ItineraryFinalCta />
     </PageWrap>
   );

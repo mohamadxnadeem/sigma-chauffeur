@@ -158,7 +158,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <NavLink href="/" onClick={onClose}>
             Home
           </NavLink>
-          <NavLink href="/airport-transfers-cape-town" onClick={onClose}>
+          <NavLink href="/private-airport-transfers-cape-town" onClick={onClose}>
             Airport Transfers
           </NavLink>
           <NavLink href="/private-jet-transfers-cape-town" onClick={onClose}>
@@ -168,13 +168,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             Multi-Day Packages
           </NavLink>
           <NavLink href="/multi-day-itineraries-cape-town" onClick={onClose}>
-            7-Day Itinerary
+            Multi-Day Itineraries
           </NavLink>
           <NavLink href="/winelands-chauffeur-days" onClick={onClose}>
-            Best Wine Farms
+            Winelands Days
           </NavLink>
           <NavLink href="/private-experiences-cape-town" onClick={onClose}>
-            Best Activities
+            Private Experiences
           </NavLink>
 
           <Divider />

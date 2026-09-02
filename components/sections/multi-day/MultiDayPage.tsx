@@ -25,10 +25,10 @@ export default function MultiDayPage({ vehicles = [] }: Props) {
       <MultiDayHero />
       <MultiDayWhy />
       <MultiDayPackages />
-      <MultiDayVehicleSelector vehicles={vehicles} />
       <MultiDayHowItWorks />
-      <MultiDayTestimonials />
+      <MultiDayVehicleSelector vehicles={vehicles} />
       <MultiDayFaq />
+      <MultiDayTestimonials />
       <MultiDayEnquiry />
     </>
   );

@@ -106,7 +106,7 @@ export default function PrivateServiceSection() {
               luggage transport as a single booking.
             </Feature>
             <Feature>
-              <FeatureLabel>FBO ramp coordination</FeatureLabel> at Cape Town
+              <FeatureLabel>FBO ramp coordination</FeatureLabel>{" "}at Cape Town
               International&apos;s private terminal. Vehicle staged, luggage
               handled, transfer from aircraft completed in under five minutes.
             </Feature>

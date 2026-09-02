@@ -161,7 +161,7 @@ export default function Header() {
             </Logo>
 
             <DesktopNav>
-              <NavLink href="/airport-transfers-cape-town">Airport Transfers</NavLink>
+              <NavLink href="/private-airport-transfers-cape-town">Airport Transfers</NavLink>
               <NavLink href="/private-jet-transfers-cape-town">Private Jet</NavLink>
               <NavLink href="/multi-day-packages-cape-town">Multi-Day Packages</NavLink>
               <NavLink href="/winelands-chauffeur-days">Winelands</NavLink>

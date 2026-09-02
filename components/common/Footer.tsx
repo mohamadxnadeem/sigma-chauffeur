@@ -162,11 +162,11 @@ export default function Footer() {
           <div>
             <ColTitle>Services</ColTitle>
             <NavList>
-              <NavLink href="/airport-transfers-cape-town">Airport Transfers</NavLink>
+              <NavLink href="/private-airport-transfers-cape-town">Airport Transfers</NavLink>
               <NavLink href="/multi-day-packages-cape-town">Multi-Day Packages</NavLink>
-              <NavLink href="/multi-day-itineraries-cape-town">7-Day Cape Town Itinerary</NavLink>
-              <NavLink href="/winelands-chauffeur-days">Best Wine Farms</NavLink>
-              <NavLink href="/private-experiences-cape-town">Best Activities in Cape Town</NavLink>
+              <NavLink href="/multi-day-itineraries-cape-town">Multi-Day Itineraries</NavLink>
+              <NavLink href="/winelands-chauffeur-days">Winelands Days</NavLink>
+              <NavLink href="/private-experiences-cape-town">Private Experiences</NavLink>
             </NavList>
           </div>
 
@@ -175,6 +175,8 @@ export default function Footer() {
             <NavList>
               <NavLink href="/private-jet-transfers-cape-town">Private Jet Transfers</NavLink>
               <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/privacy">Privacy Policy</NavLink>
+              <NavLink href="/cancellation-policy">Cancellation Policy</NavLink>
             </NavList>
           </div>
 
