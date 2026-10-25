@@ -168,6 +168,7 @@ export default function PrivateTourRelatedTours({
                   src={item.image}
                   alt={`${item.title} private tour`}
                   fill
+                  unoptimized
                   placeholder="blur"
                   blurDataURL={`data:image/svg+xml;base64,${toBase64(
                     shimmer(700, 500)

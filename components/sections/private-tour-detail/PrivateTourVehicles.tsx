@@ -308,6 +308,7 @@ function VehicleImage({
           src={image}
           alt={alt}
           fill
+          unoptimized
           placeholder="blur"
           blurDataURL={`data:image/svg+xml;base64,${toBase64(
             shimmer(700, 500)
