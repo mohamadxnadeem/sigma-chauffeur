@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PrivateJetTransferPage from "../../components/sections/private-jet-transfer/PrivateJetTransferPage";
 import { privateJetFaqItems } from "../../components/sections/private-jet-transfer/faqData";
-import { API_BASE } from "../../lib/api";
+import { SIGMA_API_BASE } from "../../lib/api";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -35,7 +35,7 @@ function isBrowserRenderable(url?: string): boolean {
 async function getVehicles() {
   try {
     const res = await fetch(
-      `${API_BASE}/api/cars-for-hire/all/`,
+      `${SIGMA_API_BASE}/api/cars-for-hire/all/`,
       { next: { revalidate: 3600 } }
     );
     if (!res.ok) return [];

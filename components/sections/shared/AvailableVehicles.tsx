@@ -41,9 +41,11 @@ type Props = {
   onLoaded?: (count: number) => void;
 };
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL
-  ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/cars-for-hire/all/`
-  : "https://web-production-1ab9.up.railway.app/api/cars-for-hire/all/";
+const SIGMA_PUBLIC_API_BASE = (
+  process.env.NEXT_PUBLIC_SIGMA_API_BASE_URL ??
+  "https://web-production-d7058.up.railway.app"
+).replace(/\/+$/, "");
+const API_URL = `${SIGMA_PUBLIC_API_BASE}/api/cars-for-hire/all/`;
 
 function isBrowserRenderable(url?: string): boolean {
   if (!url) return false;

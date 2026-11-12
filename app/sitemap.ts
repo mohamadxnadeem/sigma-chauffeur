@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { API_BASE } from "../lib/api";
+import { API_BASE, SIGMA_API_BASE } from "../lib/api";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -16,7 +16,7 @@ type ExperienceApiItem = {
 async function getVehicleSlugs(): Promise<string[]> {
   try {
     const res = await fetch(
-      `${API_BASE}/api/cars-for-hire/all/`,
+      `${SIGMA_API_BASE}/api/cars-for-hire/all/`,
       { next: { revalidate: 3600 } }
     );
     if (!res.ok) return [];

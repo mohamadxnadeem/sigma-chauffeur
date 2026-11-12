@@ -7,7 +7,7 @@ import TestimonialsSection from "../components/sections/testimonials/Testimonial
 import TestimonialsCta from "../components/sections/testimonials/TestimonialsCta";
 import ChauffeurAuthoritySection from "../components/sections/ChauffeurAuthoritySection";
 import PrivateServiceSection from "../components/sections/PrivateServiceSection";
-import { API_BASE } from "../lib/api";
+import { API_BASE, SIGMA_API_BASE } from "../lib/api";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -223,7 +223,7 @@ async function getFeaturedExperiences(): Promise<FeaturedExperienceItem[]> {
 async function getFeaturedVehicles(): Promise<FeaturedVehicleItem[]> {
   try {
     const response = await fetch(
-      `${API_BASE}/api/cars-for-hire/all/`,
+      `${SIGMA_API_BASE}/api/cars-for-hire/all/`,
       {
         next: { revalidate: 3600 },
       }

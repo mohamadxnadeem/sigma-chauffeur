@@ -56,20 +56,65 @@ const nextConfig: NextConfig = {
         destination: "/chauffeur-drive-days/:slug*",
         permanent: true,
       },
-      // Lowercase vehicle slugs (CMS returns mixed-case; normalise for inbound links)
+      // Vehicle slugs moved to Sigma's own backend. Old URLs go straight to the final page (no chains).
       {
         source: "/chauffeur-services/BMW-X5-for-hire-with-driver",
-        destination: "/chauffeur-services/bmw-x5-for-hire-with-driver",
+        destination: "/chauffeur-services/bmw-x5",
         permanent: true,
       },
       {
-        source: "/chauffeur-services/Mercedes-s-class-for-hire-with-driver",
-        destination: "/chauffeur-services/mercedes-s-class-for-hire-with-driver",
+        source: "/chauffeur-services/bmw-x5-for-hire-with-driver",
+        destination: "/chauffeur-services/bmw-x5",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/bmw-5-series-for-hire-with-driver",
+        destination: "/chauffeur-services/bmw-5-series",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/BMW-5-series-for-hire-with-driver",
+        destination: "/chauffeur-services/bmw-5-series",
         permanent: true,
       },
       {
         source: "/chauffeur-services/Mercedes-v-class-private-chauffeur-service",
-        destination: "/chauffeur-services/mercedes-v-class-private-chauffeur-service",
+        destination: "/chauffeur-services/mercedes-v-class",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/mercedes-v-class-private-chauffeur-service",
+        destination: "/chauffeur-services/mercedes-v-class",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/Mercedes-s-class-for-hire-with-driver",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/mercedes-s-class-for-hire-with-driver",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/audi-a4",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/8-seater-staria-van-with-driver",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/mercedes-benz-e-class",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/chauffeur-services/range-rover-sport-chauffeur-service",
+        destination: "/",
         permanent: true,
       },
     ];
