@@ -153,7 +153,18 @@ function List({ title, items }: { title: string; items?: NamedItem[] }) {
 }
 
 export function BookingCard({ b, heading }: { b: BookingData; heading?: string }) {
-  const photo = b.car?.cover_photos?.[0]?.image;
+  // Featured photo first, then the rest in their set order.
+  const photos = [...(b.car?.cover_photos ?? [])]
+    .filter((p) => !!p.cover_photos)
+    .sort(
+      (a, z) =>
+        Number(!!z.is_featured) - Number(!!a.is_featured) ||
+        (a.order ?? 0) - (z.order ?? 0)
+    )
+    .map((p) => p.cover_photos as string);
+  const photo = photos[0];
+  const extraPhotos = photos.slice(1);
+  const carAlt = b.car?.title ? `${b.car.title} with Sigma VIP` : "Sigma VIP vehicle";
   const plate = b.vehicle_plate ?? b.car?.registration_number;
   const days = b.days ?? [];
   return (
@@ -164,9 +175,31 @@ export function BookingCard({ b, heading }: { b: BookingData; heading?: string }
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={photo}
-          alt={b.car?.title ? `${b.car.title} with Sigma VIP` : "Sigma VIP vehicle"}
-          style={{ width: "100%", maxHeight: 280, objectFit: "cover", borderRadius: 8, marginBottom: 16 }}
+          alt={carAlt}
+          style={{ width: "100%", maxHeight: 320, objectFit: "cover", borderRadius: 8, marginBottom: extraPhotos.length ? 8 : 16 }}
         />
+      ) : null}
+      {extraPhotos.length ? (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+            gap: 8,
+            marginBottom: 16,
+          }}
+        >
+          {extraPhotos.map((src, i) => (
+            <a key={src} href={src} target="_blank" rel="noopener noreferrer">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={src}
+                alt={`${carAlt}, photo ${i + 2}`}
+                loading="lazy"
+                style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 6, display: "block" }}
+              />
+            </a>
+          ))}
+        </div>
       ) : null}
       <dl style={{ margin: 0, display: "grid", gridTemplateColumns: "120px 1fr", gap: "8px 16px" }}>
         {b.car?.title ? (<><dt style={muted}>Vehicle</dt><dd style={{ margin: 0 }}>{b.car.title}{plate ? ` (${plate})` : ""}</dd></>) : null}
