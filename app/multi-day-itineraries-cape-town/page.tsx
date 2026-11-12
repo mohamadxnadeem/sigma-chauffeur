@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import MultiDayItinerariesPage from "../../components/sections/cape-town-itinerary/ItineraryPage";
+import { brand } from "@/lib/brand";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -61,6 +62,7 @@ export default function MultiDayItinerariesCapeTownPage() {
           name: "Sigma VIP",
           url: SITE_URL,
           telephone: "+27711081227",
+          email: brand.email,
         },
         areaServed: [
           { "@type": "City", name: "Cape Town" },

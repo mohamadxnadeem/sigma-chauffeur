@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { brand } from "@/lib/brand";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -62,7 +63,14 @@ export default function PrivacyPage() {
           >
             +27 71 108 1227
           </a>
-          .
+          {" "}
+          or email{" "}
+          <a
+            href={`mailto:${brand.email}`}
+            style={{ color: "#C9A84C", textDecoration: "none" }}
+          >
+            {brand.email}
+          </a>.
         </p>
       </section>
 
@@ -158,7 +166,14 @@ export default function PrivacyPage() {
           >
             +27 71 108 1227
           </a>
-          . We will respond within 21 days.
+          {" "}
+          or email{" "}
+          <a
+            href={`mailto:${brand.email}`}
+            style={{ color: "#C9A84C", textDecoration: "none" }}
+          >
+            {brand.email}
+          </a>. We will respond within 21 days.
         </p>
       </section>
 

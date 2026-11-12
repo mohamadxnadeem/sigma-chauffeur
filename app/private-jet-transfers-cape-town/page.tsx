@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PrivateJetTransferPage from "../../components/sections/private-jet-transfer/PrivateJetTransferPage";
 import { privateJetFaqItems } from "../../components/sections/private-jet-transfer/faqData";
 import { SIGMA_API_BASE } from "../../lib/api";
+import { brand } from "@/lib/brand";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -139,6 +140,7 @@ export default async function PrivateJetTransfersRoute() {
             url: `${SITE_URL}/images/logo.png`,
           },
           telephone: "+27 71 108 1227",
+          email: brand.email,
         },
         areaServed: {
           "@type": "City",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactContent from "./ContactContent";
+import { brand } from "@/lib/brand";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -54,6 +55,7 @@ export default function ContactPage() {
       name: "Sigma VIP",
       url: SITE_URL,
       telephone: "+27 71 108 1227",
+      email: brand.email,
     },
   };
 

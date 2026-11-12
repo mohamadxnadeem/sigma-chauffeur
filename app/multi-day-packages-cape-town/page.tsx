@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import MultiDayPage from "../../components/sections/multi-day/MultiDayPage";
 import { SIGMA_API_BASE } from "../../lib/api";
+import { brand } from "@/lib/brand";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -175,6 +176,7 @@ export default async function MultiDayPackagesRoute() {
             url: `${SITE_URL}/images/logo.png`,
           },
           telephone: "+27 71 108 1227",
+          email: brand.email,
         },
         areaServed: {
           "@type": "City",

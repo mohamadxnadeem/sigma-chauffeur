@@ -8,6 +8,7 @@ import TestimonialsCta from "../components/sections/testimonials/TestimonialsCta
 import ChauffeurAuthoritySection from "../components/sections/ChauffeurAuthoritySection";
 import PrivateServiceSection from "../components/sections/PrivateServiceSection";
 import { API_BASE, SIGMA_API_BASE } from "../lib/api";
+import { brand } from "@/lib/brand";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -301,6 +302,7 @@ export default async function HomePage() {
         name: "Sigma VIP",
         url: SITE_URL,
         telephone: "+27711081227",
+        email: brand.email,
         priceRange: "RRRR",
         logo: `${SITE_URL}/images/logo.png`,
         openingHoursSpecification: {

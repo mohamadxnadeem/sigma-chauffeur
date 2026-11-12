@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { brand } from "@/lib/brand";
 
 const SITE_URL = "https://sigmachauffeur.vip";
 
@@ -245,7 +246,14 @@ export default function CancellationPolicyPage() {
           >
             +27 71 108 1227
           </a>
-          . The time and date of your message is used to determine which
+          {" "}
+          or email{" "}
+          <a
+            href={`mailto:${brand.email}`}
+            style={{ color: "#C9A84C", textDecoration: "none" }}
+          >
+            {brand.email}
+          </a>. The time and date of your message is used to determine which
           cancellation bracket applies. A confirmation reply from us acknowledges
           receipt.
         </p>
