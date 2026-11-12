@@ -13,7 +13,8 @@ export type NamedItem = { title?: string; name?: string };
 export type BookingCar = {
   title?: string;
   registration_number?: string | null;
-  cover_photos?: { image?: string }[];
+  // Backend image items: the URL is in `cover_photos` (CarsforhireImageSerializer).
+  cover_photos?: { cover_photos?: string | null; order?: number | null; is_featured?: boolean }[];
 } | null;
 
 export type BookingData = {
