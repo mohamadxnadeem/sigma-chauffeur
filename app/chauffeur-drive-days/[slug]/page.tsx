@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import PrivateTourDetailView from "../../../components/sections/private-tour-detail/PrivateTourDetailView";
-import { API_BASE } from "../../../lib/api";
+import { API_BASE, SIGMA_API_BASE } from "../../../lib/api";
 
 type ExperiencePhoto = {
   id: number;
@@ -120,7 +120,7 @@ async function getAllExperiences(): Promise<ExperienceListItem[]> {
 
 async function getAllVehicles(): Promise<CarsApiItem[]> {
   try {
-    const response = await fetch(`${API_BASE}/api/cars-for-hire/all/`, {
+    const response = await fetch(`${SIGMA_API_BASE}/api/cars-for-hire/all/`, {
       next: { revalidate: 3600 },
     });
     if (!response.ok) return [];
