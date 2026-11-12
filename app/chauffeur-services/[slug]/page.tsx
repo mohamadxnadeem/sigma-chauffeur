@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ChauffeurDetailView from "../../../components/sections/chauffeur-services/ChauffeurDetailView";
 import { SIGMA_API_BASE } from "../../../lib/api";
+import { brand } from "@/lib/brand";
 
 // ─────────────────────────────────────────────
 // TYPES
@@ -395,6 +396,7 @@ export default async function ChauffeurServiceDetailPage({ params }: PageProps) 
           name: "Sigma VIP",
           url: SITE_URL,
           telephone: "+27711081227",
+          email: brand.email,
           priceRange: "$$$$",
           sameAs: [],
         },

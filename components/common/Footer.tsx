@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { buildWhatsAppLink, buildGeneralWhatsAppMessage } from "../../lib/whatsapp";
 import { trackWhatsAppClick, trackPhoneClick } from "../../lib/tracking";
+import { brand } from "@/lib/brand";
 
 const whatsappLink = buildWhatsAppLink(
   "Hi, I'd like to make a booking. Details:"
@@ -190,6 +191,9 @@ export default function Footer() {
                 }
               >
                 +27 71 108 1227
+              </ContactLink>
+              <ContactLink href={`mailto:${brand.email}`}>
+                {brand.email}
               </ContactLink>
               <WhatsAppLink
                 href={whatsappLink}

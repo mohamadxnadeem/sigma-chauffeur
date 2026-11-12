@@ -1,6 +1,7 @@
 "use client";
 
 import { trackWhatsAppClick } from "../../lib/tracking";
+import { brand } from "@/lib/brand";
 
 export default function ContactContent() {
   return (
@@ -44,6 +45,10 @@ export default function ContactContent() {
         <div>
           <strong>Phone:</strong>{" "}
           <a href="tel:+27711081227">+27 71 108 1227</a>
+        </div>
+        <div>
+          <strong>Email:</strong>{" "}
+          <a href={`mailto:${brand.email}`}>{brand.email}</a>
         </div>
         <div>
           <strong>Hours:</strong> Available 7 days a week, 24 hours
