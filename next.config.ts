@@ -88,6 +88,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/chauffeur-services/mercedes-v-class-2",
+        destination: "/chauffeur-services/mercedes-v-class",
+        permanent: true,
+      },
+      {
         source: "/chauffeur-services/Mercedes-s-class-for-hire-with-driver",
         destination: "/",
         permanent: true,
