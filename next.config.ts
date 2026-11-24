@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
     ],
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        // Retired URL still indexed by Google; send visitors and ranking to the live page.
+        source: "/chauffeur-services/mercedes-v-class-2",
+        destination: "/chauffeur-services/mercedes-v-class",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
