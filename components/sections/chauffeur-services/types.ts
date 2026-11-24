@@ -27,7 +27,6 @@ export type Car = {
   images?: CarPhoto[];
   meta_title?: string;
   meta_description?: string;
-  seo_keyword?: string;
 };
 
 export type RelatedVehicle = {
